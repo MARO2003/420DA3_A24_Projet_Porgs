@@ -45,7 +45,7 @@ internal class ProjectApplication {
     }
 
     public string GetCopyrightNotice() {
-        return $"(c) {DateTime.Now.Year} Marc-Eric Boury - All rights reserved.";
+        return $"(c) {DateTime.Now.Year} Team Porgs - All rights reserved.";
     }
 
     public void Start() {
