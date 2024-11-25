@@ -1,17 +1,15 @@
 ﻿using _420DA3_A24_Projet.Business.Services;
 using _420DA3_A24_Projet.DataAccess.Contexts;
 using _420DA3_A24_Projet.Presentation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace _420DA3_A24_Projet.Business;
 internal class ProjectApplication {
     private readonly WsysDbContext dbContext;
     private readonly MainMenu mainMenu;
 
+    public UserService UserService { get; private set; }
+    public RoleService RoleService { get; private set; }
     public SupplierService SupplierService { get; private set; }
     public PurchaseOrderService PurchaseOrderService { get; private set; }
 
@@ -22,10 +20,12 @@ internal class ProjectApplication {
     public ProjectApplication() {
         ApplicationConfiguration.Initialize();
         this.dbContext = new WsysDbContext();
+        this.UserService = new UserService(this, this.dbContext);
+        this.RoleService = new RoleService(this, this.dbContext);
         this.SupplierService = new SupplierService(this, this.dbContext);
         this.PurchaseOrderService = new PurchaseOrderService(this, this.dbContext);
-        this.AdresseServices = new AdresseServices(this,this.dbContext);
-        this.ShipmentServices = new ShipmentServices(this,this.dbContext);
+        this.AdresseServices = new AdresseServices(this, this.dbContext);
+        this.ShipmentServices = new ShipmentServices(this, this.dbContext);
         this.mainMenu = new MainMenu(this);
     }
 
