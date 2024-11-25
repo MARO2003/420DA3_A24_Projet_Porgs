@@ -1,7 +1,7 @@
 ﻿using _420DA3_A24_Projet.Business.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace _420DA3_A24_Projet.DataAccess.Contexts {
+namespace _420DA3_A24_Projet.DataAccess.Contexts;
 
     internal class WsysDbContext : DbContext {
         public DbSet<User> Users { get; set; }
@@ -10,6 +10,8 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts {
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<ShippingOrder> ShippingOrders { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         public DbSet<Adresse>Adresses { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
@@ -461,6 +463,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts {
                .IsRowVersion();
 
             #endregion
+            
 
             #region Shipment
 
@@ -803,5 +806,5 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts {
 
         }
     }
-}
+
 
