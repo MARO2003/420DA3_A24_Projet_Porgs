@@ -618,7 +618,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts {
 
 
             #endregion
-            #region ShippingOrderProduct
+            #region ShippingOrder
             _ = modelBuilder.Entity<ShippingOrder>()
                 .ToTable(nameof(this.ShippingOrders))
                 .HasKey(shippingOrder => shippingOrder.Id);
