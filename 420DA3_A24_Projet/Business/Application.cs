@@ -12,11 +12,13 @@ internal class Application {
     private readonly WsysDbContext dbContext;
     private readonly MainMenu mainMenu;
 
+    public PasswordService PasswordService { get; private set; }
     public SupplierService SupplierService { get; private set; }
     public PurchaseOrderService PurchaseOrderService { get; private set; }
 
     public Application() {
         ApplicationConfiguration.Initialize();
+        this.PasswordService = PasswordService.GetInstance();
         this.dbContext = new WsysDbContext();
         this.SupplierService = new SupplierService(this, this.dbContext);
         this.PurchaseOrderService = new PurchaseOrderService(this, this.dbContext);

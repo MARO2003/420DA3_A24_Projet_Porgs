@@ -1,5 +1,6 @@
 ﻿using _420DA3_A24_Projet.Business.Domain;
 using Microsoft.EntityFrameworkCore;
+using System.Configuration;
 
 namespace _420DA3_A24_Projet.DataAccess.Contexts {
 
@@ -17,9 +18,11 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts {
          
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             base.OnConfiguring(optionsBuilder);
+            string connString = ConfigurationManager.ConnectionStrings["ProjectDatabase"].ConnectionString;
+
             _ = optionsBuilder
                 // TODO: éventuellement remplacer par un string construit sur les configurations de l'application (fichier App.config).
-                .UseSqlServer("Server=.\\SQL2022DEV;Database=420DA3_A24_PROJET;Integrated Security=true;TrustServerCertificate=true;")
+                .UseSqlServer(connString)
                 .UseLazyLoadingProxies();
 
         }
