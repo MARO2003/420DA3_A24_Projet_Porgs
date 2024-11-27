@@ -15,6 +15,6 @@ public partial class PasswordHasherWindow : Form {
     }
 
     private void QuitButton_Click(object sender, EventArgs e) {
-        Application.Exit();
+        System.Windows.Forms.Application.Exit();
     }
 }
