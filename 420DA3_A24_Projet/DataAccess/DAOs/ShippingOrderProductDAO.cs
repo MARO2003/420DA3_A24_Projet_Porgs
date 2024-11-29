@@ -5,5 +5,5 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace _420DA3_A24_Projet.DataAccess.DAOs;
-internal class ShippingOrderProductDAO {
+internal class ShippingOrderProduct {
 }
