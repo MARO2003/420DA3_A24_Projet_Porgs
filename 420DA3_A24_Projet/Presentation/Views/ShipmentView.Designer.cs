@@ -30,6 +30,7 @@ partial class ShipmentView {
         this.btnAnnuler = new Button();
         this.centerTblLayoutPanel = new TableLayoutPanel();
         this.centerPanel = new Panel();
+        this.label1 = new Label();
         this.valuedateTimePickerDelete = new DateTimePicker();
         this.valuedateTimePickerModified = new DateTimePicker();
         this.valuedateTimePickerCreate = new DateTimePicker();
@@ -45,7 +46,6 @@ partial class ShipmentView {
         this.lblShipmentStatus = new Label();
         this.valueId = new NumericUpDown();
         this.labelId = new Label();
-        this.label1 = new Label();
         this.bottomBarPanel.SuspendLayout();
         this.centerTblLayoutPanel.SuspendLayout();
         this.centerPanel.SuspendLayout();
@@ -132,6 +132,16 @@ partial class ShipmentView {
         this.centerPanel.Name = "centerPanel";
         this.centerPanel.Size = new Size(494, 509);
         this.centerPanel.TabIndex = 0;
+        // 
+        // label1
+        // 
+        this.label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.label1.Location = new Point(40, 343);
+        this.label1.Name = "label1";
+        this.label1.Size = new Size(150, 31);
+        this.label1.TabIndex = 31;
+        this.label1.Text = "Date Modified:";
+        this.label1.TextAlign = ContentAlignment.MiddleRight;
         // 
         // valuedateTimePickerDelete
         // 
@@ -264,16 +274,6 @@ partial class ShipmentView {
         this.labelId.Text = "ID:";
         this.labelId.TextAlign = ContentAlignment.TopRight;
         // 
-        // label1
-        // 
-        this.label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.label1.Location = new Point(40, 343);
-        this.label1.Name = "label1";
-        this.label1.Size = new Size(150, 31);
-        this.label1.TabIndex = 31;
-        this.label1.Text = "Date Modified:";
-        this.label1.TextAlign = ContentAlignment.MiddleRight;
-        // 
         // ShipmentView
         // 
         this.AutoScaleDimensions = new SizeF(10F, 25F);
@@ -284,6 +284,7 @@ partial class ShipmentView {
         this.Controls.Add(this.topBarPanel);
         this.Name = "ShipmentView";
         this.Text = "ShipmentView";
+        this.Load += this.ShipmentView_Load;
         this.bottomBarPanel.ResumeLayout(false);
         this.centerTblLayoutPanel.ResumeLayout(false);
         this.centerPanel.ResumeLayout(false);
