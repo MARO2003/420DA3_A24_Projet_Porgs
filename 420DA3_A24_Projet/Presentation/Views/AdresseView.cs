@@ -1,6 +1,7 @@
 ﻿using _420DA3_A24_Projet.Business;
 using _420DA3_A24_Projet.Business.Domain;
 using _420DA3_A24_Projet.Business.Services;
+using Microsoft.VisualBasic.ApplicationServices;
 using Project_Utilities.Enums;
 using System;
 using System.Collections.Generic;
@@ -65,6 +66,18 @@ internal partial class AdresseView : Form {
 
     private void LoadAdresseDataInControls(Adresse adresse) {
         //TODO @MAGUETTE: Charger les donnes de l'adresse dans les controls
+        this.idValue.Value = adresse.Id;
+        this.valueAdresseTypeCB.SelectedValue = adresse.AdressTypes;
+        this.valueAdresss.Text = adresse.Adress;
+        this.valueCity.Text = adresse.City;
+        this.valueCivicNumber.Text = adresse.CivicNumber;
+        this.valueStreet.Text= adresse.Street;
+        this.valueState.Text = adresse.State;
+        this.valueCountry.Text = adresse.Country;
+        this.valuePostalCode.Text = adresse.PostalCode;
+        this.valuedateTimePickerCreate.Value =adresse.DateCreated;
+        this.valuedateTimePickerDelete.Value =  adresse.DateDelete ?? DateTime.Now;
+        this.valuedateTimePickerModified.Value =  adresse.DateModified ?? DateTime.Now;
 
     }
 
