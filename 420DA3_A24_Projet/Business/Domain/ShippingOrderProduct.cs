@@ -8,14 +8,14 @@ namespace _420DA3_A24_Projet.Business.Domain;
 public class ShippingOrderProduct {
     /// <summary>
     /// Classe représentant la liaison entre <see cref="ShippingOrder"/> et <see cref="Product"/>."/>.
-    /// Utilisé pour représenter les produits d'un ordre d'expédition et leur quantité.
+    /// classe qui représente les produits d'un ordre d'expédition et leur quantité.
     /// </summary>
    
 
         private int quantity;
 
 
-        public int ShippingOderId { get; set; }
+        public int ShippingOrderId { get; set; }
         public int ProductId { get; set; }
         public int Quantity {
             get { return this.quantity; }
@@ -37,11 +37,11 @@ public class ShippingOrderProduct {
         /// <summary>
         /// Constructeur orienté création manuelle
         /// </summary>
-        /// <param name="shippingOrderId">L'identifiant de l'ordre d'expédition.</param>
-        /// <param name="productId">L'identifiant du produit.</param>
+        /// <param name="shippingOrderId">L'id de l'ordre d'expédition.</param>
+        /// <param name="productId">L'id du produit.</param>
         /// <param name="quantity">La quantité du produit associé à cet ordre d'expédition.</param>
         public ShippingOrderProduct(int shippingOrderId, int productId, int quantity = 0) {
-            this.ShippingOderId = shippingOrderId;
+            this.ShippingOrderId = shippingOrderId;
             this.ProductId = productId;
             this.Quantity = quantity;
         }
@@ -49,8 +49,8 @@ public class ShippingOrderProduct {
         /// <summary>
         /// Constructeur orienté entity framework.
         /// </summary>
-        /// <param name="shippingOrderId">L'identifiant de l'ordre d'expédition.</param>
-        /// <param name="productId">L'identifiant du produit.</param>
+        /// <param name="shippingOrderId">L'id de l'ordre d'expédition.</param>
+        /// <param name="productId">L'id du produit.</param>
         /// <param name="quantity">La quantité du produit associé à cet ordre d'expédition.</param>
         /// <param name="rowVersion">Le numéro de version anti-concurrence de l'entrée dans la base de donnée.</param>
         protected ShippingOrderProduct(int shippingOrderId, int productId, int quantity, byte[] rowVersion)
