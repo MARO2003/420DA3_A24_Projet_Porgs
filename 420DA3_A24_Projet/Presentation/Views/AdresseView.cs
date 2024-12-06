@@ -140,7 +140,6 @@ internal partial class AdresseView : Form {
         }if(this.valuePostalCode.Text.Length < Adresse.PostalCodeMinLength) {
             throw new Exception($"Le code Postale doit contenir au moins {Adresse.PostalCodeMinLength} caractere");
         }
-        ///TODO il me reste les autres attributs de la classeAdresse a valider
     }
     /// <summary>
     /// cette fonction permet d'activer certains controls  pour faire en sorte que l'utilisateur 
@@ -190,6 +189,23 @@ internal partial class AdresseView : Form {
 
     private void ProcessAction() {
 
+        switch (this.CurrentAction) {
+            case ViewActionsEnum.Creation:
+                this.UpdateAdresseInstanceFromControls(this.CurrentInstance);
+                this.CurrentInstance = this.parentApp.AdresseServices.CreateAdresse(this.CurrentInstance);
+                break;
+            case ViewActionsEnum.Deletion:
+                this.CurrentInstance = this.parentApp.AdresseServices.DeleteAdresse(this.CurrentInstance);
+                break;
+            case ViewActionsEnum.Edition:
+                this.UpdateAdresseInstanceFromControls(this.CurrentInstance);
+                this.CurrentInstance =this.parentApp.AdresseServices.UpdateAdresse(this.CurrentInstance);
+                break;
+            default:
+                throw new Exception("Erreur!");
+
+        }
+        
     }
    
 }

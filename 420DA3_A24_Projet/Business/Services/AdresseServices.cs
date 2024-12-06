@@ -67,6 +67,8 @@ internal class AdresseServices {
     public Adresse CreateAdresse(Adresse adresse) {
         return this.dao.Create(adresse);
     }
-    
 
+    internal Adresse DeleteAdresse(Adresse currentInstance) {
+        throw new NotImplementedException();
+    }
 }
