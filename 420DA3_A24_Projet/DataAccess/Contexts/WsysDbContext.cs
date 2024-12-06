@@ -11,6 +11,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Warehouse> Warehouses { get; set; }
         public DbSet<ShippingOrder> ShippingOrders { get; set; }
+        public DbSet<ShippingOrderProduct> ShippingOrdersProducts { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Customer> Customers { get; set; }
 
@@ -738,16 +739,53 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
                .HasColumnOrder(14)
                .IsRequired();
 
-            #endregion
+        #endregion
+
+        #region ShippingOrderProduct
+
+        _ = modelBuilder.Entity<ShippingOrderProduct>()
+            .ToTable(nameof(this.ShippingOrdersProducts))
+            .HasKey(sop => new { sop.ShippingOrderId, sop.ProductId });
+
+        _ = modelBuilder.Entity<ShippingOrderProduct>()
+            .HasIndex(sop => new { sop.ShippingOrderId, sop.ProductId })
+            .IsUnique(true);
+
+        _ = modelBuilder.Entity<ShippingOrderProduct>()
+            .Property(sop => sop.ShippingOrderId)
+            .HasColumnName("ShippingOderId")
+            .HasColumnOrder(0)
+            .HasColumnType("int");
+        _ = modelBuilder.Entity<ShippingOrderProduct>()
+            .Property(sop => sop.ProductId)
+            .HasColumnName("ProductId")
+            .HasColumnOrder(1)
+            .HasColumnType("int");
+        _ = modelBuilder.Entity<ShippingOrderProduct>()
+            .Property(sop => sop.Quantity)
+            .HasColumnName("Quantity")
+            .HasColumnOrder(2)
+            .HasColumnType("int");
+        _ = modelBuilder.Entity<ShippingOrderProduct>()
+            .Property(sop => sop.RowVersion)
+            .HasColumnName("RowVersion")
+            .HasColumnOrder(3)
+            .IsRowVersion();
+       
 
 
-            #region RELATIONS RE DONNÉES DE TEST
-
-            // Warehouse ici
 
 
-            // NOTE: le mot de passe des user est "testpasswd".
-            User user1 = new User("UserAdmin", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
+        #endregion
+
+
+        #region RELATIONS RE DONNÉES DE TEST
+
+        // Warehouse ici
+
+
+        // NOTE: le mot de passe des user est "testpasswd".
+        User user1 = new User("UserAdmin", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
                 Id = 1
             };
             User user2 = new User("UserOffice", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {

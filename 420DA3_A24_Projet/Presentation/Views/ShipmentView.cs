@@ -25,14 +25,14 @@ internal partial class ShipmentView : Form {
 
 
 
-   
+
 
     public DialogResult GetCurrentInstance() {
 
     }
 
     public DialogResult OpenForViewAction(ViewActionsEnum action, Shipment? = null) {
-    
+
 
     }
 
@@ -73,4 +73,7 @@ internal partial class ShipmentView : Form {
         this.DialogResult = DialogResult.Cancel;
     }
 
+    private void ShipmentView_Load(object sender, EventArgs e) {
+
+    }
 }

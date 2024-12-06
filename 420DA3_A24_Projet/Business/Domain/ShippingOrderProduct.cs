@@ -5,29 +5,79 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace _420DA3_A24_Projet.Business.Domain;
-internal class ShippingOrderProduct {
-    private int quantite;
-    public int Quantity {
-        get {
-            return quantite;
-        } set {
-            if (quantite <= 0) {
-                throw new ArgumentOutOfRangeException("Quantity", "Quantity must  be greater than 0");
+public class ShippingOrderProduct {
+    /// <summary>
+    /// Classe représentant la liaison entre <see cref="ShippingOrder"/> et <see cref="Product"/>."/>.
+    /// classe qui représente les produits d'un ordre d'expédition et leur quantité.
+    /// </summary>
+   
+
+        private int quantity;
+
+
+        public int ShippingOrderId { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity {
+            get { return this.quantity; }
+            set {
+                if (!ValidateQuantity(value)) {
+                    throw new ArgumentOutOfRangeException("Quantity", "Quantity must be greater than or equal to 1.");
+                }
+                this.quantity = value;
             }
-            quantite = value;
         }
-    }
-    public int ShippingOrderId { get; set; }
-    public int ProductId { get; set; }
+        public byte[] RowVersion { get; set; } = null!;
 
-    public virtual Product Product { get; set; }
-    public virtual ShippingOrder ShippingOrder { get; set; }
+        /// <summary>
+        /// L'ordre d'expédition associé.
+        /// </summary>
+        public virtual ShippingOrder ShippingOrder { get; set; } = null!;
+        public virtual Product Product { get; set; } = null!;
+
+        /// <summary>
+        /// Constructeur orienté création manuelle
+        /// </summary>
+        /// <param name="shippingOrderId">L'id de l'ordre d'expédition.</param>
+        /// <param name="productId">L'id du produit.</param>
+        /// <param name="quantity">La quantité du produit associé à cet ordre d'expédition.</param>
+        public ShippingOrderProduct(int shippingOrderId, int productId, int quantity = 0) {
+            this.ShippingOrderId = shippingOrderId;
+            this.ProductId = productId;
+            this.Quantity = quantity;
+        }
+
+        /// <summary>
+        /// Constructeur orienté entity framework.
+        /// </summary>
+        /// <param name="shippingOrderId">L'id de l'ordre d'expédition.</param>
+        /// <param name="productId">L'id du produit.</param>
+        /// <param name="quantity">La quantité du produit associé à cet ordre d'expédition.</param>
+        /// <param name="rowVersion">Le numéro de version anti-concurrence de l'entrée dans la base de donnée.</param>
+        protected ShippingOrderProduct(int shippingOrderId, int productId, int quantity, byte[] rowVersion)
+            : this(shippingOrderId, productId, quantity) {
+            this.RowVersion = rowVersion;
+        }
+
+        /// <summary>
+        /// Méthode de validation de la quantité du produit.
+        /// La quantité doit être supérieure ou égale à 1.
+        /// </summary>
+        /// <param name="quantity">La quantité du produit.</param>
+        /// <returns><see langword="true"/> si valide, <see langword="false"/> sinon.</returns>
+        public static bool ValidateQuantity(int quantity) {
+            return quantity >= 1;
+        }
 
 
-    public ShippingOrderProduct(int ShippingOrderId,int ProductId,int Quantity){
-        this.ShippingOrderId = ShippingOrderId;
-        this.ProductId = ProductId;
-        this.Quantity = Quantity;
-    }
+        /// <summary>
+        /// Override de la méthode <see cref="object.ToString"/> pour affichage des associations
+        /// produit-ordre d'expédition dans des ListBox ou ComboBox.
+        /// </summary>
+        /// <returns>Un string décrivant l'association produit-ordre d'expédition.</returns>
+        public override string ToString() {
+            return $"{this.Product.ProductName} (Qty: {this.Quantity})";
+        }
+
     
+
 }

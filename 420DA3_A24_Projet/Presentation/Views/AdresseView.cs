@@ -1,6 +1,7 @@
 ﻿using _420DA3_A24_Projet.Business;
 using _420DA3_A24_Projet.Business.Domain;
 using _420DA3_A24_Projet.Business.Services;
+using Microsoft.VisualBasic.ApplicationServices;
 using Project_Utilities.Enums;
 using System;
 using System.Collections.Generic;
@@ -65,12 +66,25 @@ internal partial class AdresseView : Form {
 
     private void LoadAdresseDataInControls(Adresse adresse) {
         //TODO @MAGUETTE: Charger les donnes de l'adresse dans les controls
+        this.idValue.Value = adresse.Id;
+        this.valueAdresseTypeCB.SelectedValue = adresse.AdressTypes;
+        this.valueAdresss.Text = adresse.Adress;
+        this.valueCity.Text = adresse.City;
+        this.valueCivicNumber.Text = adresse.CivicNumber;
+        this.valueStreet.Text= adresse.Street;
+        this.valueState.Text = adresse.State;
+        this.valueCountry.Text = adresse.Country;
+        this.valuePostalCode.Text = adresse.PostalCode;
+        this.valuedateTimePickerCreate.Value =adresse.DateCreated;
+        this.valuedateTimePickerDelete.Value =  adresse.DateDelete ?? DateTime.Now;
+        this.valuedateTimePickerModified.Value =  adresse.DateModified ?? DateTime.Now;
 
     }
 
     private  void UpdateAdresseInstanceFromControls(Adresse adresse) {
         try {
-            
+            this.ValidateControlsValues();
+
 
         } catch(Exception ex) {
             _ = MessageBox.Show(ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -84,17 +98,48 @@ internal partial class AdresseView : Form {
 
 
     private void ValidateControlsValues() {
+        //Adresse
         if (this.valueAdresss.Text.Length < Adresse.AdresseMinLength) {
-
-            throw new Exception($"L'adresse doit contenir au moins {Adresse.AdresseMinLength} caracteres.", );
-
-        }
+            throw new Exception($"L'adresse doit contenir au moins {Adresse.AdresseMinLength} caracteres." );}
         if (this.valueAdresss.Text.Length > Adresse.AdresseMaxLength) {
-
-            throw new Exception(($"L'adresse ne doit pas contenir plus de {Adresse.AdresseMaxLength} caracteres.", );
-
+            throw new Exception($"L'adresse ne doit pas contenir plus de {Adresse.AdresseMaxLength} caracteres." );
         }
-        ///TODO il me reste les autres attributs de la classeAdresse a valider
+        //City
+        if (this.valueCity.Text.Length > Adresse.CityMaxLength) {
+            throw new Exception($"Le ne nom City ne doit pas contenir plus de {Adresse.CityMaxLength} caracteres.");
+        }if (this.valueAdresss.Text.Length < Adresse.CityMinLength) {
+            throw new Exception($"Le nom du City  doit  contenir au moins {Adresse.CityMinLength} caractere");
+        }
+        //Civic Number
+        if(this.valueCivicNumber.Text.Length > Adresse.CivicNumberMaxLength) {
+            throw new Exception($"Le Numero Civic ne doit pas contenir plus de {Adresse.CivicNumberMaxLength} caractere.");
+        }if(this.valueCivicNumber.Text.Length< Adresse.CivicNumberMinLength) {
+            throw new Exception($"Le Numero Civic doit contenir au moins {Adresse.CivicNumberMinLength} caractere");
+        }
+        //Country
+        if(this.valueCountry.Text.Length > Adresse.ContryMaxLength) {
+            throw new Exception($"Le Pays  ne doit pas  contenir plus de {Adresse.ContryMaxLength} caractere.");
+        }if(this.valueCountry.Text.Length < Adresse.ContryMinLength) {
+            throw new Exception($"Le nom du Pays doit contenir au moins {Adresse.ContryMinLength} caractere");
+        }
+        //State
+        if (this.valueState.Text.Length > Adresse.StateMaxLength) {
+            throw new Exception($"Le nom de l'Etat ne doit pas contenir plus de {Adresse.StateMaxLength} caracterer.");
+        }if(this.valueState.Text.Length < Adresse.StateMinLength) {
+            throw new Exception($"Le nom de l'Eta doit contenir au moins {Adresse.StateMinLength} caractere");
+        }
+        //Street
+        if(this.valueStreet.Text.Length > Adresse.StreeMaxLength) {
+            throw new Exception($"Rue ne doit pas contenir plus de {Adresse.StreeMaxLength} caracterer."); 
+        }if(this.valueStreet.Text.Length < Adresse.StreeMinLength) {
+            throw new Exception($"Le nom de la Rue doit contenir au moins {Adresse.StreeMinLength} caractere.");
+        }
+        //CodePostal
+        if (this.valuePostalCode.Text.Length > Adresse.PostalCodeMaxLength) {
+            throw new Exception($"Le Code Postale ne doit pas contenir plus de {Adresse.PostalCodeMaxLength} caractere.");
+        }if(this.valuePostalCode.Text.Length < Adresse.PostalCodeMinLength) {
+            throw new Exception($"Le code Postale doit contenir au moins {Adresse.PostalCodeMinLength} caractere");
+        }
     }
     /// <summary>
     /// cette fonction permet d'activer certains controls  pour faire en sorte que l'utilisateur 
@@ -138,12 +183,29 @@ internal partial class AdresseView : Form {
             this.DialogResult=DialogResult.OK;
         }
         catch (Exception ex){
-            //TODO @maguette afficher erreur
+            this.parentApp.HandleException(ex);
         }
     }
 
     private void ProcessAction() {
 
+        switch (this.CurrentAction) {
+            case ViewActionsEnum.Creation:
+                this.UpdateAdresseInstanceFromControls(this.CurrentInstance);
+                this.CurrentInstance = this.parentApp.AdresseServices.CreateAdresse(this.CurrentInstance);
+                break;
+            case ViewActionsEnum.Deletion:
+                this.CurrentInstance = this.parentApp.AdresseServices.DeleteAdresse(this.CurrentInstance);
+                break;
+            case ViewActionsEnum.Edition:
+                this.UpdateAdresseInstanceFromControls(this.CurrentInstance);
+                this.CurrentInstance =this.parentApp.AdresseServices.UpdateAdresse(this.CurrentInstance);
+                break;
+            default:
+                throw new Exception("Erreur!");
+
+        }
+        
     }
    
 }
