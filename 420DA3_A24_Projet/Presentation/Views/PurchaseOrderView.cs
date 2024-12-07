@@ -24,7 +24,7 @@ internal partial class PurchaseOrderView : Form {
         //this.copyrightLabel.Text = this.application.GetCopyrightNotice();
     }
 
-    public PurchaseOrder? GetCurrentinstance() {
+    public PurchaseOrder? GetCurrentInstance() {
         return this.currentInstance;
     }
 
@@ -37,7 +37,7 @@ internal partial class PurchaseOrderView : Form {
                 this.EnableEditableControls();
                 break;
             case ViewActionsEnum.Visualization:
-                if(purchaseOrder is null) {
+                if (purchaseOrder is null) {
                     throw new ArgumentException($"PArameter [purchaseOrder] cannot be null for view action [{currentAction}].");
                 }
                 //labels && buttons
@@ -64,7 +64,7 @@ internal partial class PurchaseOrderView : Form {
     }
 
     public void LoadInstanceInControls(PurchaseOrder? purchaseOrder) {
-        if(purchaseOrder is null) {
+        if (purchaseOrder is null) {
             //affectations
         } else {
             //affectations
@@ -89,7 +89,7 @@ internal partial class PurchaseOrderView : Form {
         switch (this.currentAction) {
             case ViewActionsEnum.Creation:
                 PurchaseOrder newPurchaseOrder = new PurchaseOrder(
-                    //trims
+                //trims
                 );
                 this.currentInstance = this.application.PurchaseOrderService.Create(newPurchaseOrder);
                 break;
@@ -97,7 +97,7 @@ internal partial class PurchaseOrderView : Form {
                 //nothing
                 break;
             case ViewActionsEnum.Edition:
-                if(this.currentInstance == null) {
+                if (this.currentInstance == null) {
                     throw new Exception("No current instance of [PurchaseOrder] loaded.");
                 }
                 //affections of trims
@@ -114,6 +114,7 @@ internal partial class PurchaseOrderView : Form {
         }
     }
 
+    private void PurchaseOrderView_Load(object sender, EventArgs e) {
 
-    
+    }
 }
