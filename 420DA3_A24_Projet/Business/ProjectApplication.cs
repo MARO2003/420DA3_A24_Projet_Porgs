@@ -8,14 +8,19 @@ internal class ProjectApplication {
     private readonly WsysDbContext dbContext;
     private readonly MainMenu mainMenu;
 
+    public PasswordService PasswordService { get; private set; }
+    public TrackingNumberFactory TrackingNumberFactory { get; private set; }
+
+
     public UserService UserService { get; private set; }
     public RoleService RoleService { get; private set; }
+
     public SupplierService SupplierService { get; private set; }
     public PurchaseOrderService PurchaseOrderService { get; private set; }
 
     public AdresseServices AdresseServices { get; private set; }
     public ShipmentServices ShipmentServices { get; private set; }
-    public TrackingNumberFactory TrackingNumberFactory { get; private set; }
+
 
     public ProjectApplication() {
         ApplicationConfiguration.Initialize();

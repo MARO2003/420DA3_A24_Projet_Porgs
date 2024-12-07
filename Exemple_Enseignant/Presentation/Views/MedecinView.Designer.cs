@@ -33,6 +33,7 @@ partial class MedecinView {
         this.cancelButton = new Button();
         this.centralTableLayoutPanel = new TableLayoutPanel();
         this.centralPanel = new Panel();
+        this.licenseNumericUpDown = new TextBox();
         this.dateDeletedDTPicker = new DateTimePicker();
         this.dateModifiedDTPicker = new DateTimePicker();
         this.dateCreatedDTPicker = new DateTimePicker();
@@ -46,7 +47,6 @@ partial class MedecinView {
         this.prenomLabel = new Label();
         this.nomLabel = new Label();
         this.idLabel = new Label();
-        this.licenseNumericUpDown = new TextBox();
         this.topBarPanel.SuspendLayout();
         this.bottomBarPanel.SuspendLayout();
         this.centralTableLayoutPanel.SuspendLayout();
@@ -60,26 +60,27 @@ partial class MedecinView {
         this.topBarPanel.Controls.Add(this.viewModeHeaderLabal);
         this.topBarPanel.Dock = DockStyle.Top;
         this.topBarPanel.Location = new Point(0, 0);
+        this.topBarPanel.Margin = new Padding(3, 4, 3, 4);
         this.topBarPanel.Name = "topBarPanel";
-        this.topBarPanel.Size = new Size(800, 40);
+        this.topBarPanel.Size = new Size(772, 53);
         this.topBarPanel.TabIndex = 0;
         // 
         // viewModeValueLabel
         // 
         this.viewModeValueLabel.AutoSize = true;
         this.viewModeValueLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.viewModeValueLabel.Location = new Point(92, 9);
+        this.viewModeValueLabel.Location = new Point(105, 12);
         this.viewModeValueLabel.Name = "viewModeValueLabel";
-        this.viewModeValueLabel.Size = new Size(88, 15);
+        this.viewModeValueLabel.Size = new Size(113, 20);
         this.viewModeValueLabel.TabIndex = 1;
         this.viewModeValueLabel.Text = "PLACEHOLDER";
         // 
         // viewModeHeaderLabal
         // 
         this.viewModeHeaderLabal.AutoSize = true;
-        this.viewModeHeaderLabal.Location = new Point(12, 9);
+        this.viewModeHeaderLabal.Location = new Point(14, 12);
         this.viewModeHeaderLabal.Name = "viewModeHeaderLabal";
-        this.viewModeHeaderLabal.Size = new Size(74, 15);
+        this.viewModeHeaderLabal.Size = new Size(94, 20);
         this.viewModeHeaderLabal.TabIndex = 0;
         this.viewModeHeaderLabal.Text = "VIEW MODE:";
         // 
@@ -89,17 +90,18 @@ partial class MedecinView {
         this.bottomBarPanel.Controls.Add(this.actionButton);
         this.bottomBarPanel.Controls.Add(this.cancelButton);
         this.bottomBarPanel.Dock = DockStyle.Bottom;
-        this.bottomBarPanel.Location = new Point(0, 400);
+        this.bottomBarPanel.Location = new Point(0, 595);
+        this.bottomBarPanel.Margin = new Padding(3, 4, 3, 4);
         this.bottomBarPanel.Name = "bottomBarPanel";
-        this.bottomBarPanel.Size = new Size(800, 50);
+        this.bottomBarPanel.Size = new Size(772, 67);
         this.bottomBarPanel.TabIndex = 1;
         // 
         // copyrightLabel
         // 
         this.copyrightLabel.AutoSize = true;
-        this.copyrightLabel.Location = new Point(12, 23);
+        this.copyrightLabel.Location = new Point(14, 31);
         this.copyrightLabel.Name = "copyrightLabel";
-        this.copyrightLabel.Size = new Size(87, 15);
+        this.copyrightLabel.Size = new Size(108, 20);
         this.copyrightLabel.TabIndex = 2;
         this.copyrightLabel.Text = "PLACEHOLDER";
         // 
@@ -107,9 +109,10 @@ partial class MedecinView {
         // 
         this.actionButton.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
         this.actionButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.actionButton.Location = new Point(582, 6);
+        this.actionButton.Location = new Point(523, 8);
+        this.actionButton.Margin = new Padding(3, 4, 3, 4);
         this.actionButton.Name = "actionButton";
-        this.actionButton.Size = new Size(100, 32);
+        this.actionButton.Size = new Size(114, 43);
         this.actionButton.TabIndex = 1;
         this.actionButton.Text = "ACTION";
         this.actionButton.UseVisualStyleBackColor = true;
@@ -118,9 +121,10 @@ partial class MedecinView {
         // cancelButton
         // 
         this.cancelButton.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.cancelButton.Location = new Point(688, 6);
+        this.cancelButton.Location = new Point(644, 8);
+        this.cancelButton.Margin = new Padding(3, 4, 3, 4);
         this.cancelButton.Name = "cancelButton";
-        this.cancelButton.Size = new Size(100, 32);
+        this.cancelButton.Size = new Size(114, 43);
         this.cancelButton.TabIndex = 0;
         this.cancelButton.Text = "Cancel";
         this.cancelButton.UseVisualStyleBackColor = true;
@@ -134,11 +138,12 @@ partial class MedecinView {
         this.centralTableLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
         this.centralTableLayoutPanel.Controls.Add(this.centralPanel, 1, 0);
         this.centralTableLayoutPanel.Dock = DockStyle.Fill;
-        this.centralTableLayoutPanel.Location = new Point(0, 40);
+        this.centralTableLayoutPanel.Location = new Point(0, 53);
+        this.centralTableLayoutPanel.Margin = new Padding(3, 4, 3, 4);
         this.centralTableLayoutPanel.Name = "centralTableLayoutPanel";
         this.centralTableLayoutPanel.RowCount = 1;
         this.centralTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.centralTableLayoutPanel.Size = new Size(800, 360);
+        this.centralTableLayoutPanel.Size = new Size(772, 542);
         this.centralTableLayoutPanel.TabIndex = 2;
         // 
         // centralPanel
@@ -158,63 +163,78 @@ partial class MedecinView {
         this.centralPanel.Controls.Add(this.nomLabel);
         this.centralPanel.Controls.Add(this.idLabel);
         this.centralPanel.Dock = DockStyle.Fill;
-        this.centralPanel.Location = new Point(83, 3);
+        this.centralPanel.Location = new Point(80, 4);
+        this.centralPanel.Margin = new Padding(3, 4, 3, 4);
         this.centralPanel.Name = "centralPanel";
-        this.centralPanel.Size = new Size(634, 354);
+        this.centralPanel.Size = new Size(611, 534);
         this.centralPanel.TabIndex = 0;
+        // 
+        // licenseNumericUpDown
+        // 
+        this.licenseNumericUpDown.Location = new Point(246, 196);
+        this.licenseNumericUpDown.Margin = new Padding(3, 4, 3, 4);
+        this.licenseNumericUpDown.Name = "licenseNumericUpDown";
+        this.licenseNumericUpDown.Size = new Size(285, 27);
+        this.licenseNumericUpDown.TabIndex = 14;
         // 
         // dateDeletedDTPicker
         // 
         this.dateDeletedDTPicker.Enabled = false;
-        this.dateDeletedDTPicker.Location = new Point(215, 265);
+        this.dateDeletedDTPicker.Location = new Point(246, 353);
+        this.dateDeletedDTPicker.Margin = new Padding(3, 4, 3, 4);
         this.dateDeletedDTPicker.Name = "dateDeletedDTPicker";
-        this.dateDeletedDTPicker.Size = new Size(250, 23);
+        this.dateDeletedDTPicker.Size = new Size(285, 27);
         this.dateDeletedDTPicker.TabIndex = 13;
         // 
         // dateModifiedDTPicker
         // 
         this.dateModifiedDTPicker.Enabled = false;
-        this.dateModifiedDTPicker.Location = new Point(215, 235);
+        this.dateModifiedDTPicker.Location = new Point(246, 313);
+        this.dateModifiedDTPicker.Margin = new Padding(3, 4, 3, 4);
         this.dateModifiedDTPicker.Name = "dateModifiedDTPicker";
-        this.dateModifiedDTPicker.Size = new Size(250, 23);
+        this.dateModifiedDTPicker.Size = new Size(285, 27);
         this.dateModifiedDTPicker.TabIndex = 12;
         // 
         // dateCreatedDTPicker
         // 
         this.dateCreatedDTPicker.Enabled = false;
-        this.dateCreatedDTPicker.Location = new Point(215, 205);
+        this.dateCreatedDTPicker.Location = new Point(246, 273);
+        this.dateCreatedDTPicker.Margin = new Padding(3, 4, 3, 4);
         this.dateCreatedDTPicker.Name = "dateCreatedDTPicker";
-        this.dateCreatedDTPicker.Size = new Size(250, 23);
+        this.dateCreatedDTPicker.Size = new Size(285, 27);
         this.dateCreatedDTPicker.TabIndex = 11;
         // 
         // prenomTextBox
         // 
-        this.prenomTextBox.Location = new Point(215, 117);
+        this.prenomTextBox.Location = new Point(246, 156);
+        this.prenomTextBox.Margin = new Padding(3, 4, 3, 4);
         this.prenomTextBox.Name = "prenomTextBox";
-        this.prenomTextBox.Size = new Size(250, 23);
+        this.prenomTextBox.Size = new Size(285, 27);
         this.prenomTextBox.TabIndex = 9;
         // 
         // idNumericUpDown
         // 
         this.idNumericUpDown.Enabled = false;
-        this.idNumericUpDown.Location = new Point(215, 37);
+        this.idNumericUpDown.Location = new Point(246, 49);
+        this.idNumericUpDown.Margin = new Padding(3, 4, 3, 4);
         this.idNumericUpDown.Name = "idNumericUpDown";
-        this.idNumericUpDown.Size = new Size(250, 23);
+        this.idNumericUpDown.Size = new Size(286, 27);
         this.idNumericUpDown.TabIndex = 8;
         // 
         // nomTextBox
         // 
-        this.nomTextBox.Location = new Point(215, 87);
+        this.nomTextBox.Location = new Point(246, 116);
+        this.nomTextBox.Margin = new Padding(3, 4, 3, 4);
         this.nomTextBox.Name = "nomTextBox";
-        this.nomTextBox.Size = new Size(250, 23);
+        this.nomTextBox.Size = new Size(285, 27);
         this.nomTextBox.TabIndex = 7;
         // 
         // dateDeletedLabel
         // 
         this.dateDeletedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.dateDeletedLabel.Location = new Point(9, 263);
+        this.dateDeletedLabel.Location = new Point(10, 351);
         this.dateDeletedLabel.Name = "dateDeletedLabel";
-        this.dateDeletedLabel.Size = new Size(200, 30);
+        this.dateDeletedLabel.Size = new Size(229, 40);
         this.dateDeletedLabel.TabIndex = 6;
         this.dateDeletedLabel.Text = "Date de suppression: ";
         this.dateDeletedLabel.TextAlign = ContentAlignment.MiddleRight;
@@ -222,9 +242,9 @@ partial class MedecinView {
         // dateModifiedLabel
         // 
         this.dateModifiedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.dateModifiedLabel.Location = new Point(9, 233);
+        this.dateModifiedLabel.Location = new Point(10, 311);
         this.dateModifiedLabel.Name = "dateModifiedLabel";
-        this.dateModifiedLabel.Size = new Size(200, 30);
+        this.dateModifiedLabel.Size = new Size(229, 40);
         this.dateModifiedLabel.TabIndex = 5;
         this.dateModifiedLabel.Text = "Date de modification: ";
         this.dateModifiedLabel.TextAlign = ContentAlignment.MiddleRight;
@@ -232,9 +252,9 @@ partial class MedecinView {
         // dateCreatedLabel
         // 
         this.dateCreatedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.dateCreatedLabel.Location = new Point(9, 203);
+        this.dateCreatedLabel.Location = new Point(10, 271);
         this.dateCreatedLabel.Name = "dateCreatedLabel";
-        this.dateCreatedLabel.Size = new Size(200, 30);
+        this.dateCreatedLabel.Size = new Size(229, 40);
         this.dateCreatedLabel.TabIndex = 4;
         this.dateCreatedLabel.Text = "Date de création: ";
         this.dateCreatedLabel.TextAlign = ContentAlignment.MiddleRight;
@@ -242,9 +262,9 @@ partial class MedecinView {
         // numLicenseLabel
         // 
         this.numLicenseLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.numLicenseLabel.Location = new Point(9, 142);
+        this.numLicenseLabel.Location = new Point(10, 189);
         this.numLicenseLabel.Name = "numLicenseLabel";
-        this.numLicenseLabel.Size = new Size(200, 30);
+        this.numLicenseLabel.Size = new Size(229, 40);
         this.numLicenseLabel.TabIndex = 3;
         this.numLicenseLabel.Text = "Num. Licence: ";
         this.numLicenseLabel.TextAlign = ContentAlignment.MiddleRight;
@@ -252,9 +272,9 @@ partial class MedecinView {
         // prenomLabel
         // 
         this.prenomLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.prenomLabel.Location = new Point(9, 112);
+        this.prenomLabel.Location = new Point(10, 149);
         this.prenomLabel.Name = "prenomLabel";
-        this.prenomLabel.Size = new Size(200, 30);
+        this.prenomLabel.Size = new Size(229, 40);
         this.prenomLabel.TabIndex = 2;
         this.prenomLabel.Text = "Prenom: ";
         this.prenomLabel.TextAlign = ContentAlignment.MiddleRight;
@@ -262,9 +282,9 @@ partial class MedecinView {
         // nomLabel
         // 
         this.nomLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.nomLabel.Location = new Point(9, 82);
+        this.nomLabel.Location = new Point(10, 109);
         this.nomLabel.Name = "nomLabel";
-        this.nomLabel.Size = new Size(200, 30);
+        this.nomLabel.Size = new Size(229, 40);
         this.nomLabel.TabIndex = 1;
         this.nomLabel.Text = "Nom: ";
         this.nomLabel.TextAlign = ContentAlignment.MiddleRight;
@@ -272,28 +292,22 @@ partial class MedecinView {
         // idLabel
         // 
         this.idLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.idLabel.Location = new Point(9, 31);
+        this.idLabel.Location = new Point(10, 41);
         this.idLabel.Name = "idLabel";
-        this.idLabel.Size = new Size(200, 30);
+        this.idLabel.Size = new Size(229, 40);
         this.idLabel.TabIndex = 0;
         this.idLabel.Text = "ID: ";
         this.idLabel.TextAlign = ContentAlignment.MiddleRight;
         // 
-        // licenseNumericUpDown
-        // 
-        this.licenseNumericUpDown.Location = new Point(215, 147);
-        this.licenseNumericUpDown.Name = "licenseNumericUpDown";
-        this.licenseNumericUpDown.Size = new Size(250, 23);
-        this.licenseNumericUpDown.TabIndex = 14;
-        // 
         // MedecinView
         // 
-        this.AutoScaleDimensions = new SizeF(7F, 15F);
+        this.AutoScaleDimensions = new SizeF(8F, 20F);
         this.AutoScaleMode = AutoScaleMode.Font;
-        this.ClientSize = new Size(800, 450);
+        this.ClientSize = new Size(772, 662);
         this.Controls.Add(this.centralTableLayoutPanel);
         this.Controls.Add(this.bottomBarPanel);
         this.Controls.Add(this.topBarPanel);
+        this.Margin = new Padding(3, 4, 3, 4);
         this.Name = "MedecinView";
         this.Text = "Gestion des médecins";
         this.topBarPanel.ResumeLayout(false);

@@ -33,6 +33,7 @@ partial class PurchaseOrderView {
         this.ClientSize = new Size(800, 450);
         this.Name = "PurchaseOrderView";
         this.Text = "PurchaseOrderView";
+        this.Load += this.PurchaseOrderView_Load;
         this.ResumeLayout(false);
     }
 
