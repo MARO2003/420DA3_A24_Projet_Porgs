@@ -28,7 +28,7 @@ internal partial class AdresseView : Form {
     }
 
     public DialogResult OpenForCreation(Adresse emptyAdresse) {
-        this.PreOpenSetup(ViewActionsEnum.Creation, emptyAdresse, "Creation d'un A dresse", "CREER");
+        this.PreOpenSetup(ViewActionsEnum.Creation, emptyAdresse, "Creation d'un Adresse", "CREER");
         return this.ShowDialog();
     }
 
