@@ -30,6 +30,7 @@ partial class ShipmentView {
         this.btnAnnuler = new Button();
         this.centerTblLayoutPanel = new TableLayoutPanel();
         this.centerPanel = new Panel();
+        this.label1 = new Label();
         this.valuedateTimePickerDelete = new DateTimePicker();
         this.valuedateTimePickerModified = new DateTimePicker();
         this.valuedateTimePickerCreate = new DateTimePicker();
@@ -45,7 +46,9 @@ partial class ShipmentView {
         this.lblShipmentStatus = new Label();
         this.valueId = new NumericUpDown();
         this.labelId = new Label();
-        this.label1 = new Label();
+        this.lblModeleFanetre = new Label();
+        this.valueModeFentre = new Label();
+        this.topBarPanel.SuspendLayout();
         this.bottomBarPanel.SuspendLayout();
         this.centerTblLayoutPanel.SuspendLayout();
         this.centerPanel.SuspendLayout();
@@ -55,6 +58,8 @@ partial class ShipmentView {
         // 
         // topBarPanel
         // 
+        this.topBarPanel.Controls.Add(this.valueModeFentre);
+        this.topBarPanel.Controls.Add(this.lblModeleFanetre);
         this.topBarPanel.Dock = DockStyle.Top;
         this.topBarPanel.Location = new Point(0, 0);
         this.topBarPanel.Name = "topBarPanel";
@@ -132,6 +137,16 @@ partial class ShipmentView {
         this.centerPanel.Name = "centerPanel";
         this.centerPanel.Size = new Size(494, 509);
         this.centerPanel.TabIndex = 0;
+        // 
+        // label1
+        // 
+        this.label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.label1.Location = new Point(40, 343);
+        this.label1.Name = "label1";
+        this.label1.Size = new Size(150, 31);
+        this.label1.TabIndex = 31;
+        this.label1.Text = "Date Modified:";
+        this.label1.TextAlign = ContentAlignment.MiddleRight;
         // 
         // valuedateTimePickerDelete
         // 
@@ -264,15 +279,25 @@ partial class ShipmentView {
         this.labelId.Text = "ID:";
         this.labelId.TextAlign = ContentAlignment.TopRight;
         // 
-        // label1
+        // lblModeleFanetre
         // 
-        this.label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.label1.Location = new Point(40, 343);
-        this.label1.Name = "label1";
-        this.label1.Size = new Size(150, 31);
-        this.label1.TabIndex = 31;
-        this.label1.Text = "Date Modified:";
-        this.label1.TextAlign = ContentAlignment.MiddleRight;
+        this.lblModeleFanetre.AutoSize = true;
+        this.lblModeleFanetre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.lblModeleFanetre.Location = new Point(21, 9);
+        this.lblModeleFanetre.Name = "lblModeleFanetre";
+        this.lblModeleFanetre.Size = new Size(145, 25);
+        this.lblModeleFanetre.TabIndex = 0;
+        this.lblModeleFanetre.Text = "Model Fenetre: ";
+        // 
+        // valueModeFentre
+        // 
+        this.valueModeFentre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.valueModeFentre.Location = new Point(173, 5);
+        this.valueModeFentre.Name = "valueModeFentre";
+        this.valueModeFentre.Size = new Size(254, 32);
+        this.valueModeFentre.TabIndex = 3;
+        this.valueModeFentre.Text = "PLACEHORDER";
+        this.valueModeFentre.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // ShipmentView
         // 
@@ -284,6 +309,9 @@ partial class ShipmentView {
         this.Controls.Add(this.topBarPanel);
         this.Name = "ShipmentView";
         this.Text = "ShipmentView";
+        this.Load += this.ShipmentView_Load;
+        this.topBarPanel.ResumeLayout(false);
+        this.topBarPanel.PerformLayout();
         this.bottomBarPanel.ResumeLayout(false);
         this.centerTblLayoutPanel.ResumeLayout(false);
         this.centerPanel.ResumeLayout(false);
@@ -318,4 +346,6 @@ partial class ShipmentView {
     private Label dateModifiedLabel;
     private Label lblDateCreate;
     private Label label1;
+    private Label lblModeleFanetre;
+    private Label valueModeFentre;
 }

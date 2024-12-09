@@ -62,7 +62,7 @@ partial class MedecinView {
         this.topBarPanel.Location = new Point(0, 0);
         this.topBarPanel.Margin = new Padding(3, 4, 3, 4);
         this.topBarPanel.Name = "topBarPanel";
-        this.topBarPanel.Size = new Size(914, 53);
+        this.topBarPanel.Size = new Size(772, 53);
         this.topBarPanel.TabIndex = 0;
         // 
         // viewModeValueLabel
@@ -90,10 +90,10 @@ partial class MedecinView {
         this.bottomBarPanel.Controls.Add(this.actionButton);
         this.bottomBarPanel.Controls.Add(this.cancelButton);
         this.bottomBarPanel.Dock = DockStyle.Bottom;
-        this.bottomBarPanel.Location = new Point(0, 533);
+        this.bottomBarPanel.Location = new Point(0, 595);
         this.bottomBarPanel.Margin = new Padding(3, 4, 3, 4);
         this.bottomBarPanel.Name = "bottomBarPanel";
-        this.bottomBarPanel.Size = new Size(914, 67);
+        this.bottomBarPanel.Size = new Size(772, 67);
         this.bottomBarPanel.TabIndex = 1;
         // 
         // copyrightLabel
@@ -109,7 +109,7 @@ partial class MedecinView {
         // 
         this.actionButton.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
         this.actionButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.actionButton.Location = new Point(665, 8);
+        this.actionButton.Location = new Point(523, 8);
         this.actionButton.Margin = new Padding(3, 4, 3, 4);
         this.actionButton.Name = "actionButton";
         this.actionButton.Size = new Size(114, 43);
@@ -121,7 +121,7 @@ partial class MedecinView {
         // cancelButton
         // 
         this.cancelButton.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.cancelButton.Location = new Point(786, 8);
+        this.cancelButton.Location = new Point(644, 8);
         this.cancelButton.Margin = new Padding(3, 4, 3, 4);
         this.cancelButton.Name = "cancelButton";
         this.cancelButton.Size = new Size(114, 43);
@@ -143,7 +143,7 @@ partial class MedecinView {
         this.centralTableLayoutPanel.Name = "centralTableLayoutPanel";
         this.centralTableLayoutPanel.RowCount = 1;
         this.centralTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.centralTableLayoutPanel.Size = new Size(914, 480);
+        this.centralTableLayoutPanel.Size = new Size(772, 542);
         this.centralTableLayoutPanel.TabIndex = 2;
         // 
         // centralPanel
@@ -163,10 +163,10 @@ partial class MedecinView {
         this.centralPanel.Controls.Add(this.nomLabel);
         this.centralPanel.Controls.Add(this.idLabel);
         this.centralPanel.Dock = DockStyle.Fill;
-        this.centralPanel.Location = new Point(94, 4);
+        this.centralPanel.Location = new Point(80, 4);
         this.centralPanel.Margin = new Padding(3, 4, 3, 4);
         this.centralPanel.Name = "centralPanel";
-        this.centralPanel.Size = new Size(725, 472);
+        this.centralPanel.Size = new Size(611, 534);
         this.centralPanel.TabIndex = 0;
         this.centralPanel.Paint += this.centralPanel_Paint;
         // 
@@ -304,7 +304,7 @@ partial class MedecinView {
         // 
         this.AutoScaleDimensions = new SizeF(8F, 20F);
         this.AutoScaleMode = AutoScaleMode.Font;
-        this.ClientSize = new Size(914, 600);
+        this.ClientSize = new Size(772, 662);
         this.Controls.Add(this.centralTableLayoutPanel);
         this.Controls.Add(this.bottomBarPanel);
         this.Controls.Add(this.topBarPanel);
