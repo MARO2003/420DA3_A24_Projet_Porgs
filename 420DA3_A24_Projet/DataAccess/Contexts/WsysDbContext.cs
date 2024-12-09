@@ -466,13 +466,199 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
                .HasColumnOrder(7)
                .IsRowVersion();
 
-            #endregion
-            
+        #endregion
+
+            #region Product
+        _ = modelBuilder.Entity<Product>()
+            .ToTable(nameof(this.Products))
+            .HasKey(product => product.Id);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.Id)
+            .HasColumnName("Id")
+            .HasColumnOrder(0)
+            .HasColumnType("int")
+            .UseIdentityColumn(1, 1)
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.ProductName)
+            .HasColumnName("ProductName")
+            .HasColumnOrder(1)
+            .HasColumnType("nvarchar")
+            .HasMaxLength(128)
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.Description)
+            .HasColumnName("Description")
+            .HasColumnOrder(2)
+            .HasColumnType("nvarchar")
+            .HasMaxLength(256)
+            .IsRequired(false);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.Weight)
+            .HasColumnName("Weight")
+            .HasColumnOrder(3)
+            .HasColumnType("float")
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.QuantityInStock)
+            .HasColumnName("QuantityInStock")
+            .HasColumnOrder(4)
+            .HasColumnType("int")
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.TargetQuantity)
+            .HasColumnName("TargetQuantity")
+            .HasColumnOrder(5)
+            .HasColumnType("int")
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.UpcCode)
+            .HasColumnName("UpcCode")
+            .HasColumnOrder(6)
+            .HasColumnType("nvarchar")
+            .HasMaxLength(12)
+            .IsRequired(false);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.DateCreated)
+            .HasColumnName("DateCreated")
+            .HasColumnOrder(7)
+            .HasColumnType("datetime2")
+            .HasPrecision(7)
+            .HasDefaultValueSql("GETDATE()")
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.DateModified)
+            .HasColumnName("DateModified")
+            .HasColumnOrder(8)
+            .HasColumnType("datetime2")
+            .HasPrecision(7)
+            .IsRequired(false);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.DateDeleted)
+            .HasColumnName("DateDeleted")
+            .HasColumnOrder(9)
+            .HasColumnType("datetime2")
+            .HasPrecision(7)
+            .IsRequired(false);
+
+        _ = modelBuilder.Entity<Product>()
+            .Property(product => product.RowVersion)
+            .HasColumnName("RowVersion")
+            .HasColumnOrder(10)
+            .IsRowVersion();
+
+        _ = modelBuilder.Entity<Product>()
+            .HasOne(product => product.Owner)
+            .WithMany(customer => customer.Products)
+            .HasForeignKey(product => product.OwnerId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        _ = modelBuilder.Entity<Product>()
+            .HasOne(product => product.Supplier)
+            .WithMany(supplier => supplier.Products)
+            .HasForeignKey(product => product.SupplierId)
+            .OnDelete(DeleteBehavior.Restrict);
+        #endregion
+
+            #region Customer
+        _ = modelBuilder.Entity<Customer>()
+            .ToTable(nameof(this.Customers))
+            .HasKey(customer => customer.Id);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.Id)
+            .HasColumnName("Id")
+            .HasColumnOrder(0)
+            .HasColumnType("int")
+            .UseIdentityColumn(1, 1)
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.CustomerName)
+            .HasColumnName("CustomerName")
+            .HasColumnOrder(1)
+            .HasColumnType("nvarchar")
+            .HasMaxLength(128)
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.ContactLastName)
+            .HasColumnName("ContactLastName")
+            .HasColumnOrder(2)
+            .HasColumnType("nvarchar")
+            .HasMaxLength(32)
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.ContactFirstName)
+            .HasColumnName("ContactFirstName")
+            .HasColumnOrder(3)
+            .HasColumnType("nvarchar")
+            .HasMaxLength(32)
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.ContactEmail)
+            .HasColumnName("ContactEmail")
+            .HasColumnOrder(4)
+            .HasColumnType("nvarchar")
+            .HasMaxLength(128)
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.ContactTelephone)
+            .HasColumnName("ContactTelephone")
+            .HasColumnOrder(5)
+            .HasColumnType("nvarchar")
+            .HasMaxLength(15)
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.DateCreated)
+            .HasColumnName("DateCreated")
+            .HasColumnOrder(6)
+            .HasColumnType("datetime2")
+            .HasPrecision(7)
+            .HasDefaultValueSql("GETDATE()")
+            .IsRequired(true);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.DateModified)
+            .HasColumnName("DateModified")
+            .HasColumnOrder(7)
+            .HasColumnType("datetime2")
+            .HasPrecision(7)
+            .IsRequired(false);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.DateDeleted)
+            .HasColumnName("DateDeleted")
+            .HasColumnOrder(8)
+            .HasColumnType("datetime2")
+            .HasPrecision(7)
+            .IsRequired(false);
+
+        _ = modelBuilder.Entity<Customer>()
+            .Property(customer => customer.RowVersion)
+            .HasColumnName("RowVersion")
+            .HasColumnOrder(9)
+            .IsRowVersion();
+        #endregion
 
             #region Shipment
 
-            //configurationminimaliste de l'entites Shipment
-            _ = modelBuilder.Entity<Shipment>()
+        //configurationminimaliste de l'entites Shipment
+        _ = modelBuilder.Entity<Shipment>()
                 .ToTable("Shipment")
                 .HasKey(shipment => shipment.Id);
 
@@ -625,6 +811,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
 
 
             #endregion
+
             #region ShippingOrderProduct
             _ = modelBuilder.Entity<ShippingOrder>()
                 .ToTable(nameof(this.ShippingOrders))

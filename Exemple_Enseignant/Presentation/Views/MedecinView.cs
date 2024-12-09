@@ -190,4 +190,7 @@ internal partial class MedecinView : Form {
         }
     }
 
+    private void centralPanel_Paint(object sender, PaintEventArgs e) {
+
+    }
 }
