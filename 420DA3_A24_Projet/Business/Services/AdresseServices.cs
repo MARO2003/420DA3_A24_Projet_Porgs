@@ -6,6 +6,7 @@ using Project_Utilities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +20,28 @@ internal class AdresseServices {
         this.view = new AdresseView(parentApp);
     }
 
+    public Adresse? OpenAdresseWindowForCreation() {
+        Adresse newAdresse = (Adresse) FormatterServices.GetUninitializedObject(typeof(Adresse));
+        DialogResult result = this.view.OpenForCreation(newAdresse);
+        return result == DialogResult.OK ? newAdresse : null;
+    }
+
+    public Adresse? OpenAdresseWindowForDetailsView(Adresse adresse) {
+        DialogResult result = this.view.OpenForDetailsView(adresse);
+        return result == DialogResult.OK ? adresse : null;
+    }
+
+    public Adresse? OpenAdresseWindowForEdition(Adresse adresse) {
+        DialogResult result = this.view.OpenForEdition(adresse);
+        return result == DialogResult.OK ? adresse : null;
+    }
+
+    public Adresse? OpenAdresseWindowForDeletion(Adresse adresse) {
+        DialogResult result = this.view.OpenForDeletion(adresse);
+        return result == DialogResult.OK ? adresse : null;
+    }
+
+  
 
     /// <summary>
     /// 
@@ -67,6 +90,8 @@ internal class AdresseServices {
     public Adresse CreateAdresse(Adresse adresse) {
         return this.dao.Create(adresse);
     }
-    
 
+    internal Adresse DeleteAdresse(Adresse currentInstance) {
+        throw new NotImplementedException();
+    }
 }

@@ -46,6 +46,9 @@ partial class ShipmentView {
         this.lblShipmentStatus = new Label();
         this.valueId = new NumericUpDown();
         this.labelId = new Label();
+        this.lblModeleFanetre = new Label();
+        this.valueModeFentre = new Label();
+        this.topBarPanel.SuspendLayout();
         this.bottomBarPanel.SuspendLayout();
         this.centerTblLayoutPanel.SuspendLayout();
         this.centerPanel.SuspendLayout();
@@ -55,6 +58,8 @@ partial class ShipmentView {
         // 
         // topBarPanel
         // 
+        this.topBarPanel.Controls.Add(this.valueModeFentre);
+        this.topBarPanel.Controls.Add(this.lblModeleFanetre);
         this.topBarPanel.Dock = DockStyle.Top;
         this.topBarPanel.Location = new Point(0, 0);
         this.topBarPanel.Name = "topBarPanel";
@@ -274,6 +279,26 @@ partial class ShipmentView {
         this.labelId.Text = "ID:";
         this.labelId.TextAlign = ContentAlignment.TopRight;
         // 
+        // lblModeleFanetre
+        // 
+        this.lblModeleFanetre.AutoSize = true;
+        this.lblModeleFanetre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.lblModeleFanetre.Location = new Point(21, 9);
+        this.lblModeleFanetre.Name = "lblModeleFanetre";
+        this.lblModeleFanetre.Size = new Size(145, 25);
+        this.lblModeleFanetre.TabIndex = 0;
+        this.lblModeleFanetre.Text = "Model Fenetre: ";
+        // 
+        // valueModeFentre
+        // 
+        this.valueModeFentre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.valueModeFentre.Location = new Point(173, 5);
+        this.valueModeFentre.Name = "valueModeFentre";
+        this.valueModeFentre.Size = new Size(254, 32);
+        this.valueModeFentre.TabIndex = 3;
+        this.valueModeFentre.Text = "PLACEHORDER";
+        this.valueModeFentre.TextAlign = ContentAlignment.MiddleLeft;
+        // 
         // ShipmentView
         // 
         this.AutoScaleDimensions = new SizeF(10F, 25F);
@@ -285,6 +310,8 @@ partial class ShipmentView {
         this.Name = "ShipmentView";
         this.Text = "ShipmentView";
         this.Load += this.ShipmentView_Load;
+        this.topBarPanel.ResumeLayout(false);
+        this.topBarPanel.PerformLayout();
         this.bottomBarPanel.ResumeLayout(false);
         this.centerTblLayoutPanel.ResumeLayout(false);
         this.centerPanel.ResumeLayout(false);
@@ -319,4 +346,6 @@ partial class ShipmentView {
     private Label dateModifiedLabel;
     private Label lblDateCreate;
     private Label label1;
+    private Label lblModeleFanetre;
+    private Label valueModeFentre;
 }

@@ -1,6 +1,6 @@
 ﻿namespace _420DA3_A24_Projet.Presentation;
 
-partial class MainMenu {
+partial class OfficeEmpMainMenu {
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -24,17 +24,10 @@ partial class MainMenu {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-        this.SuspendLayout();
-        // 
-        // MainMenu
-        // 
-        this.AutoScaleDimensions = new SizeF(8F, 20F);
-        this.AutoScaleMode = AutoScaleMode.Font;
-        this.ClientSize = new Size(800, 450);
-        this.Name = "MainMenu";
-        this.Text = "MainMenu";
-        this.Load += this.MainMenu_Load;
-        this.ResumeLayout(false);
+        this.components = new System.ComponentModel.Container();
+        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        this.ClientSize = new System.Drawing.Size(800, 450);
+        this.Text = "OfficeEmpMainMenu";
     }
 
     #endregion

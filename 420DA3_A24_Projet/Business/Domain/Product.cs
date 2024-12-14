@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +23,7 @@ public class Product {
     public DateTime? DateModified { get; set; }
     public DateTime? DateDeleted { get; set; }
     public byte[] RowVersion { get; set; } = null!;
+
 
     public int Id {
         get { return this.id; }
@@ -72,7 +73,9 @@ public class Product {
 
     #region Propriétés de navigation
     public virtual Customer Owner { get; set; } = null!; // Client propriétaire du produit
+    public int OwnerId { get; set; }
     public virtual Supplier Supplier { get; set; } = null!; // Fournisseur du produit  
+    public int SupplierId { get; set; }
     #endregion
 
     /// <summary>
