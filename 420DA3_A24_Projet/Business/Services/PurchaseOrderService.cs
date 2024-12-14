@@ -2,10 +2,13 @@
 using _420DA3_A24_Projet.DataAccess.Contexts;
 using _420DA3_A24_Projet.DataAccess.DAOs;
 using _420DA3_A24_Projet.Presentation.Views;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Project_Utilities.Enums;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,70 +17,103 @@ internal class PurchaseOrderService {
     private readonly ProjectApplication application;
     private readonly PurchaseOrderView view;
     private readonly PurchaseOrderDAO dao;
-    
 
-    public PurchaseOrderService(ProjectApplication app , WsysDbContext context) {
-        this.application = app;
+
+    /// <summary>
+    /// <see cref="PurchaseOrderService"/> constructor.
+    /// </summary>
+    /// <param name="parentApp"></param>
+    /// <param name="context"></param>
+    public PurchaseOrderService(ProjectApplication parentApp, WsysDbContext context) {
+        this.application = parentApp;
         this.dao = new PurchaseOrderDAO(context);
-        this.view = new PurchaseOrderView(app);
+        this.view = new PurchaseOrderView(parentApp);
     }
 
-    public PurchaseOrder? OpenViewFor(ViewActionsEnum viewAction , PurchaseOrder? purchaseOrder = null) {
+    /// <summary>
+    /// Opens the <see cref="PurchaseOrderView">PurchaseOrder management window</see> in creation mode.
+    /// </summary>
+    /// <returns></returns>
+    public PurchaseOrder? OpenManagementWindowForCreation() {
         try {
-            DialogResult result = this.view.OpenFor(viewAction, purchaseOrder);
-            if (result == DialogResult.OK) {
-                switch (viewAction) {
-                    case ViewActionsEnum.Creation:
-                    case ViewActionsEnum.Edition:
-                        _ = this.OpenViewFor(ViewActionsEnum.Visualization, this.view.GetCurrentInstance());
-                        break;
-                    default:
-                        break;
-                }
-            }
-            return this.view.GetCurrentInstance();
+            PurchaseOrder newPurchaseOrder = (PurchaseOrder) FormatterServices.GetUninitializedObject(typeof(PurchaseOrder));
+            DialogResult result = this.view.OpenForCreation(newPurchaseOrder);
+            return result == DialogResult.OK
+                ? this.view.CurrentEntityInstance
+                : null;
         }catch(Exception ex) {
-            this.application.HandleException(ex);
-            return null;
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to open the purchaseOrder management window in purchaseOrder creation mode.", ex);
         }
     }
+    /// <summary>
+    /// Opens the <see cref="PurchaseOrderView">PurchaseOrder management window</see> in edition mode
+    /// for the given <paramref name="purchaseOrder"/>.
+    /// </summary>
+    /// <param name="purchaseOrder"></param>
+    /// <returns></returns>
+    /// 
 
-    public List<PurchaseOrder> Search(string filter) {
+    public bool OpenManagementWindowForEdition(PurchaseOrder purchaseOrder) {
         try {
-            return this.dao.Search(filter);
-        }catch(Exception ex) {
-            throw new Exception("Failed to search for [PurchaseOrder].", ex);
-        }
-    }
-    public PurchaseOrder? GetById(int id) {
-        try {
-            return this.dao.GetById(id);
-        }catch(Exception ex) {
-            throw new Exception($"Failed to obtain [PurchaseOrder] instance with id# {id}.", ex);
+            DialogResult result = this.view.OpenForModification(purchaseOrder);
+            return result == DialogResult.OK;
+        } catch (Exception ex) {
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to open the purchaseOrder management window in purchaseOrder edition mode.", ex);
         }
     }
 
-    public PurchaseOrder Create(PurchaseOrder newPurchaseOrder) {
+    /// <summary>
+    /// Opens the <see cref="PurchaseOrderView">PurchaseOrder management window</see> in visualization mode
+    /// for the given <paramref name="purchaseOrder"/>.
+    /// </summary>
+    /// <param name="purchaseOrder"></param>
+    /// <returns></returns>
+    /// 
+
+    public PurchaseOrder OpenManagementWindowForVisualization(PurchaseOrder purchaseOrder) {
         try {
-            return this.dao.Create(newPurchaseOrder);
-        }catch(Exception ex) {
-            throw new Exception($"Failed to create new [PurchaseOrder]", ex);
+            _ = this.view.OpenForDetailsView(purchaseOrder);
+            return purchaseOrder;
+        } catch (Exception ex) {
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to open the purchaseOrder management window in purchaseOrder visualization mode.", ex);
         }
     }
-    
-    public PurchaseOrder Update(PurchaseOrder purchaseOrder) {
+    /// <summary>
+    /// Opens the <see cref="PurchaseOrderView">purchaseOrder management window</see> in deletion mode
+    /// for the given <paramref name="purchaseOrder"/>.
+    /// </summary>
+    /// <param name="purchaseOrder"></param>
+    /// <returns></returns>
+
+    public bool OpenManagementWindowForDeletion(PurchaseOrder purchaseOrder) {
         try {
-            return this.dao.Update(purchaseOrder);
-        }catch(Exception ex) {
-            throw new Exception($"Failed to update [PurchaseOrder] instance with id# {purchaseOrder.Id}.", ex);
+            DialogResult result = this.view.OpenForDeletion(purchaseOrder);
+            return result == DialogResult.OK;
+        } catch (Exception ex) {
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to open the purchaseOrder management window in purchaseOrder deletion mode.", ex);
         }
     }
 
-    public void Delete(PurchaseOrder purchaseOrder , bool softDeletes = true) {
+
+
+
+    //// <summary>
+    /// Returns the list of every <see cref="PurchaseOrder"/> that exist in the data source.
+    /// </summary>
+    /// <param name="includeDeleted"></param>
+    /// <returns></returns>
+    /// 
+
+    public List<PurchaseOrder> GetAllRoles(bool includeDeleted = false) {
         try {
-             this.dao.Delete(purchaseOrder,softDeletes);
-        }catch(Exception ex) {
-            throw new Exception($"Failed to delte [PurchaseOrder] instance with id# {purchaseOrder.Id}.", ex);
+            return this.dao.GetAll(includeDeleted);
+
+        } catch (Exception ex) {
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to retrieve the list of all existing purchaseOrders.", ex);
         }
     }
+
+
+
+
 }

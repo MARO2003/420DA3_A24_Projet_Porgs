@@ -229,4 +229,8 @@ internal partial class UserView : Form {
     private void BtnCancel_Click(object sender, EventArgs e) {
         this.DialogResult = DialogResult.Cancel;
     }
+
+    private void centerBarTabLayPanel_Paint(object sender, PaintEventArgs e) {
+
+    }
 }
