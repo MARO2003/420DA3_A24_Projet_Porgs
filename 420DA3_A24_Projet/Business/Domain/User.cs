@@ -25,7 +25,7 @@ public class User {
     /// </summary>
     public const int PASSWORD_MAX_LENGTH = 32;
 
-    // champs privés pour les propriétés avec validation
+    // backing fields
     private int id;
     private string username = null!;
     private string passwordHash = null!;
@@ -83,13 +83,11 @@ public class User {
     /// </summary>
     public virtual List<ShippingOrder> FulfilledShippingOrders { get; set; } = new List<ShippingOrder>();
     /// <summary>
-    /// Entrepôt où travaille l'employé d'entrepôt ou <see langword="null"/> pour les autres utilisateurs.
+    /// L'entrepôt de travail de l'employé d'entrepôt ou <see langword="null"/> pour les autres utilisateurs.
     /// </summary>
     public virtual Warehouse? EmployeeWarehouse { get; set; }
 
     #endregion
-
-
 
     /// <summary>
     /// Constructeur orienté création utilisateur
@@ -178,7 +176,7 @@ public class User {
     /// <returns><see langword="true"/> si l'utilisateur possède le rôle administrateur, <see langword="false"/> sinon.</returns>
     public bool IsAdministrator() {
         return this.Roles.Any(role => {
-            return role.Id == Role.ADMIN_ROLE_ID;
+            return role.IsAdministratorRole();
         });
     }
 
@@ -188,7 +186,7 @@ public class User {
     /// <returns><see langword="true"/> si l'utilisateur possède le rôle d'employé de bureau, <see langword="false"/> sinon.</returns>
     public bool IsOfficeEmployee() {
         return this.Roles.Any(role => {
-            return role.Id == Role.OFFICE_EMPLOYEE_ROLE_ID;
+            return role.IsOfficeEmployeeRole();
         });
     }
 
@@ -198,7 +196,7 @@ public class User {
     /// <returns><see langword="true"/> si l'utilisateur possède le rôle d'employé d'entrepôt, <see langword="false"/> sinon.</returns>
     public bool IsWarehouseEmployee() {
         return this.Roles.Any(role => {
-            return role.Id == Role.WAREHOUSE_EMPLOYEE_ROLE_ID;
+            return role.IsWarehouseEmployeeRole();
         });
     }
 
