@@ -283,6 +283,7 @@ partial class RoleView {
         this.Name = "RoleView";
         this.StartPosition = FormStartPosition.CenterScreen;
         this.Text = "Role Management Window";
+        this.Load += this.RoleView_Load;
         this.topBarPanel.ResumeLayout(false);
         this.topBarPanel.PerformLayout();
         this.bottomBarPanel.ResumeLayout(false);

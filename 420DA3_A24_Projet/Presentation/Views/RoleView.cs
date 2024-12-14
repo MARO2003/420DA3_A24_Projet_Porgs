@@ -184,4 +184,8 @@ internal partial class RoleView : Form {
     private void centerTLP_Paint(object sender, PaintEventArgs e) {
 
     }
+
+    private void RoleView_Load(object sender, EventArgs e) {
+
+    }
 }
