@@ -26,9 +26,14 @@ partial class ShippingOrderView {
     private void InitializeComponent() {
         this.panel1 = new Panel();
         this.panel2 = new Panel();
+        this.label6 = new Label();
+        this.label11 = new Label();
         this.panel3 = new Panel();
+        this.Annulerbtn = new Button();
+        this.Actionbtn = new Button();
         this.tableLayoutPanel1 = new TableLayoutPanel();
         this.panel4 = new Panel();
+        this.textBox1 = new TextBox();
         this.Ajouterbtn = new Button();
         this.QuantiteAjoutValue = new NumericUpDown();
         this.label7 = new Label();
@@ -44,23 +49,18 @@ partial class ShippingOrderView {
         this.StatutCb = new ComboBox();
         this.IdValue = new NumericUpDown();
         this.panel5 = new Panel();
-        this.label2 = new Label();
-        this.createdDateTimePicker1 = new DateTimePicker();
-        this.label8 = new Label();
-        this.UpdatedDateTimePicker2 = new DateTimePicker();
-        this.label9 = new Label();
-        this.CreatingEmployeeValue = new TextBox();
-        this.OrderProductslist = new ListBox();
-        this.RetirerProduitbtn = new Button();
-        this.label10 = new Label();
-        this.numericUpDown1 = new NumericUpDown();
-        this.label11 = new Label();
-        this.textBox1 = new TextBox();
-        this.label6 = new Label();
         this.deletedDatedateTimePicker1 = new DateTimePicker();
         this.label12 = new Label();
-        this.Actionbtn = new Button();
-        this.Annulerbtn = new Button();
+        this.ChangerQTYnumericUpDown = new NumericUpDown();
+        this.label10 = new Label();
+        this.RetirerProduitbtn = new Button();
+        this.OrderProductslist = new ListBox();
+        this.CreatingEmployeeValue = new TextBox();
+        this.UpdatedDateTimePicker2 = new DateTimePicker();
+        this.label9 = new Label();
+        this.label8 = new Label();
+        this.createdDateTimePicker1 = new DateTimePicker();
+        this.label2 = new Label();
         this.panel1.SuspendLayout();
         this.panel2.SuspendLayout();
         this.panel3.SuspendLayout();
@@ -69,7 +69,7 @@ partial class ShippingOrderView {
         ((System.ComponentModel.ISupportInitialize) this.QuantiteAjoutValue).BeginInit();
         ((System.ComponentModel.ISupportInitialize) this.IdValue).BeginInit();
         this.panel5.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize) this.numericUpDown1).BeginInit();
+        ((System.ComponentModel.ISupportInitialize) this.ChangerQTYnumericUpDown).BeginInit();
         this.SuspendLayout();
         // 
         // panel1
@@ -91,6 +91,24 @@ partial class ShippingOrderView {
         this.panel2.Size = new Size(1140, 72);
         this.panel2.TabIndex = 1;
         // 
+        // label6
+        // 
+        this.label6.Location = new Point(81, 19);
+        this.label6.Name = "label6";
+        this.label6.Size = new Size(147, 25);
+        this.label6.TabIndex = 8;
+        this.label6.Text = "Placeholder";
+        this.label6.TextAlign = ContentAlignment.TopRight;
+        // 
+        // label11
+        // 
+        this.label11.AutoSize = true;
+        this.label11.Location = new Point(12, 19);
+        this.label11.Name = "label11";
+        this.label11.Size = new Size(63, 25);
+        this.label11.TabIndex = 0;
+        this.label11.Text = "Mode:";
+        // 
         // panel3
         // 
         this.panel3.Controls.Add(this.Annulerbtn);
@@ -100,6 +118,25 @@ partial class ShippingOrderView {
         this.panel3.Name = "panel3";
         this.panel3.Size = new Size(1140, 44);
         this.panel3.TabIndex = 2;
+        // 
+        // Annulerbtn
+        // 
+        this.Annulerbtn.Location = new Point(928, 3);
+        this.Annulerbtn.Name = "Annulerbtn";
+        this.Annulerbtn.Size = new Size(112, 34);
+        this.Annulerbtn.TabIndex = 1;
+        this.Annulerbtn.Text = "Annuler";
+        this.Annulerbtn.UseVisualStyleBackColor = true;
+        // 
+        // Actionbtn
+        // 
+        this.Actionbtn.Location = new Point(794, 3);
+        this.Actionbtn.Name = "Actionbtn";
+        this.Actionbtn.Size = new Size(112, 34);
+        this.Actionbtn.TabIndex = 0;
+        this.Actionbtn.Text = "ACTION";
+        this.Actionbtn.UseVisualStyleBackColor = true;
+        this.Actionbtn.Click += this.Actionbtn_Click;
         // 
         // tableLayoutPanel1
         // 
@@ -141,6 +178,15 @@ partial class ShippingOrderView {
         this.panel4.Size = new Size(494, 510);
         this.panel4.TabIndex = 0;
         // 
+        // textBox1
+        // 
+        this.textBox1.Anchor =  AnchorStyles.Bottom | AnchorStyles.Left;
+        this.textBox1.Location = new Point(3, 312);
+        this.textBox1.Name = "textBox1";
+        this.textBox1.Size = new Size(296, 31);
+        this.textBox1.TabIndex = 15;
+        this.textBox1.Text = "Recherche de produits";
+        // 
         // Ajouterbtn
         // 
         this.Ajouterbtn.Location = new Point(305, 454);
@@ -149,6 +195,7 @@ partial class ShippingOrderView {
         this.Ajouterbtn.TabIndex = 14;
         this.Ajouterbtn.Text = "Ajouter";
         this.Ajouterbtn.UseVisualStyleBackColor = true;
+        this.Ajouterbtn.Click += this.Ajouterbtn_Click;
         // 
         // QuantiteAjoutValue
         // 
@@ -176,6 +223,7 @@ partial class ShippingOrderView {
         this.productSearchResultsListBox.Name = "productSearchResultsListBox";
         this.productSearchResultsListBox.Size = new Size(296, 154);
         this.productSearchResultsListBox.TabIndex = 11;
+        this.productSearchResultsListBox.SelectedIndexChanged += this.productSearchResultsListBox_SelectedIndexChanged;
         // 
         // label5
         // 
@@ -186,7 +234,6 @@ partial class ShippingOrderView {
         this.label5.TabIndex = 9;
         this.label5.Text = "Gestion des produits de l'ordre d'expedition:";
         this.label5.TextAlign = ContentAlignment.MiddleLeft;
-        this.label5.Click += this.label5_Click;
         // 
         // label4
         // 
@@ -223,7 +270,6 @@ partial class ShippingOrderView {
         this.idlbl.TabIndex = 5;
         this.idlbl.Text = "id:";
         this.idlbl.TextAlign = ContentAlignment.TopRight;
-        this.idlbl.Click += this.idlbl_Click;
         // 
         // CreateAdressebtn
         // 
@@ -234,6 +280,7 @@ partial class ShippingOrderView {
         this.CreateAdressebtn.TabIndex = 4;
         this.CreateAdressebtn.Text = "Creer adresse";
         this.CreateAdressebtn.UseVisualStyleBackColor = true;
+        this.CreateAdressebtn.Click += this.CreateAdressebtn_Click;
         // 
         // ClientSourceCb
         // 
@@ -267,12 +314,13 @@ partial class ShippingOrderView {
         this.IdValue.Name = "IdValue";
         this.IdValue.Size = new Size(338, 31);
         this.IdValue.TabIndex = 0;
+        this.IdValue.ValueChanged += this.IdValue_ValueChanged;
         // 
         // panel5
         // 
         this.panel5.Controls.Add(this.deletedDatedateTimePicker1);
         this.panel5.Controls.Add(this.label12);
-        this.panel5.Controls.Add(this.numericUpDown1);
+        this.panel5.Controls.Add(this.ChangerQTYnumericUpDown);
         this.panel5.Controls.Add(this.label10);
         this.panel5.Controls.Add(this.RetirerProduitbtn);
         this.panel5.Controls.Add(this.OrderProductslist);
@@ -287,119 +335,6 @@ partial class ShippingOrderView {
         this.panel5.Name = "panel5";
         this.panel5.Size = new Size(494, 510);
         this.panel5.TabIndex = 1;
-        // 
-        // label2
-        // 
-        this.label2.Location = new Point(3, 79);
-        this.label2.Name = "label2";
-        this.label2.Size = new Size(181, 25);
-        this.label2.TabIndex = 8;
-        this.label2.Text = "Date creation";
-        this.label2.TextAlign = ContentAlignment.TopRight;
-        // 
-        // createdDateTimePicker1
-        // 
-        this.createdDateTimePicker1.Location = new Point(190, 79);
-        this.createdDateTimePicker1.Name = "createdDateTimePicker1";
-        this.createdDateTimePicker1.Size = new Size(301, 31);
-        this.createdDateTimePicker1.TabIndex = 9;
-        // 
-        // label8
-        // 
-        this.label8.Anchor = AnchorStyles.Top;
-        this.label8.Location = new Point(3, 19);
-        this.label8.Name = "label8";
-        this.label8.Size = new Size(181, 25);
-        this.label8.TabIndex = 11;
-        this.label8.Text = "Employe createur";
-        this.label8.TextAlign = ContentAlignment.TopRight;
-//        this.label8.Click += this.label8_Click;
-        // 
-        // UpdatedDateTimePicker2
-        // 
-        this.UpdatedDateTimePicker2.Location = new Point(190, 125);
-        this.UpdatedDateTimePicker2.Name = "UpdatedDateTimePicker2";
-        this.UpdatedDateTimePicker2.Size = new Size(301, 31);
-        this.UpdatedDateTimePicker2.TabIndex = 13;
-        // 
-        // label9
-        // 
-        this.label9.Location = new Point(3, 125);
-        this.label9.Name = "label9";
-        this.label9.Size = new Size(181, 25);
-        this.label9.TabIndex = 12;
-        this.label9.Text = "Date modification";
-        this.label9.TextAlign = ContentAlignment.TopRight;
-        // 
-        // CreatingEmployeeValue
-        // 
-        this.CreatingEmployeeValue.Location = new Point(190, 19);
-        this.CreatingEmployeeValue.Name = "CreatingEmployeeValue";
-        this.CreatingEmployeeValue.Size = new Size(301, 31);
-        this.CreatingEmployeeValue.TabIndex = 14;
-        // 
-        // OrderProductslist
-        // 
-        this.OrderProductslist.Anchor =  AnchorStyles.Bottom | AnchorStyles.Left;
-        this.OrderProductslist.FormattingEnabled = true;
-        this.OrderProductslist.ItemHeight = 25;
-        this.OrderProductslist.Location = new Point(0, 328);
-        this.OrderProductslist.Name = "OrderProductslist";
-        this.OrderProductslist.Size = new Size(281, 179);
-        this.OrderProductslist.TabIndex = 15;
-        // 
-        // RetirerProduitbtn
-        // 
-        this.RetirerProduitbtn.Location = new Point(287, 335);
-        this.RetirerProduitbtn.Name = "RetirerProduitbtn";
-        this.RetirerProduitbtn.Size = new Size(196, 34);
-        this.RetirerProduitbtn.TabIndex = 16;
-        this.RetirerProduitbtn.Text = "Retirer";
-        this.RetirerProduitbtn.UseVisualStyleBackColor = true;
-        // 
-        // label10
-        // 
-        this.label10.Location = new Point(287, 407);
-        this.label10.Name = "label10";
-        this.label10.Size = new Size(196, 25);
-        this.label10.TabIndex = 17;
-        this.label10.Text = "Changer Quantite:";
-        this.label10.TextAlign = ContentAlignment.MiddleLeft;
-        // 
-        // numericUpDown1
-        // 
-        this.numericUpDown1.Location = new Point(287, 435);
-        this.numericUpDown1.Name = "numericUpDown1";
-        this.numericUpDown1.Size = new Size(204, 31);
-        this.numericUpDown1.TabIndex = 18;
-        this.numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
-        // 
-        // label11
-        // 
-        this.label11.AutoSize = true;
-        this.label11.Location = new Point(12, 19);
-        this.label11.Name = "label11";
-        this.label11.Size = new Size(63, 25);
-        this.label11.TabIndex = 0;
-        this.label11.Text = "Mode:";
-        // 
-        // textBox1
-        // 
-        this.textBox1.Anchor =  AnchorStyles.Bottom | AnchorStyles.Left;
-        this.textBox1.Location = new Point(3, 312);
-        this.textBox1.Name = "textBox1";
-        this.textBox1.Size = new Size(296, 31);
-        this.textBox1.TabIndex = 15;
-        this.textBox1.Text = "Recherche de produits";
-        // 
-        // label6
-        // 
-        this.label6.Location = new Point(81, 19);
-        this.label6.Name = "label6";
-        this.label6.Size = new Size(147, 25);
-        this.label6.TabIndex = 8;
-        this.label6.Text = "Placeholder";
-        this.label6.TextAlign = ContentAlignment.TopRight;
         // 
         // deletedDatedateTimePicker1
         // 
@@ -417,25 +352,95 @@ partial class ShippingOrderView {
         this.label12.Text = "Date suppresion";
         this.label12.TextAlign = ContentAlignment.TopRight;
         // 
-        // Actionbtn
+        // ChangerQTYnumericUpDown
         // 
-        this.Actionbtn.Location = new Point(794, 3);
-        this.Actionbtn.Name = "Actionbtn";
-        this.Actionbtn.Size = new Size(112, 34);
-        this.Actionbtn.TabIndex = 0;
-        this.Actionbtn.Text = "ACTION";
-        this.Actionbtn.UseVisualStyleBackColor = true;
+        this.ChangerQTYnumericUpDown.Location = new Point(287, 435);
+        this.ChangerQTYnumericUpDown.Name = "ChangerQTYnumericUpDown";
+        this.ChangerQTYnumericUpDown.Size = new Size(204, 31);
+        this.ChangerQTYnumericUpDown.TabIndex = 18;
+        this.ChangerQTYnumericUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+        this.ChangerQTYnumericUpDown.ValueChanged += this.ChangerQTYnumericUpDown_ValueChanged;
         // 
-        // Annulerbtn
+        // label10
         // 
-        this.Annulerbtn.Location = new Point(928, 3);
-        this.Annulerbtn.Name = "Annulerbtn";
-        this.Annulerbtn.Size = new Size(112, 34);
-        this.Annulerbtn.TabIndex = 1;
-        this.Annulerbtn.Text = "Annuler";
-        this.Annulerbtn.UseVisualStyleBackColor = true;
+        this.label10.Location = new Point(287, 407);
+        this.label10.Name = "label10";
+        this.label10.Size = new Size(196, 25);
+        this.label10.TabIndex = 17;
+        this.label10.Text = "Changer Quantite:";
+        this.label10.TextAlign = ContentAlignment.MiddleLeft;
         // 
-        // ShippingOrderProductView
+        // RetirerProduitbtn
+        // 
+        this.RetirerProduitbtn.Location = new Point(287, 335);
+        this.RetirerProduitbtn.Name = "RetirerProduitbtn";
+        this.RetirerProduitbtn.Size = new Size(196, 34);
+        this.RetirerProduitbtn.TabIndex = 16;
+        this.RetirerProduitbtn.Text = "Retirer";
+        this.RetirerProduitbtn.UseVisualStyleBackColor = true;
+        this.RetirerProduitbtn.Click += this.RetirerProduitbtn_Click;
+        // 
+        // OrderProductslist
+        // 
+        this.OrderProductslist.Anchor =  AnchorStyles.Bottom | AnchorStyles.Left;
+        this.OrderProductslist.FormattingEnabled = true;
+        this.OrderProductslist.ItemHeight = 25;
+        this.OrderProductslist.Location = new Point(0, 328);
+        this.OrderProductslist.Name = "OrderProductslist";
+        this.OrderProductslist.Size = new Size(281, 179);
+        this.OrderProductslist.TabIndex = 15;
+        this.OrderProductslist.SelectedIndexChanged += this.OrderProductslist_SelectedIndexChanged;
+        // 
+        // CreatingEmployeeValue
+        // 
+        this.CreatingEmployeeValue.Location = new Point(190, 19);
+        this.CreatingEmployeeValue.Name = "CreatingEmployeeValue";
+        this.CreatingEmployeeValue.Size = new Size(301, 31);
+        this.CreatingEmployeeValue.TabIndex = 14;
+        // 
+        // UpdatedDateTimePicker2
+        // 
+        this.UpdatedDateTimePicker2.Location = new Point(190, 125);
+        this.UpdatedDateTimePicker2.Name = "UpdatedDateTimePicker2";
+        this.UpdatedDateTimePicker2.Size = new Size(301, 31);
+        this.UpdatedDateTimePicker2.TabIndex = 13;
+        // 
+        // label9
+        // 
+        this.label9.Location = new Point(3, 125);
+        this.label9.Name = "label9";
+        this.label9.Size = new Size(181, 25);
+        this.label9.TabIndex = 12;
+        this.label9.Text = "Date modification";
+        this.label9.TextAlign = ContentAlignment.TopRight;
+        // 
+        // label8
+        // 
+        this.label8.Anchor = AnchorStyles.Top;
+        this.label8.Location = new Point(3, 19);
+        this.label8.Name = "label8";
+        this.label8.Size = new Size(181, 25);
+        this.label8.TabIndex = 11;
+        this.label8.Text = "Employe createur";
+        this.label8.TextAlign = ContentAlignment.TopRight;
+        // 
+        // createdDateTimePicker1
+        // 
+        this.createdDateTimePicker1.Location = new Point(190, 79);
+        this.createdDateTimePicker1.Name = "createdDateTimePicker1";
+        this.createdDateTimePicker1.Size = new Size(301, 31);
+        this.createdDateTimePicker1.TabIndex = 9;
+        // 
+        // label2
+        // 
+        this.label2.Location = new Point(3, 79);
+        this.label2.Name = "label2";
+        this.label2.Size = new Size(181, 25);
+        this.label2.TabIndex = 8;
+        this.label2.Text = "Date creation";
+        this.label2.TextAlign = ContentAlignment.TopRight;
+        // 
+        // ShippingOrderView
         // 
         this.AutoScaleDimensions = new SizeF(10F, 25F);
         this.AutoScaleMode = AutoScaleMode.Font;
@@ -444,7 +449,7 @@ partial class ShippingOrderView {
         this.Controls.Add(this.panel3);
         this.Controls.Add(this.panel1);
         this.MinimumSize = new Size(1129, 688);
-        this.Name = "ShippingOrderProductView";
+        this.Name = "ShippingOrderView";
         this.Text = "ShippingOrderProductView";
         this.panel1.ResumeLayout(false);
         this.panel2.ResumeLayout(false);
@@ -457,7 +462,7 @@ partial class ShippingOrderView {
         ((System.ComponentModel.ISupportInitialize) this.IdValue).EndInit();
         this.panel5.ResumeLayout(false);
         this.panel5.PerformLayout();
-        ((System.ComponentModel.ISupportInitialize) this.numericUpDown1).EndInit();
+        ((System.ComponentModel.ISupportInitialize) this.ChangerQTYnumericUpDown).EndInit();
         this.ResumeLayout(false);
     }
 
@@ -494,7 +499,7 @@ partial class ShippingOrderView {
     private ListBox OrderProductslist;
     private Label label11;
     private TextBox textBox1;
-    private NumericUpDown numericUpDown1;
+    private NumericUpDown ChangerQTYnumericUpDown;
     private Label label6;
     private DateTimePicker deletedDatedateTimePicker1;
     private Label label12;

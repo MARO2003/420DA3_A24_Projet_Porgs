@@ -931,9 +931,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
             .ToTable(nameof(this.ShippingOrdersProducts))
             .HasKey(sop => new { sop.ShippingOrderId, sop.ProductId });
 
-        _ = modelBuilder.Entity<ShippingOrderProduct>()
-            .HasIndex(sop => new { sop.ShippingOrderId, sop.ProductId })
-            .IsUnique(true);
+       
 
         _ = modelBuilder.Entity<ShippingOrderProduct>()
             .Property(sop => sop.ShippingOrderId)
