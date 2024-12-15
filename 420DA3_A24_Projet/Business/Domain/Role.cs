@@ -3,7 +3,7 @@
 /// <summary>
 /// Classe représentant un rôle-utilisateur de l'application.
 /// </summary>
-public class Role {
+public class Supplier {
     /// <summary>
     /// Identifiant du rôle administrateur.
     /// </summary>
