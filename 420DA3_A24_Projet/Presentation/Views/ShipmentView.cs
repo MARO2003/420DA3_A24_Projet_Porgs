@@ -18,7 +18,7 @@ internal partial class ShipmentView : Form {
     public Shipment CurrentInstance { get; private set; }
     public ViewActionsEnum CurrentAction { get; private set; }
 
-  
+
     public ShipmentView(ProjectApplication parentApp) {
         this.parentApp = parentApp;
         this.InitializeComponent();
@@ -49,7 +49,7 @@ internal partial class ShipmentView : Form {
     }
 
 
-    /*
+    
     public DialogResult OpenForEdition(Shipment shipment) {
         this.PreOpenSetup(ViewActionsEnum.Edition, shipment, "Modification d'une Expeditions", "ENREGISTRER");
         return this.ShowDialog();
@@ -60,7 +60,7 @@ internal partial class ShipmentView : Form {
         return this.ShowDialog();
     }
 
-    */
+    
 
 
     private void PreOpenSetup(ViewActionsEnum action, Shipment instance, string windowsTitle, string actionButtonText) {
@@ -71,7 +71,7 @@ internal partial class ShipmentView : Form {
         this.btnAction.Text = actionButtonText;
         this.LoadShipmentDataInControls(instance);
 
-        if (action == ViewActionsEnum.Creation ) {
+        if (action == ViewActionsEnum.Creation) {
             this.EnableEditableControls();
         } else {
             this.DisnableEditableControls();
@@ -107,8 +107,13 @@ internal partial class ShipmentView : Form {
                 this.UpdateShipmentInstanceFromControls(this.CurrentInstance);
                 this.CurrentInstance = this.parentApp.ShipmentServices.CreateShipment(this.CurrentInstance);
                 break;
+            case ViewActionsEnum.Edition:
+                this.CurrentInstance = this.parentApp.ShipmentServices.UpdateShipment(this.CurrentInstance);
+                break;
             case ViewActionsEnum.Deletion:
                 this.CurrentInstance = this.parentApp.ShipmentServices.DeleteShipment(this.CurrentInstance);
+                break;
+            case ViewActionsEnum.Visualization:
                 break;
             default:
                 throw new Exception("Erreur!");
@@ -117,13 +122,13 @@ internal partial class ShipmentView : Form {
     }
 
     private void ValidateControlsValues() {
-        if(this.valueShipmentStatus.Items.Count <= 0) {
-            throw new Exception($"Au moins un statut doit etre selectionne");
+        if (this.valueShipmentStatus.Items.Count <= 0) {
+            throw new Exception($"Au moins un statut doit etre selectionner");
         }
-        if(this.valueShippingServices.Items.Count <= 0) {
-            throw new Exception($"Au moins une services d'expeditions doit etre selectionne");
+        if (this.valueShippingServices.Items.Count <= 0) {
+            throw new Exception($"Au moins une services d'expeditions doit etre selectionner");
         }
-        if(this.valueTrackingNumber.Text.Length < Shipment.TrackingNumberMinLength) {
+        if (this.valueTrackingNumber.Text.Length < Shipment.TrackingNumberMinLength) {
             throw new Exception($"L'Expedition doit contenir au moins {Shipment.TrackingNumberMinLength} caractere.");
         }
         if (this.valueTrackingNumber.Text.Length > Shipment.TrackingNumberMaxLength) {
@@ -146,6 +151,10 @@ internal partial class ShipmentView : Form {
     }
 
     private void ShipmentView_Load(object sender, EventArgs e) {
+
+    }
+
+    private void centerTblLayoutPanel_Paint(object sender, PaintEventArgs e) {
 
     }
 }

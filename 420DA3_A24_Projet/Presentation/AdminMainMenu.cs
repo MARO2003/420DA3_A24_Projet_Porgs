@@ -286,4 +286,110 @@ internal partial class AdminMainMenu : Form {
     #endregion
 
 
+    #region GESTION DES ADRESSES
+
+    private void btnCreateAdresse_Click(object sender, EventArgs e) {
+        Adresse? adresseCreer = this.parentApp.AdresseServices.OpenAdresseWindowForCreation();
+        if (adresseCreer != null) {
+            _ = this.adresseSearchResults.Items.Add(adresseCreer);
+            this.adresseSearchResults.SelectedItem = adresseCreer;
+        }
+    }
+
+    private void AdresseSearchtextBox_TextChanged(object sender, EventArgs e) {
+        string criterion = this.AdresseSearchtextBox.Text.Trim();
+        List<Adresse> result = this.parentApp.AdresseServices.Search(criterion);
+        this.adresseSearchResults.Items.Clear();
+        this.adresseSearchResults.SelectedItem = null;
+        this.adresseSearchResults.SelectedIndex = -1;
+        foreach (Adresse adresse in result) {
+            _ = this.adresseSearchResults.Items.Add(adresse);
+        }
+    }
+
+    private void adresseSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
+        Adresse? selectedAdresse = this.adresseSearchResults.SelectedItem as Adresse;
+        if (selectedAdresse != null) {
+            this.btnCreateAdresse.Enabled = true;
+            this.btnUpdateAdresse.Enabled = true;
+            this.btnDeleteAdresse.Enabled = true;
+        } else {
+            this.btnCreateAdresse.Enabled = false;
+            this.btnUpdateAdresse.Enabled = false;
+            this.btnDeleteAdresse.Enabled = false;
+        }
+    }
+
+    private void btnViewAdresse_Click(object sender, EventArgs e) {
+        Adresse? selectedAdresse = this.adresseSearchResults.SelectedItem as Adresse;
+        if (selectedAdresse != null) {
+            throw new Exception("Veuillez selectionner une adresse.");
+        }
+        _ = this.parentApp.AdresseServices.OpenAdresseWindowForView(selectedAdresse);
+
+
+    }
+
+    private void btnUpdateAdresse_Click(object sender, EventArgs e) {
+        Adresse? selectedAdresse = this.adresseSearchResults.SelectedItem as Adresse;
+        if (selectedAdresse != null) {
+            throw new Exception("Veuillez selectionner une adresse.");
+        }
+        _ = this.parentApp.AdresseServices.OpenAdresseWindowForEdition(selectedAdresse);
+        this.adresseSearchResults.Refresh();
+    }
+
+    private void btnDeleteAdresse_Click(object sender, EventArgs e) {
+        Adresse? selectedAdresse = this.adresseSearchResults.SelectedItem as Adresse;
+        if (selectedAdresse != null) {
+            throw new Exception("Veuillez selectionner une adresse.");
+        }
+        selectedAdresse = this.parentApp.AdresseServices.OpenAdresseWindowForDeletion(selectedAdresse);
+        if (selectedAdresse != null) {
+            this.adresseSearchResults.Items.Remove(selectedAdresse);
+            this.adresseSearchResults.SelectedItem = null;
+            this.adresseSearchResults.SelectedIndex = -1;
+        }
+
+    }
+    #endregion
+
+    #region GESTION DES EXPEDITIONS
+    private void btnCreateExpedition_Click(object sender, EventArgs e) {
+        Shipment? shipmentCreer = this.parentApp.ShipmentServices.OpenShipmentWindowForCreation();
+        if (shipmentCreer != null) { 
+            _= this.expeditionSearchResults.Items.Add(shipmentCreer);
+            this.expeditionSearchResults.SelectedItem = shipmentCreer;
+        }
+    }
+
+    private void ExpeditionSearchtextBox_TextChanged(object sender, EventArgs e) {
+        string criterion = this.ExpeditionSearchtextBox.Text.Trim();
+        List<Shipment> result = this.parentApp.ShipmentServices.Search(criterion);
+        this.expeditionSearchResults.Items.Clear();
+        this.expeditionSearchResults.SelectedItem = null;
+        this.expeditionSearchResults.SelectedIndex = -1;
+        foreach(Shipment shipment in result) {
+            _= this.expeditionSearchResults.Items.Add(shipment);
+        }
+    }
+
+    private void expeditionSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
+        Shipment? selectedShipment = this.expeditionSearchResults.SelectedItem as Shipment;
+        if (selectedShipment != null) {
+            this.btnViewExpedion.Enabled = true;
+        } else {
+            this.btnViewExpedion.Enabled = false;
+        }
+    }
+
+    private void btnViewExpedion_Click(object sender, EventArgs e) {
+        Shipment? selectedShipment = this.expeditionSearchResults.SelectedItem as Shipment;
+        if (selectedShipment != null) {
+            throw new Exception("Veuillez selectionner une expedition");
+        }
+        _= this.parentApp.ShipmentServices.OpenShipmentWindowForView(selectedShipment);
+
+    }
+    #endregion
 }
