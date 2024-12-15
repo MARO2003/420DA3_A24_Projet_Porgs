@@ -6,17 +6,22 @@ using System.Threading.Tasks;
 
 namespace _420DA3_A24_Projet.Business.Services;
 using _420DA3_A24_Projet.Business.Domain;
-
+using _420DA3_A24_Projet.DataAccess.Contexts;
 using _420DA3_A24_Projet.DataAccess.DAOs;
+using _420DA3_A24_Projet.Presentation.Views;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 internal class WarehouseService {
-    private  WarehouseDAO warehouseDAO;
-
+    private WarehouseDAO dao;
+    private WarehouseView view;
+    public WarehouseService(ProjectApplication parentApp, WsysDbContext context) {
+        this.dao=new WarehouseDAO(context);
+        this.view = new WarehouseView(parentApp);
+    }
     public Warehouse? OpenWarehouseWindowForCreation() {
-        Warehouse newwarehouse = (Warehouse) FormatterServices.GetUninitializedObject(typeof(Warehouse));
+        Warehouse newWarehouse = (Warehouse) FormatterServices.GetUninitializedObject(typeof(Warehouse));
         DialogResult result = this.view.OpenForCreation(newWarehouse);
         return result == DialogResult.OK ? newWarehouse : null;
     }
@@ -27,7 +32,7 @@ internal class WarehouseService {
     }
 
     public Warehouse? OpenWarehouseWindowForEdition(Warehouse wh) {
-        DialogResult result = this.view.OpenForEdition(wh);
+        DialogResult result = this.view.OpenForModification(wh);
         return result == DialogResult.OK ? wh : null;
     }
 
@@ -37,16 +42,14 @@ internal class WarehouseService {
     }
 
 
-    public WarehouseService(WarehouseDAO warehouseDAO) {
-        this.warehouseDAO = warehouseDAO;
-    }
+    
 
     public Warehouse GetWarehouseById(int id) {
-        return warehouseDAO.GetById(id);
+        return dao.GetById(id);
     }
 
     public List<Warehouse> GetWarehousesByName(string name) {
-        return warehouseDAO.GetByName(name);
+        return dao.GetByName(name);
     }
 
     public Warehouse CreateWarehouse(Warehouse warehouse) {
@@ -55,7 +58,7 @@ internal class WarehouseService {
             throw new ArgumentException("Warehouse name cannot be empty.");
         }
 
-        return warehouseDAO.Create(warehouse);
+        return dao.Create(warehouse);
     }
 
     public Warehouse UpdateWarehouse(Warehouse warehouse) {
@@ -64,14 +67,14 @@ internal class WarehouseService {
             throw new ArgumentException("Warehouse name cannot be empty.");
         }
 
-        return warehouseDAO.Update(warehouse);
+        return dao.Update(warehouse);
     }
 
     public Warehouse DeleteWarehouse(Warehouse warehouse, bool softDelete = true) {
-        return warehouseDAO.Delete(warehouse, softDelete);
+        return dao.Delete(warehouse, softDelete);
     }
 
     public List<Warehouse> SearchWarehouses(string criterion) {
-        return warehouseDAO.Search(criterion);
+        return dao.Search(criterion);
     }
 }

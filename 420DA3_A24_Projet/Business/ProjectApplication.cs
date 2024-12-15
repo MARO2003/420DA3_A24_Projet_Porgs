@@ -25,7 +25,8 @@ internal class ProjectApplication {
 
     public AdresseServices AdresseServices { get; private set; }
     public ShipmentServices ShipmentServices { get; private set; }
-
+    public ShippingOrderService ShippingOrderService { get; private set; }
+    public WarehouseService WarehouseService { get; private set; }
 
     public ProjectApplication() {
         ApplicationConfiguration.Initialize();
@@ -39,6 +40,8 @@ internal class ProjectApplication {
         this.PurchaseOrderService = new PurchaseOrderService(this, this.dbContext);
         this.AdresseServices = new AdresseServices(this, this.dbContext);
         this.ShipmentServices = new ShipmentServices(this, this.dbContext);
+        this.ShippingOrderService=new ShippingOrderService(this, this.dbContext);
+        this.WarehouseService=new WarehouseService(this, this.dbContext);
 
         this.adminMainMenu = new AdminMainMenu(this);
         this.officeEmployeeMainMenu = new OfficeEmpMainMenu(this);

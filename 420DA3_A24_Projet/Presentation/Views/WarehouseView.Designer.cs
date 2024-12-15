@@ -26,9 +26,14 @@ partial class WarehouseView {
     private void InitializeComponent() {
         this.panel1 = new Panel();
         this.panel2 = new Panel();
+        this.openendModeValue = new Label();
+        this.openedModeLabel = new Label();
         this.panel3 = new Panel();
+        this.btnAction = new Button();
+        this.btnCancel = new Button();
         this.tableLayoutPanel1 = new TableLayoutPanel();
         this.panel4 = new Panel();
+        this.AdressValue = new TextBox();
         this.dateDeletedValue = new DateTimePicker();
         this.dateModifiedValue = new DateTimePicker();
         this.dateCreatedValue = new DateTimePicker();
@@ -42,17 +47,12 @@ partial class WarehouseView {
         this.idValue = new NumericUpDown();
         this.idLabel = new Label();
         this.panel5 = new Panel();
-        this.ClientsValues = new ListBox();
-        this.ClientsLbl = new Label();
-        this.WarehouseEmployeesValues = new ListBox();
-        this.label1 = new Label();
         this.RestockOrdersValues = new ListBox();
         this.label2 = new Label();
-        this.AdressValue = new TextBox();
-        this.openendModeValue = new Label();
-        this.openedModeLabel = new Label();
-        this.btnAction = new Button();
-        this.btnCancel = new Button();
+        this.WarehouseEmployeesValues = new ListBox();
+        this.label1 = new Label();
+        this.ClientsValues = new ListBox();
+        this.ClientsLbl = new Label();
         this.panel1.SuspendLayout();
         this.panel2.SuspendLayout();
         this.panel3.SuspendLayout();
@@ -81,6 +81,27 @@ partial class WarehouseView {
         this.panel2.Size = new Size(1052, 56);
         this.panel2.TabIndex = 1;
         // 
+        // openendModeValue
+        // 
+        this.openendModeValue.AutoSize = true;
+        this.openendModeValue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.openendModeValue.Location = new Point(85, 9);
+        this.openendModeValue.Margin = new Padding(4, 0, 4, 0);
+        this.openendModeValue.Name = "openendModeValue";
+        this.openendModeValue.Size = new Size(112, 25);
+        this.openendModeValue.TabIndex = 3;
+        this.openendModeValue.Text = "Placeholder";
+        // 
+        // openedModeLabel
+        // 
+        this.openedModeLabel.AutoSize = true;
+        this.openedModeLabel.Location = new Point(13, 9);
+        this.openedModeLabel.Margin = new Padding(4, 0, 4, 0);
+        this.openedModeLabel.Name = "openedModeLabel";
+        this.openedModeLabel.Size = new Size(68, 25);
+        this.openedModeLabel.TabIndex = 2;
+        this.openedModeLabel.Text = "Mode :";
+        // 
         // panel3
         // 
         this.panel3.Controls.Add(this.btnAction);
@@ -90,6 +111,31 @@ partial class WarehouseView {
         this.panel3.Name = "panel3";
         this.panel3.Size = new Size(1052, 56);
         this.panel3.TabIndex = 1;
+        // 
+        // btnAction
+        // 
+        this.btnAction.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
+        this.btnAction.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.btnAction.Location = new Point(744, 8);
+        this.btnAction.Margin = new Padding(4, 5, 4, 5);
+        this.btnAction.Name = "btnAction";
+        this.btnAction.Size = new Size(162, 39);
+        this.btnAction.TabIndex = 3;
+        this.btnAction.Text = "ACTION";
+        this.btnAction.UseVisualStyleBackColor = true;
+        this.btnAction.Click += this.btnAction_Click;
+        // 
+        // btnCancel
+        // 
+        this.btnCancel.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
+        this.btnCancel.Location = new Point(915, 8);
+        this.btnCancel.Margin = new Padding(4, 5, 4, 5);
+        this.btnCancel.Name = "btnCancel";
+        this.btnCancel.Size = new Size(108, 39);
+        this.btnCancel.TabIndex = 2;
+        this.btnCancel.Text = "Annuler";
+        this.btnCancel.UseVisualStyleBackColor = true;
+        this.btnCancel.Click += this.btnCancel_Click;
         // 
         // tableLayoutPanel1
         // 
@@ -131,6 +177,13 @@ partial class WarehouseView {
         this.panel4.Size = new Size(494, 452);
         this.panel4.TabIndex = 0;
         this.panel4.Paint += this.panel4_Paint;
+        // 
+        // AdressValue
+        // 
+        this.AdressValue.Location = new Point(238, 160);
+        this.AdressValue.Name = "AdressValue";
+        this.AdressValue.Size = new Size(252, 31);
+        this.AdressValue.TabIndex = 22;
         // 
         // dateDeletedValue
         // 
@@ -261,27 +314,26 @@ partial class WarehouseView {
         this.panel5.Size = new Size(494, 452);
         this.panel5.TabIndex = 1;
         // 
-        // ClientsValues
+        // RestockOrdersValues
         // 
-        this.ClientsValues.FormattingEnabled = true;
-        this.ClientsValues.ItemHeight = 25;
-        this.ClientsValues.Location = new Point(17, 35);
-        this.ClientsValues.Margin = new Padding(4, 5, 4, 5);
-        this.ClientsValues.Name = "ClientsValues";
-        this.ClientsValues.SelectionMode = SelectionMode.MultiSimple;
-        this.ClientsValues.Size = new Size(285, 104);
-        this.ClientsValues.TabIndex = 19;
+        this.RestockOrdersValues.FormattingEnabled = true;
+        this.RestockOrdersValues.ItemHeight = 25;
+        this.RestockOrdersValues.Location = new Point(17, 338);
+        this.RestockOrdersValues.Margin = new Padding(4, 5, 4, 5);
+        this.RestockOrdersValues.Name = "RestockOrdersValues";
+        this.RestockOrdersValues.SelectionMode = SelectionMode.MultiSimple;
+        this.RestockOrdersValues.Size = new Size(285, 104);
+        this.RestockOrdersValues.TabIndex = 23;
         // 
-        // ClientsLbl
+        // label2
         // 
-        this.ClientsLbl.Location = new Point(8, -3);
-        this.ClientsLbl.Margin = new Padding(8, 9, 8, 9);
-        this.ClientsLbl.Name = "ClientsLbl";
-        this.ClientsLbl.Size = new Size(206, 39);
-        this.ClientsLbl.TabIndex = 18;
-        this.ClientsLbl.Text = "Clients";
-        this.ClientsLbl.TextAlign = ContentAlignment.MiddleRight;
-        this.ClientsLbl.Click += this.userRolesLabel_Click;
+        this.label2.Location = new Point(8, 300);
+        this.label2.Margin = new Padding(8, 9, 8, 9);
+        this.label2.Name = "label2";
+        this.label2.Size = new Size(206, 39);
+        this.label2.TabIndex = 22;
+        this.label2.Text = "Ordres de restockage";
+        this.label2.TextAlign = ContentAlignment.MiddleRight;
         // 
         // WarehouseEmployeesValues
         // 
@@ -304,77 +356,27 @@ partial class WarehouseView {
         this.label1.Text = "Employes";
         this.label1.TextAlign = ContentAlignment.MiddleRight;
         // 
-        // RestockOrdersValues
+        // ClientsValues
         // 
-        this.RestockOrdersValues.FormattingEnabled = true;
-        this.RestockOrdersValues.ItemHeight = 25;
-        this.RestockOrdersValues.Location = new Point(17, 338);
-        this.RestockOrdersValues.Margin = new Padding(4, 5, 4, 5);
-        this.RestockOrdersValues.Name = "RestockOrdersValues";
-        this.RestockOrdersValues.SelectionMode = SelectionMode.MultiSimple;
-        this.RestockOrdersValues.Size = new Size(285, 104);
-        this.RestockOrdersValues.TabIndex = 23;
+        this.ClientsValues.FormattingEnabled = true;
+        this.ClientsValues.ItemHeight = 25;
+        this.ClientsValues.Location = new Point(17, 35);
+        this.ClientsValues.Margin = new Padding(4, 5, 4, 5);
+        this.ClientsValues.Name = "ClientsValues";
+        this.ClientsValues.SelectionMode = SelectionMode.MultiSimple;
+        this.ClientsValues.Size = new Size(285, 104);
+        this.ClientsValues.TabIndex = 19;
         // 
-        // label2
+        // ClientsLbl
         // 
-        this.label2.Location = new Point(8, 300);
-        this.label2.Margin = new Padding(8, 9, 8, 9);
-        this.label2.Name = "label2";
-        this.label2.Size = new Size(206, 39);
-        this.label2.TabIndex = 22;
-        this.label2.Text = "Ordres de restockage";
-        this.label2.TextAlign = ContentAlignment.MiddleRight;
-        // 
-        // AdressValue
-        // 
-        this.AdressValue.Location = new Point(238, 160);
-        this.AdressValue.Name = "AdressValue";
-        this.AdressValue.Size = new Size(252, 31);
-        this.AdressValue.TabIndex = 22;
-        // 
-        // openendModeValue
-        // 
-        this.openendModeValue.AutoSize = true;
-        this.openendModeValue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.openendModeValue.Location = new Point(85, 9);
-        this.openendModeValue.Margin = new Padding(4, 0, 4, 0);
-        this.openendModeValue.Name = "openendModeValue";
-        this.openendModeValue.Size = new Size(112, 25);
-        this.openendModeValue.TabIndex = 3;
-        this.openendModeValue.Text = "Placeholder";
-        // 
-        // openedModeLabel
-        // 
-        this.openedModeLabel.AutoSize = true;
-        this.openedModeLabel.Location = new Point(13, 9);
-        this.openedModeLabel.Margin = new Padding(4, 0, 4, 0);
-        this.openedModeLabel.Name = "openedModeLabel";
-        this.openedModeLabel.Size = new Size(68, 25);
-        this.openedModeLabel.TabIndex = 2;
-        this.openedModeLabel.Text = "Mode :";
-        // 
-        // btnAction
-        // 
-        this.btnAction.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.btnAction.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.btnAction.Location = new Point(744, 8);
-        this.btnAction.Margin = new Padding(4, 5, 4, 5);
-        this.btnAction.Name = "btnAction";
-        this.btnAction.Size = new Size(162, 39);
-        this.btnAction.TabIndex = 3;
-        this.btnAction.Text = "ACTION";
-        this.btnAction.UseVisualStyleBackColor = true;
-        // 
-        // btnCancel
-        // 
-        this.btnCancel.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.btnCancel.Location = new Point(915, 8);
-        this.btnCancel.Margin = new Padding(4, 5, 4, 5);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new Size(108, 39);
-        this.btnCancel.TabIndex = 2;
-        this.btnCancel.Text = "Annuler";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        this.ClientsLbl.Location = new Point(8, -3);
+        this.ClientsLbl.Margin = new Padding(8, 9, 8, 9);
+        this.ClientsLbl.Name = "ClientsLbl";
+        this.ClientsLbl.Size = new Size(206, 39);
+        this.ClientsLbl.TabIndex = 18;
+        this.ClientsLbl.Text = "Clients";
+        this.ClientsLbl.TextAlign = ContentAlignment.MiddleRight;
+        this.ClientsLbl.Click += this.userRolesLabel_Click;
         // 
         // WarehouseView
         // 

@@ -1,5 +1,6 @@
 ﻿using _420DA3_A24_Projet.Business;
 using _420DA3_A24_Projet.Business.Domain;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Project_Utilities.Enums;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ internal partial class WarehouseView : Form {
         InitializeComponent();
         this.parentApp = application;
     }
-   
+
 
     /// <summary>
     /// The <see cref="ViewActionsEnum"/> value indicating the intent for which the window
@@ -88,7 +89,7 @@ internal partial class WarehouseView : Form {
     /// <param name="windowTitle"></param>
     /// <param name="actionButtonText"></param>
     private void PreOpenSetup(Warehouse instance, ViewActionsEnum action, string windowTitle, string actionButtonText) {
-        
+
         // remember what the current action is
         this.CurrentAction = action;
         // remember which instance we are currently working with
@@ -133,7 +134,7 @@ internal partial class WarehouseView : Form {
     private Warehouse LoadDataInControls(Warehouse warehouse) {
         this.idValue.Text = warehouse.Id.ToString();
         this.nameValue.Text = warehouse.Name;
-        this.AdressValue.Text = warehouse.AddressId+"";
+        this.AdressValue.Text = warehouse.AddressId + "";
         this.dateCreatedValue.Text = warehouse.DateCreated.ToString();
         return warehouse;
     }
@@ -146,7 +147,7 @@ internal partial class WarehouseView : Form {
     /// <returns></returns>
     private Warehouse SaveDataFromControls(Warehouse warehouse) {
         warehouse.Name = this.nameValue.Text.Trim();
-        warehouse.AddressId =int.Parse( this.AdressValue.Text.Trim());
+        warehouse.AddressId = int.Parse(this.AdressValue.Text.Trim());
         return warehouse;
     }
 
@@ -158,11 +159,41 @@ internal partial class WarehouseView : Form {
 
     }
 
-    private void label3_Click(object sender, EventArgs e) {
-
-    }
+   
 
     private void userRolesLabel_Click(object sender, EventArgs e) {
 
+    }
+
+    private void btnAction_Click(object sender, EventArgs e) {
+        try {
+            switch (this.CurrentAction) {
+                case ViewActionsEnum.Creation:
+                    _ = this.SaveDataFromControls(this.CurrentEntityInstance);
+                    this.CurrentEntityInstance = this.parentApp.WarehouseService.CreateUserInDatabase(this.CurrentEntityInstance);
+                    break;
+                case ViewActionsEnum.Edition:
+                    _ = this.SaveDataFromControls(this.CurrentEntityInstance);
+                    this.CurrentEntityInstance = this.parentApp.WarehouseService.UpdateUserInDatabase(this.CurrentEntityInstance);
+                    break;
+                case ViewActionsEnum.Deletion:
+                    this.CurrentEntityInstance = this.parentApp.WarehouseService.DeleteUserFromDatabase(this.CurrentEntityInstance);
+                    break;
+                case ViewActionsEnum.Visualization:
+                    // nothing to do
+                    break;
+                default:
+                    throw new NotImplementedException($"The view action [{Enum.GetName(this.CurrentAction)}] is not implemented in [{this.GetType().ShortDisplayName}].");
+            }
+            this.DialogResult = DialogResult.OK;
+        }
+        
+        }
+        catch 
+        { }
+    }
+
+    private void btnCancel_Click(object sender, EventArgs e) {
+        this.DialogResult= DialogResult.Cancel;
     }
 }
