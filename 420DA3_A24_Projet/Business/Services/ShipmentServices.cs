@@ -67,5 +67,12 @@ internal class ShipmentServices {
     }
 
 
+    public Shipment DeleteShipment(Shipment shipment) { 
+        return this.dao.Delete(shipment);
+    }
+
+    public Shipment UpdateShipment(Shipment shipment) { 
+        return this.dao.Update(shipment);
+    }
 
 }
