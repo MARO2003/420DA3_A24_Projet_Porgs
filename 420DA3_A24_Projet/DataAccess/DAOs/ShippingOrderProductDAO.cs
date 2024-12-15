@@ -53,28 +53,20 @@ namespace _420DA3_A24_Projet.DataAccess.DAOs {
             return shippingOrderProduct;
         }
 
-        /// <summary>
-        /// Met à jour un produit d'ordre d'expédition.
-        /// </summary>
-        /// <param name="shippingOrderProduct">Le produit d'ordre d'expédition à mettre à jour.</param>
-        /// <returns>Le produit d'ordre d'expédition mis à jour.</returns>
-        public ShippingOrderProduct Update(ShippingOrderProduct shippingOrderProduct) {
-            _ = this.context.ShippingOrdersProducts.Update(shippingOrderProduct);
-            _ = this.context.SaveChanges();
-            return shippingOrderProduct;
-        }
+      
 
         /// <summary>
         /// Supprime un produit d'ordre d'expédition.
         /// </summary>
         /// <param name="shippingOrderProduct">Le produit d'ordre d'expédition à supprimer.</param>
         /// <returns>Le produit d'ordre d'expédition supprimé.</returns>
-        public ShippingOrderProduct Delete(ShippingOrderProduct shippingOrderProduct) {
-            _ = this.context.ShippingOrdersProducts.Remove(shippingOrderProduct);
+        public ShippingOrderProduct DeletebyShippingOrder(int idShippingOrder,ShippingOrderProduct shippingOrderProduct) {
+            _ = this.context.ShippingOrdersProducts.Where(p.ShippingOrderId == idShippingOrder).Remove(shippingOrderProduct);
             _ = this.context.SaveChanges();
             return shippingOrderProduct;
         }
 
+     
         /// <summary>
         /// Recherche des produits d'ordre d'expédition en fonction d'un critère donné.
         /// </summary>

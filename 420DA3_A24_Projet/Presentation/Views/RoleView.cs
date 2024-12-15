@@ -144,7 +144,7 @@ internal partial class RoleView : Form {
         role.Description = this.descriptionValue.Text.Trim();
         return role;
     }
-
+    
     private void ActionButton_Click(object sender, EventArgs e) {
         try {
 

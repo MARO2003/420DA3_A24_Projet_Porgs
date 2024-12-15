@@ -26,8 +26,6 @@ partial class ShippingOrderView {
     private void InitializeComponent() {
         this.panel1 = new Panel();
         this.panel2 = new Panel();
-        this.label6 = new Label();
-        this.label11 = new Label();
         this.panel3 = new Panel();
         this.Annulerbtn = new Button();
         this.Actionbtn = new Button();
@@ -61,6 +59,8 @@ partial class ShippingOrderView {
         this.label8 = new Label();
         this.createdDateTimePicker1 = new DateTimePicker();
         this.label2 = new Label();
+        this.openendModeValue = new Label();
+        this.openedModeLabel = new Label();
         this.panel1.SuspendLayout();
         this.panel2.SuspendLayout();
         this.panel3.SuspendLayout();
@@ -83,31 +83,13 @@ partial class ShippingOrderView {
         // 
         // panel2
         // 
-        this.panel2.Controls.Add(this.label6);
-        this.panel2.Controls.Add(this.label11);
+        this.panel2.Controls.Add(this.openendModeValue);
+        this.panel2.Controls.Add(this.openedModeLabel);
         this.panel2.Dock = DockStyle.Top;
         this.panel2.Location = new Point(0, 0);
         this.panel2.Name = "panel2";
         this.panel2.Size = new Size(1140, 72);
         this.panel2.TabIndex = 1;
-        // 
-        // label6
-        // 
-        this.label6.Location = new Point(81, 19);
-        this.label6.Name = "label6";
-        this.label6.Size = new Size(147, 25);
-        this.label6.TabIndex = 8;
-        this.label6.Text = "Placeholder";
-        this.label6.TextAlign = ContentAlignment.TopRight;
-        // 
-        // label11
-        // 
-        this.label11.AutoSize = true;
-        this.label11.Location = new Point(12, 19);
-        this.label11.Name = "label11";
-        this.label11.Size = new Size(63, 25);
-        this.label11.TabIndex = 0;
-        this.label11.Text = "Mode:";
         // 
         // panel3
         // 
@@ -440,6 +422,27 @@ partial class ShippingOrderView {
         this.label2.Text = "Date creation";
         this.label2.TextAlign = ContentAlignment.TopRight;
         // 
+        // openendModeValue
+        // 
+        this.openendModeValue.AutoSize = true;
+        this.openendModeValue.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.openendModeValue.Location = new Point(90, 26);
+        this.openendModeValue.Margin = new Padding(4, 0, 4, 0);
+        this.openendModeValue.Name = "openendModeValue";
+        this.openendModeValue.Size = new Size(112, 25);
+        this.openendModeValue.TabIndex = 10;
+        this.openendModeValue.Text = "Placeholder";
+        // 
+        // openedModeLabel
+        // 
+        this.openedModeLabel.AutoSize = true;
+        this.openedModeLabel.Location = new Point(18, 26);
+        this.openedModeLabel.Margin = new Padding(4, 0, 4, 0);
+        this.openedModeLabel.Name = "openedModeLabel";
+        this.openedModeLabel.Size = new Size(68, 25);
+        this.openedModeLabel.TabIndex = 9;
+        this.openedModeLabel.Text = "Mode :";
+        // 
         // ShippingOrderView
         // 
         this.AutoScaleDimensions = new SizeF(10F, 25F);
@@ -497,12 +500,12 @@ partial class ShippingOrderView {
     private Label label10;
     private Button RetirerProduitbtn;
     private ListBox OrderProductslist;
-    private Label label11;
     private TextBox textBox1;
     private NumericUpDown ChangerQTYnumericUpDown;
-    private Label label6;
     private DateTimePicker deletedDatedateTimePicker1;
     private Label label12;
     private Button Annulerbtn;
     private Button Actionbtn;
+    private Label openendModeValue;
+    private Label openedModeLabel;
 }
