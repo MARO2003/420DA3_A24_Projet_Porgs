@@ -168,12 +168,24 @@ internal partial class RoleView : Form {
             }
             this.DialogResult = DialogResult.OK;
 
-        } catch (Exception ex) { 
+        } catch (Exception ex) {
             this.parentApp.HandleException(ex);
         }
     }
 
     private void CancelButton_Click(object sender, EventArgs e) {
         this.DialogResult = DialogResult.Cancel;
+    }
+
+    private void bottomBarPanel_Paint(object sender, PaintEventArgs e) {
+
+    }
+
+    private void centerTLP_Paint(object sender, PaintEventArgs e) {
+
+    }
+
+    private void RoleView_Load(object sender, EventArgs e) {
+
     }
 }
