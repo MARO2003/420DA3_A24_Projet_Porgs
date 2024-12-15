@@ -2,6 +2,7 @@
 using _420DA3_A24_Projet.DataAccess.Contexts;
 using _420DA3_A24_Projet.DataAccess.DAOs;
 using _420DA3_A24_Projet.Presentation.Views;
+using Project_Utilities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -69,6 +70,10 @@ internal class ShippingOrderService {
 
     public ShippingOrder ModifyShippingOrder(ShippingOrder shippingOrder, List<ShippingOrderProduct> newOrderProducts) {
         try {
+            if (shippingOrder.Status != ShippingOrderStatusEnum.Unassigned && shippingOrder.Status != ShippingOrderStatusEnum.New) {
+                throw new Exception("Only 'unassigned' or 'new' shipping orders can be edited.");
+            }
+
             // dictionnaire pour contenir les variations de qty par produit
             Dictionary<Product, int> quantityVariations = new Dictionary<Product, int>();
 
