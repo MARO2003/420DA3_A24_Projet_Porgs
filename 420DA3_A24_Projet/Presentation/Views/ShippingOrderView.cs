@@ -107,7 +107,7 @@ internal partial class ShippingOrderView : Form {
         Product? selectedProduct = this.productSearchResultsListBox.SelectedItem as Product;
         int selectedQuantity = (int) this.QuantiteAjoutValue.Value;
         if (selectedProduct != null) {
-            ShippingOrderProduct sop = new ShippingOrderProduct(selectedProduct.Id, selectedQuantity);
+            ShippingOrderProduct sop = new ShippingOrderProduct(selectedProduct, selectedQuantity);
             this.products.Add(sop);
             this.productSearchResultsListBox.Items.Remove(selectedProduct);
             this.OrderProductslist.Items.Add(sop);

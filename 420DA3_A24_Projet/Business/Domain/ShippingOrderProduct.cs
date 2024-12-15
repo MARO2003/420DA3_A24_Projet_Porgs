@@ -58,8 +58,9 @@ public class ShippingOrderProduct {
             this.RowVersion = rowVersion;
         }
 
-        public ShippingOrderProduct(int productId, int quantity = 0) {
-            this.ProductId = productId;
+        public ShippingOrderProduct(Product product, int quantity = 0) {
+            this.Product = product;
+            this.ProductId = product.Id;
             this.Quantity = quantity;
         }
 
