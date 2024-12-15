@@ -25,15 +25,33 @@ partial class SupplierView {
     /// </summary>
     private void InitializeComponent() {
         this.topBarPanel = new Panel();
-        this.BottomBarPanel = new Panel();
-        this.centerTblLayoutPanel = new TableLayoutPanel();
-        this.btnCancel = new Button();
-        this.btnAction = new Button();
+        this.bottomBarPanel = new Panel();
+        this.centerTLP = new TableLayoutPanel();
+        this.cancelBtn = new Button();
+        this.ActionBtn = new Button();
         this.centerPanel = new Panel();
         this.idLabel = new Label();
+        this.supplierNameLabel = new Label();
+        this.contactLastNameLabel = new Label();
+        this.contactFirstNameLabel = new Label();
+        this.contactEmailLabel = new Label();
+        this.contactTelephoneLabel = new Label();
+        this.dateCreatedLabel = new Label();
+        this.dateModifiedLabel = new Label();
+        this.dateDeletedLabel = new Label();
+        this.label1 = new Label();
         this.idValue = new NumericUpDown();
-        this.BottomBarPanel.SuspendLayout();
-        this.centerTblLayoutPanel.SuspendLayout();
+        this.supplierNameValue = new TextBox();
+        this.contactLastNameValue = new TextBox();
+        this.contactFirstNameValue = new TextBox();
+        this.contactEmailValue = new TextBox();
+        this.contactTelephoneValue = new TextBox();
+        this.dateCreatedValue = new DateTimePicker();
+        this.dateModifiedValue = new DateTimePicker();
+        this.dateDeletedValue = new DateTimePicker();
+        this.ProductsValue = new ListBox();
+        this.bottomBarPanel.SuspendLayout();
+        this.centerTLP.SuspendLayout();
         this.centerPanel.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize) this.idValue).BeginInit();
         this.SuspendLayout();
@@ -43,99 +61,260 @@ partial class SupplierView {
         this.topBarPanel.Dock = DockStyle.Top;
         this.topBarPanel.Location = new Point(0, 0);
         this.topBarPanel.Name = "topBarPanel";
-        this.topBarPanel.Size = new Size(800, 50);
+        this.topBarPanel.Size = new Size(802, 50);
         this.topBarPanel.TabIndex = 0;
         // 
-        // BottomBarPanel
+        // bottomBarPanel
         // 
-        this.BottomBarPanel.Controls.Add(this.btnAction);
-        this.BottomBarPanel.Controls.Add(this.btnCancel);
-        this.BottomBarPanel.Dock = DockStyle.Bottom;
-        this.BottomBarPanel.Location = new Point(0, 403);
-        this.BottomBarPanel.Name = "BottomBarPanel";
-        this.BottomBarPanel.Size = new Size(800, 50);
-        this.BottomBarPanel.TabIndex = 1;
+        this.bottomBarPanel.Controls.Add(this.ActionBtn);
+        this.bottomBarPanel.Controls.Add(this.cancelBtn);
+        this.bottomBarPanel.Dock = DockStyle.Bottom;
+        this.bottomBarPanel.Location = new Point(0, 597);
+        this.bottomBarPanel.Name = "bottomBarPanel";
+        this.bottomBarPanel.Size = new Size(802, 50);
+        this.bottomBarPanel.TabIndex = 1;
         // 
-        // centerTblLayoutPanel
+        // centerTLP
         // 
-        this.centerTblLayoutPanel.ColumnCount = 3;
-        this.centerTblLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.centerTblLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 400F));
-        this.centerTblLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.centerTblLayoutPanel.Controls.Add(this.centerPanel, 1, 0);
-        this.centerTblLayoutPanel.Dock = DockStyle.Fill;
-        this.centerTblLayoutPanel.Location = new Point(0, 50);
-        this.centerTblLayoutPanel.Name = "centerTblLayoutPanel";
-        this.centerTblLayoutPanel.RowCount = 1;
-        this.centerTblLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.centerTblLayoutPanel.Size = new Size(800, 353);
-        this.centerTblLayoutPanel.TabIndex = 2;
+        this.centerTLP.ColumnCount = 3;
+        this.centerTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.centerTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 600F));
+        this.centerTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.centerTLP.Controls.Add(this.centerPanel, 1, 0);
+        this.centerTLP.Dock = DockStyle.Fill;
+        this.centerTLP.Location = new Point(0, 50);
+        this.centerTLP.Name = "centerTLP";
+        this.centerTLP.RowCount = 1;
+        this.centerTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.centerTLP.Size = new Size(802, 547);
+        this.centerTLP.TabIndex = 2;
         // 
-        // btnCancel
+        // cancelBtn
         // 
-        this.btnCancel.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.btnCancel.Location = new Point(694, 9);
-        this.btnCancel.Name = "btnCancel";
-        this.btnCancel.Size = new Size(94, 29);
-        this.btnCancel.TabIndex = 0;
-        this.btnCancel.Text = "Annuler";
-        this.btnCancel.UseVisualStyleBackColor = true;
+        this.cancelBtn.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
+        this.cancelBtn.Location = new Point(622, 9);
+        this.cancelBtn.Name = "cancelBtn";
+        this.cancelBtn.Size = new Size(154, 29);
+        this.cancelBtn.TabIndex = 0;
+        this.cancelBtn.Text = "Cancel";
+        this.cancelBtn.UseVisualStyleBackColor = true;
         // 
-        // btnAction
+        // ActionBtn
         // 
-        this.btnAction.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.btnAction.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.btnAction.Location = new Point(477, 9);
-        this.btnAction.Name = "btnAction";
-        this.btnAction.Size = new Size(211, 29);
-        this.btnAction.TabIndex = 1;
-        this.btnAction.Text = "Action";
-        this.btnAction.UseVisualStyleBackColor = true;
+        this.ActionBtn.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
+        this.ActionBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.ActionBtn.Location = new Point(364, 9);
+        this.ActionBtn.Name = "ActionBtn";
+        this.ActionBtn.Size = new Size(224, 29);
+        this.ActionBtn.TabIndex = 1;
+        this.ActionBtn.Text = "Action";
+        this.ActionBtn.UseVisualStyleBackColor = true;
         // 
         // centerPanel
         // 
+        this.centerPanel.Controls.Add(this.ProductsValue);
+        this.centerPanel.Controls.Add(this.dateDeletedValue);
+        this.centerPanel.Controls.Add(this.dateModifiedValue);
+        this.centerPanel.Controls.Add(this.dateCreatedValue);
+        this.centerPanel.Controls.Add(this.contactTelephoneValue);
+        this.centerPanel.Controls.Add(this.contactEmailValue);
+        this.centerPanel.Controls.Add(this.contactFirstNameValue);
+        this.centerPanel.Controls.Add(this.contactLastNameValue);
+        this.centerPanel.Controls.Add(this.supplierNameValue);
         this.centerPanel.Controls.Add(this.idValue);
+        this.centerPanel.Controls.Add(this.label1);
+        this.centerPanel.Controls.Add(this.dateDeletedLabel);
+        this.centerPanel.Controls.Add(this.dateModifiedLabel);
+        this.centerPanel.Controls.Add(this.dateCreatedLabel);
+        this.centerPanel.Controls.Add(this.contactTelephoneLabel);
+        this.centerPanel.Controls.Add(this.contactEmailLabel);
+        this.centerPanel.Controls.Add(this.contactFirstNameLabel);
+        this.centerPanel.Controls.Add(this.contactLastNameLabel);
+        this.centerPanel.Controls.Add(this.supplierNameLabel);
         this.centerPanel.Controls.Add(this.idLabel);
         this.centerPanel.Dock = DockStyle.Fill;
-        this.centerPanel.Location = new Point(203, 3);
+        this.centerPanel.Location = new Point(104, 3);
         this.centerPanel.Name = "centerPanel";
-        this.centerPanel.Size = new Size(394, 347);
+        this.centerPanel.Size = new Size(594, 541);
         this.centerPanel.TabIndex = 0;
         // 
         // idLabel
         // 
-        this.idLabel.Location = new Point(3, 18);
+        this.idLabel.Location = new Point(5, 24);
         this.idLabel.Name = "idLabel";
-        this.idLabel.Size = new Size(180, 24);
+        this.idLabel.Size = new Size(218, 25);
         this.idLabel.TabIndex = 0;
-        this.idLabel.Text = "ID :";
+        this.idLabel.Text = "Id :";
         this.idLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // supplierNameLabel
+        // 
+        this.supplierNameLabel.Location = new Point(5, 57);
+        this.supplierNameLabel.Name = "supplierNameLabel";
+        this.supplierNameLabel.Size = new Size(218, 25);
+        this.supplierNameLabel.TabIndex = 1;
+        this.supplierNameLabel.Text = "Supplier Name :";
+        this.supplierNameLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // contactLastNameLabel
+        // 
+        this.contactLastNameLabel.Location = new Point(5, 92);
+        this.contactLastNameLabel.Name = "contactLastNameLabel";
+        this.contactLastNameLabel.Size = new Size(218, 25);
+        this.contactLastNameLabel.TabIndex = 2;
+        this.contactLastNameLabel.Text = "Contact Last Name :";
+        this.contactLastNameLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // contactFirstNameLabel
+        // 
+        this.contactFirstNameLabel.Location = new Point(5, 125);
+        this.contactFirstNameLabel.Name = "contactFirstNameLabel";
+        this.contactFirstNameLabel.Size = new Size(218, 25);
+        this.contactFirstNameLabel.TabIndex = 3;
+        this.contactFirstNameLabel.Text = "Contact First Name :";
+        this.contactFirstNameLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // contactEmailLabel
+        // 
+        this.contactEmailLabel.Location = new Point(5, 158);
+        this.contactEmailLabel.Name = "contactEmailLabel";
+        this.contactEmailLabel.Size = new Size(218, 25);
+        this.contactEmailLabel.TabIndex = 4;
+        this.contactEmailLabel.Text = "Contact Email :";
+        this.contactEmailLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // contactTelephoneLabel
+        // 
+        this.contactTelephoneLabel.Location = new Point(5, 191);
+        this.contactTelephoneLabel.Name = "contactTelephoneLabel";
+        this.contactTelephoneLabel.Size = new Size(218, 25);
+        this.contactTelephoneLabel.TabIndex = 5;
+        this.contactTelephoneLabel.Text = "Contact Telephone :";
+        this.contactTelephoneLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // dateCreatedLabel
+        // 
+        this.dateCreatedLabel.Location = new Point(5, 222);
+        this.dateCreatedLabel.Name = "dateCreatedLabel";
+        this.dateCreatedLabel.Size = new Size(218, 25);
+        this.dateCreatedLabel.TabIndex = 6;
+        this.dateCreatedLabel.Text = "Date Created :";
+        this.dateCreatedLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // dateModifiedLabel
+        // 
+        this.dateModifiedLabel.Location = new Point(5, 257);
+        this.dateModifiedLabel.Name = "dateModifiedLabel";
+        this.dateModifiedLabel.Size = new Size(218, 25);
+        this.dateModifiedLabel.TabIndex = 7;
+        this.dateModifiedLabel.Text = "Date Modified :";
+        this.dateModifiedLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // dateDeletedLabel
+        // 
+        this.dateDeletedLabel.Location = new Point(5, 290);
+        this.dateDeletedLabel.Name = "dateDeletedLabel";
+        this.dateDeletedLabel.Size = new Size(218, 25);
+        this.dateDeletedLabel.TabIndex = 8;
+        this.dateDeletedLabel.Text = "Date Deleted :";
+        this.dateDeletedLabel.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // label1
+        // 
+        this.label1.Location = new Point(27, 343);
+        this.label1.Name = "label1";
+        this.label1.Size = new Size(196, 25);
+        this.label1.TabIndex = 9;
+        this.label1.Text = "Products List :";
+        this.label1.TextAlign = ContentAlignment.MiddleRight;
         // 
         // idValue
         // 
         this.idValue.Enabled = false;
-        this.idValue.Location = new Point(215, 18);
-        this.idValue.Maximum = new decimal(new int[] { 658067456, 1164, 0, 0 });
+        this.idValue.Location = new Point(229, 24);
         this.idValue.Name = "idValue";
-        this.idValue.Size = new Size(162, 27);
-        this.idValue.TabIndex = 1;
+        this.idValue.Size = new Size(209, 27);
+        this.idValue.TabIndex = 10;
+        // 
+        // supplierNameValue
+        // 
+        this.supplierNameValue.Location = new Point(229, 57);
+        this.supplierNameValue.Name = "supplierNameValue";
+        this.supplierNameValue.Size = new Size(270, 27);
+        this.supplierNameValue.TabIndex = 11;
+        // 
+        // contactLastNameValue
+        // 
+        this.contactLastNameValue.Location = new Point(229, 90);
+        this.contactLastNameValue.Name = "contactLastNameValue";
+        this.contactLastNameValue.Size = new Size(270, 27);
+        this.contactLastNameValue.TabIndex = 12;
+        // 
+        // contactFirstNameValue
+        // 
+        this.contactFirstNameValue.Location = new Point(229, 123);
+        this.contactFirstNameValue.Name = "contactFirstNameValue";
+        this.contactFirstNameValue.Size = new Size(270, 27);
+        this.contactFirstNameValue.TabIndex = 13;
+        // 
+        // contactEmailValue
+        // 
+        this.contactEmailValue.Location = new Point(229, 156);
+        this.contactEmailValue.Name = "contactEmailValue";
+        this.contactEmailValue.Size = new Size(270, 27);
+        this.contactEmailValue.TabIndex = 14;
+        // 
+        // contactTelephoneValue
+        // 
+        this.contactTelephoneValue.Location = new Point(229, 189);
+        this.contactTelephoneValue.Name = "contactTelephoneValue";
+        this.contactTelephoneValue.Size = new Size(270, 27);
+        this.contactTelephoneValue.TabIndex = 15;
+        // 
+        // dateCreatedValue
+        // 
+        this.dateCreatedValue.Location = new Point(229, 222);
+        this.dateCreatedValue.Name = "dateCreatedValue";
+        this.dateCreatedValue.Size = new Size(250, 27);
+        this.dateCreatedValue.TabIndex = 16;
+        // 
+        // dateModifiedValue
+        // 
+        this.dateModifiedValue.Location = new Point(229, 255);
+        this.dateModifiedValue.Name = "dateModifiedValue";
+        this.dateModifiedValue.Size = new Size(250, 27);
+        this.dateModifiedValue.TabIndex = 17;
+        // 
+        // dateDeletedValue
+        // 
+        this.dateDeletedValue.Location = new Point(229, 290);
+        this.dateDeletedValue.Name = "dateDeletedValue";
+        this.dateDeletedValue.Size = new Size(250, 27);
+        this.dateDeletedValue.TabIndex = 18;
+        // 
+        // ProductsValue
+        // 
+        this.ProductsValue.FormattingEnabled = true;
+        this.ProductsValue.ItemHeight = 20;
+        this.ProductsValue.Location = new Point(229, 343);
+        this.ProductsValue.Name = "ProductsValue";
+        this.ProductsValue.Size = new Size(311, 184);
+        this.ProductsValue.TabIndex = 19;
         // 
         // SupplierView
         // 
         this.AutoScaleDimensions = new SizeF(8F, 20F);
         this.AutoScaleMode = AutoScaleMode.Font;
-        this.ClientSize = new Size(800, 453);
-        this.Controls.Add(this.centerTblLayoutPanel);
-        this.Controls.Add(this.BottomBarPanel);
+        this.ClientSize = new Size(802, 647);
+        this.Controls.Add(this.centerTLP);
+        this.Controls.Add(this.bottomBarPanel);
         this.Controls.Add(this.topBarPanel);
-        this.MinimumSize = new Size(500, 500);
         this.Name = "SupplierView";
-        this.StartPosition = FormStartPosition.CenterScreen;
-        this.Text = "Gestion des Fournisseurs";
-        this.Load += this.SupplierView_Load;
-        this.BottomBarPanel.ResumeLayout(false);
-        this.centerTblLayoutPanel.ResumeLayout(false);
+        this.Text = "Gestion d'un Fournisseur";
+        this.bottomBarPanel.ResumeLayout(false);
+        this.centerTLP.ResumeLayout(false);
         this.centerPanel.ResumeLayout(false);
+        this.centerPanel.PerformLayout();
         ((System.ComponentModel.ISupportInitialize) this.idValue).EndInit();
         this.ResumeLayout(false);
     }
@@ -143,11 +322,29 @@ partial class SupplierView {
     #endregion
 
     private Panel topBarPanel;
-    private Panel BottomBarPanel;
-    private TableLayoutPanel centerTblLayoutPanel;
-    private Button btnCancel;
-    private Button btnAction;
+    private Panel bottomBarPanel;
+    private Button ActionBtn;
+    private Button cancelBtn;
+    private TableLayoutPanel centerTLP;
     private Panel centerPanel;
+    private Label contactTelephoneLabel;
+    private Label contactEmailLabel;
+    private Label contactFirstNameLabel;
+    private Label contactLastNameLabel;
+    private Label supplierNameLabel;
     private Label idLabel;
+    private Label dateCreatedLabel;
     private NumericUpDown idValue;
+    private Label label1;
+    private Label dateDeletedLabel;
+    private Label dateModifiedLabel;
+    private DateTimePicker dateModifiedValue;
+    private DateTimePicker dateCreatedValue;
+    private TextBox contactTelephoneValue;
+    private TextBox contactEmailValue;
+    private TextBox contactFirstNameValue;
+    private TextBox contactLastNameValue;
+    private TextBox supplierNameValue;
+    private ListBox ProductsValue;
+    private DateTimePicker dateDeletedValue;
 }

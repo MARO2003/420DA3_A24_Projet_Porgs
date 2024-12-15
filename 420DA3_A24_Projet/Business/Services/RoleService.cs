@@ -4,6 +4,7 @@ using _420DA3_A24_Projet.DataAccess.DAOs;
 using _420DA3_A24_Projet.Presentation.Views;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Runtime.Serialization;
+using System.Security.Principal;
 
 namespace _420DA3_A24_Projet.Business.Services;
 
@@ -11,7 +12,7 @@ namespace _420DA3_A24_Projet.Business.Services;
 /// Service class for managing <see cref="Role"/> entities.
 /// </summary>
 internal class RoleService {
-
+    
     private readonly ProjectApplication parentApp;
     private readonly RoleDAO dao;
     private readonly RoleView view;
