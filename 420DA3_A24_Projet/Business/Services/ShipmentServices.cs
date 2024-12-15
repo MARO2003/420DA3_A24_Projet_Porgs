@@ -26,7 +26,7 @@ internal class ShipmentServices {
         return result == DialogResult.OK ? newShipment : null;
     }
 
-    public Shipment? OpenShipmentWindowForDetailsView(Shipment shipment) {
+    public Shipment? OpenShipmentWindowForView(Shipment shipment) {
         DialogResult result = this.view.OpenForDetailsView(shipment);
         return result == DialogResult.OK ? shipment : null;
 
@@ -62,8 +62,8 @@ internal class ShipmentServices {
         return dao.Create(shipment);
     }
 
-    public List<Shipment> Search(string criterion, bool includeDeteded = false) {
-        return this.dao.Search(criterion, includeDeteded);
+    public List<Shipment> Search(string criterion) {
+        return this.dao.Search(criterion);
     }
 
 
