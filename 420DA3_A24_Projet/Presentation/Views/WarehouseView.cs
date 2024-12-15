@@ -18,6 +18,8 @@ internal partial class WarehouseView : Form {
         InitializeComponent();
         this.parentApp = application;
     }
+   
+
     /// <summary>
     /// The <see cref="ViewActionsEnum"/> value indicating the intent for which the window
     /// is currently opened or was opened last.
@@ -123,29 +125,29 @@ internal partial class WarehouseView : Form {
     }
 
     /// <summary>
-    /// Loads the data of a given <paramref name="role"/> in the <see cref="WarehouseView"/>
+    /// Loads the data of a given <paramref name="warehouse"/> in the <see cref="WarehouseView"/>
     /// window's controls.
     /// </summary>
-    /// <param name="role"></param>
+    /// <param name="warehouse"></param>
     /// <returns></returns>
-    private Role LoadDataInControls(Warehouse warehouse) {
+    private Warehouse LoadDataInControls(Warehouse warehouse) {
         this.idValue.Text = warehouse.Id.ToString();
         this.nameValue.Text = warehouse.Name;
-        this.AdressValue.Text = warehouse.AddressId;
+        this.AdressValue.Text = warehouse.AddressId+"";
         this.dateCreatedValue.Text = warehouse.DateCreated.ToString();
         return warehouse;
     }
 
     /// <summary>
     /// Takes data from the basic <see cref="WarehouseView"/>'s controls and assigns
-    /// it to the given <paramref name="role"/>.
+    /// it to the given <paramref name="warehouse"/>.
     /// </summary>
-    /// <param name="role"></param>
+    /// <param name="warehouse"></param>
     /// <returns></returns>
-    private Role SaveDataFromControls(Role role) {
-        role.Name = this.nameValue.Text.Trim();
-        role.Description = this.AdressValue.Text.Trim();
-        return role;
+    private Warehouse SaveDataFromControls(Warehouse warehouse) {
+        warehouse.Name = this.nameValue.Text.Trim();
+        warehouse.AddressId =int.Parse( this.AdressValue.Text.Trim());
+        return warehouse;
     }
 
     private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e) {

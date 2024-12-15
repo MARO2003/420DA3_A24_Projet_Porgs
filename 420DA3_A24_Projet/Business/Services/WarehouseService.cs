@@ -10,9 +10,32 @@ using _420DA3_A24_Projet.Business.Domain;
 using _420DA3_A24_Projet.DataAccess.DAOs;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 
 internal class WarehouseService {
     private  WarehouseDAO warehouseDAO;
+
+    public Warehouse? OpenWarehouseWindowForCreation() {
+        Warehouse newwarehouse = (Warehouse) FormatterServices.GetUninitializedObject(typeof(Warehouse));
+        DialogResult result = this.view.OpenForCreation(newWarehouse);
+        return result == DialogResult.OK ? newWarehouse : null;
+    }
+
+    public Warehouse? OpenWarehouseWindowForDetailsView(Warehouse wh) {
+        DialogResult result = this.view.OpenForDetailsView(wh);
+        return result == DialogResult.OK ? wh : null;
+    }
+
+    public Warehouse? OpenWarehouseWindowForEdition(Warehouse wh) {
+        DialogResult result = this.view.OpenForEdition(wh);
+        return result == DialogResult.OK ? wh : null;
+    }
+
+    public Warehouse? OpenWarehouseWindowForDeletion(Warehouse wh) {
+        DialogResult result = this.view.OpenForDeletion(wh);
+        return result == DialogResult.OK ? wh : null;
+    }
+
 
     public WarehouseService(WarehouseDAO warehouseDAO) {
         this.warehouseDAO = warehouseDAO;

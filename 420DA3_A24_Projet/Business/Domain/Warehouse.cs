@@ -81,8 +81,12 @@ namespace _420DA3_A24_Projet.Business.Domain;
         public static bool ValidateWarehouseName(string warehousename) {
             return warehousename.Length<= WAREHOUSE_NAME_MAX_LENGTH; 
         }
-
-        
+    public override string ToString() {
+        return     $"#{this.Id} - {this.name} - {this.Address.ToString}";
 
     }
+
+
+
+}
 
