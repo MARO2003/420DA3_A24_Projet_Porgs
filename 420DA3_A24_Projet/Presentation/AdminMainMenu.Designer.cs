@@ -31,8 +31,25 @@ partial class AdminMainMenu {
         this.purchaseOrderMainPanel = new Panel();
         this.purchaseOrderManagementLabel = new Label();
         this.shipmentMainPanel = new Panel();
+        this.tableLayoutPanel2 = new TableLayoutPanel();
+        this.panel3 = new Panel();
+        this.btnViewExpedion = new Button();
+        this.expeditionSearchResults = new ListBox();
+        this.ExpeditionSearchtextBox = new TextBox();
+        this.createExpeditionTLP = new TableLayoutPanel();
+        this.createExpeditionPanel = new Panel();
+        this.btnCreateExpedition = new Button();
         this.shipmentManagementLabel = new Label();
         this.shipOrderMainPanel = new Panel();
+        this.ShipOSearchResults = new ListBox();
+        this.textBox2 = new TextBox();
+        this.createShipOTLP = new TableLayoutPanel();
+        this.CreateShipO = new Button();
+        this.ShipOButtonsTLP = new TableLayoutPanel();
+        this.panel5 = new Panel();
+        this.deleteShipObtn = new Button();
+        this.updateShipObtn = new Button();
+        this.ViewShipObtn = new Button();
         this.shipOrderManagementLabel = new Label();
         this.addressMainPanel = new Panel();
         this.adresseSearchResults = new ListBox();
@@ -47,6 +64,15 @@ partial class AdminMainMenu {
         this.btnCreateAdresse = new Button();
         this.addressManagementLabel = new Label();
         this.warehouseMainPanel = new Panel();
+        this.whSearchResults = new ListBox();
+        this.whSearxhtextBox1 = new TextBox();
+        this.createWhTLP = new TableLayoutPanel();
+        this.CreerWhBtn = new Button();
+        this.whButtonsTLP = new TableLayoutPanel();
+        this.panel4 = new Panel();
+        this.deletewhbtn = new Button();
+        this.EditWhbtn = new Button();
+        this.viewWhbtn = new Button();
         this.warehouseManagementLabel = new Label();
         this.supplierMainPanel = new Panel();
         this.supplierManagementLabel = new Label();
@@ -76,25 +102,27 @@ partial class AdminMainMenu {
         this.createUserTLP = new TableLayoutPanel();
         this.buttonCreateUser = new Button();
         this.userManagementLabel = new Label();
-        this.createExpeditionTLP = new TableLayoutPanel();
-        this.createExpeditionPanel = new Panel();
-        this.btnCreateExpedition = new Button();
-        this.ExpeditionSearchtextBox = new TextBox();
-        this.expeditionSearchResults = new ListBox();
-        this.tableLayoutPanel2 = new TableLayoutPanel();
-        this.panel3 = new Panel();
-        this.btnViewExpedion = new Button();
         this.bottomBarPanel.SuspendLayout();
         this.centerTableLayoutPanel.SuspendLayout();
         this.purchaseOrderMainPanel.SuspendLayout();
         this.shipmentMainPanel.SuspendLayout();
+        this.tableLayoutPanel2.SuspendLayout();
+        this.panel3.SuspendLayout();
+        this.createExpeditionTLP.SuspendLayout();
+        this.createExpeditionPanel.SuspendLayout();
         this.shipOrderMainPanel.SuspendLayout();
+        this.createShipOTLP.SuspendLayout();
+        this.ShipOButtonsTLP.SuspendLayout();
+        this.panel5.SuspendLayout();
         this.addressMainPanel.SuspendLayout();
         this.tableLayoutPanel1.SuspendLayout();
         this.panel1.SuspendLayout();
         this.createAdresseTLP.SuspendLayout();
         this.createAdressePanel.SuspendLayout();
         this.warehouseMainPanel.SuspendLayout();
+        this.createWhTLP.SuspendLayout();
+        this.whButtonsTLP.SuspendLayout();
+        this.panel4.SuspendLayout();
         this.supplierMainPanel.SuspendLayout();
         this.productMainPanel.SuspendLayout();
         this.clientMainPanel.SuspendLayout();
@@ -106,10 +134,6 @@ partial class AdminMainMenu {
         this.userButtonsTLP.SuspendLayout();
         this.userActionButtonsPanel.SuspendLayout();
         this.createUserTLP.SuspendLayout();
-        this.createExpeditionTLP.SuspendLayout();
-        this.createExpeditionPanel.SuspendLayout();
-        this.tableLayoutPanel2.SuspendLayout();
-        this.panel3.SuspendLayout();
         this.SuspendLayout();
         // 
         // topBarPanel
@@ -208,6 +232,95 @@ partial class AdminMainMenu {
         this.shipmentMainPanel.Size = new Size(279, 402);
         this.shipmentMainPanel.TabIndex = 8;
         // 
+        // tableLayoutPanel2
+        // 
+        this.tableLayoutPanel2.ColumnCount = 3;
+        this.tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
+        this.tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.tableLayoutPanel2.Controls.Add(this.panel3, 1, 0);
+        this.tableLayoutPanel2.Dock = DockStyle.Bottom;
+        this.tableLayoutPanel2.Location = new Point(0, 334);
+        this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+        this.tableLayoutPanel2.RowCount = 1;
+        this.tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.tableLayoutPanel2.Size = new Size(279, 68);
+        this.tableLayoutPanel2.TabIndex = 6;
+        // 
+        // panel3
+        // 
+        this.panel3.Controls.Add(this.btnViewExpedion);
+        this.panel3.Dock = DockStyle.Fill;
+        this.panel3.Location = new Point(57, 3);
+        this.panel3.Name = "panel3";
+        this.panel3.Size = new Size(165, 62);
+        this.panel3.TabIndex = 0;
+        // 
+        // btnViewExpedion
+        // 
+        this.btnViewExpedion.Location = new Point(3, 24);
+        this.btnViewExpedion.Name = "btnViewExpedion";
+        this.btnViewExpedion.Size = new Size(163, 38);
+        this.btnViewExpedion.TabIndex = 0;
+        this.btnViewExpedion.Text = "Voir Détails";
+        this.btnViewExpedion.UseVisualStyleBackColor = true;
+        this.btnViewExpedion.Click += this.btnViewExpedion_Click;
+        // 
+        // expeditionSearchResults
+        // 
+        this.expeditionSearchResults.Dock = DockStyle.Fill;
+        this.expeditionSearchResults.FormattingEnabled = true;
+        this.expeditionSearchResults.ItemHeight = 25;
+        this.expeditionSearchResults.Location = new Point(0, 137);
+        this.expeditionSearchResults.Name = "expeditionSearchResults";
+        this.expeditionSearchResults.Size = new Size(279, 265);
+        this.expeditionSearchResults.TabIndex = 5;
+        this.expeditionSearchResults.SelectedIndexChanged += this.expeditionSearchResults_SelectedIndexChanged;
+        // 
+        // ExpeditionSearchtextBox
+        // 
+        this.ExpeditionSearchtextBox.Dock = DockStyle.Top;
+        this.ExpeditionSearchtextBox.Location = new Point(0, 106);
+        this.ExpeditionSearchtextBox.Name = "ExpeditionSearchtextBox";
+        this.ExpeditionSearchtextBox.PlaceholderText = "Recherche une expedition";
+        this.ExpeditionSearchtextBox.Size = new Size(279, 31);
+        this.ExpeditionSearchtextBox.TabIndex = 4;
+        this.ExpeditionSearchtextBox.TextChanged += this.ExpeditionSearchtextBox_TextChanged;
+        // 
+        // createExpeditionTLP
+        // 
+        this.createExpeditionTLP.ColumnCount = 3;
+        this.createExpeditionTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.createExpeditionTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
+        this.createExpeditionTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.createExpeditionTLP.Controls.Add(this.createExpeditionPanel, 1, 0);
+        this.createExpeditionTLP.Dock = DockStyle.Top;
+        this.createExpeditionTLP.Location = new Point(0, 38);
+        this.createExpeditionTLP.Name = "createExpeditionTLP";
+        this.createExpeditionTLP.RowCount = 1;
+        this.createExpeditionTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.createExpeditionTLP.Size = new Size(279, 68);
+        this.createExpeditionTLP.TabIndex = 1;
+        // 
+        // createExpeditionPanel
+        // 
+        this.createExpeditionPanel.Controls.Add(this.btnCreateExpedition);
+        this.createExpeditionPanel.Dock = DockStyle.Fill;
+        this.createExpeditionPanel.Location = new Point(57, 3);
+        this.createExpeditionPanel.Name = "createExpeditionPanel";
+        this.createExpeditionPanel.Size = new Size(165, 62);
+        this.createExpeditionPanel.TabIndex = 0;
+        // 
+        // btnCreateExpedition
+        // 
+        this.btnCreateExpedition.Location = new Point(3, 24);
+        this.btnCreateExpedition.Name = "btnCreateExpedition";
+        this.btnCreateExpedition.Size = new Size(163, 38);
+        this.btnCreateExpedition.TabIndex = 0;
+        this.btnCreateExpedition.Text = "Créer Expédition";
+        this.btnCreateExpedition.UseVisualStyleBackColor = true;
+        this.btnCreateExpedition.Click += this.btnCreateExpedition_Click;
+        // 
         // shipmentManagementLabel
         // 
         this.shipmentManagementLabel.Dock = DockStyle.Top;
@@ -222,6 +335,10 @@ partial class AdminMainMenu {
         // 
         // shipOrderMainPanel
         // 
+        this.shipOrderMainPanel.Controls.Add(this.ShipOSearchResults);
+        this.shipOrderMainPanel.Controls.Add(this.textBox2);
+        this.shipOrderMainPanel.Controls.Add(this.createShipOTLP);
+        this.shipOrderMainPanel.Controls.Add(this.ShipOButtonsTLP);
         this.shipOrderMainPanel.Controls.Add(this.shipOrderManagementLabel);
         this.shipOrderMainPanel.Dock = DockStyle.Fill;
         this.shipOrderMainPanel.Location = new Point(578, 417);
@@ -229,6 +346,118 @@ partial class AdminMainMenu {
         this.shipOrderMainPanel.Name = "shipOrderMainPanel";
         this.shipOrderMainPanel.Size = new Size(279, 402);
         this.shipOrderMainPanel.TabIndex = 7;
+        // 
+        // ShipOSearchResults
+        // 
+        this.ShipOSearchResults.Dock = DockStyle.Fill;
+        this.ShipOSearchResults.FormattingEnabled = true;
+        this.ShipOSearchResults.ItemHeight = 25;
+        this.ShipOSearchResults.Location = new Point(0, 136);
+        this.ShipOSearchResults.Margin = new Padding(4, 5, 4, 5);
+        this.ShipOSearchResults.Name = "ShipOSearchResults";
+        this.ShipOSearchResults.Size = new Size(279, 133);
+        this.ShipOSearchResults.TabIndex = 7;
+        // 
+        // textBox2
+        // 
+        this.textBox2.Dock = DockStyle.Top;
+        this.textBox2.Location = new Point(0, 105);
+        this.textBox2.Margin = new Padding(4, 5, 4, 5);
+        this.textBox2.Name = "textBox2";
+        this.textBox2.PlaceholderText = "Rechercher un Ordre d'exp";
+        this.textBox2.Size = new Size(279, 31);
+        this.textBox2.TabIndex = 6;
+        // 
+        // createShipOTLP
+        // 
+        this.createShipOTLP.ColumnCount = 3;
+        this.createShipOTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.createShipOTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
+        this.createShipOTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.createShipOTLP.Controls.Add(this.CreateShipO, 1, 0);
+        this.createShipOTLP.Dock = DockStyle.Top;
+        this.createShipOTLP.Location = new Point(0, 38);
+        this.createShipOTLP.Margin = new Padding(4, 5, 4, 5);
+        this.createShipOTLP.Name = "createShipOTLP";
+        this.createShipOTLP.RowCount = 1;
+        this.createShipOTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.createShipOTLP.Size = new Size(279, 67);
+        this.createShipOTLP.TabIndex = 5;
+        // 
+        // CreateShipO
+        // 
+        this.CreateShipO.Dock = DockStyle.Bottom;
+        this.CreateShipO.Location = new Point(58, 24);
+        this.CreateShipO.Margin = new Padding(4, 5, 4, 5);
+        this.CreateShipO.Name = "CreateShipO";
+        this.CreateShipO.Size = new Size(163, 38);
+        this.CreateShipO.TabIndex = 0;
+        this.CreateShipO.Text = "Créer Ordre Exp";
+        this.CreateShipO.UseVisualStyleBackColor = true;
+        // 
+        // ShipOButtonsTLP
+        // 
+        this.ShipOButtonsTLP.ColumnCount = 3;
+        this.ShipOButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.ShipOButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
+        this.ShipOButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.ShipOButtonsTLP.Controls.Add(this.panel5, 1, 0);
+        this.ShipOButtonsTLP.Dock = DockStyle.Bottom;
+        this.ShipOButtonsTLP.Location = new Point(0, 269);
+        this.ShipOButtonsTLP.Margin = new Padding(4, 5, 4, 5);
+        this.ShipOButtonsTLP.Name = "ShipOButtonsTLP";
+        this.ShipOButtonsTLP.RowCount = 1;
+        this.ShipOButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.ShipOButtonsTLP.Size = new Size(279, 133);
+        this.ShipOButtonsTLP.TabIndex = 4;
+        // 
+        // panel5
+        // 
+        this.panel5.Controls.Add(this.deleteShipObtn);
+        this.panel5.Controls.Add(this.updateShipObtn);
+        this.panel5.Controls.Add(this.ViewShipObtn);
+        this.panel5.Dock = DockStyle.Fill;
+        this.panel5.Location = new Point(54, 8);
+        this.panel5.Margin = new Padding(0, 8, 0, 0);
+        this.panel5.Name = "panel5";
+        this.panel5.Size = new Size(171, 125);
+        this.panel5.TabIndex = 0;
+        // 
+        // deleteShipObtn
+        // 
+        this.deleteShipObtn.Dock = DockStyle.Top;
+        this.deleteShipObtn.Enabled = false;
+        this.deleteShipObtn.Location = new Point(0, 76);
+        this.deleteShipObtn.Margin = new Padding(4, 5, 4, 5);
+        this.deleteShipObtn.Name = "deleteShipObtn";
+        this.deleteShipObtn.Size = new Size(171, 38);
+        this.deleteShipObtn.TabIndex = 2;
+        this.deleteShipObtn.Text = "Supprimer";
+        this.deleteShipObtn.UseVisualStyleBackColor = true;
+        // 
+        // updateShipObtn
+        // 
+        this.updateShipObtn.Dock = DockStyle.Top;
+        this.updateShipObtn.Enabled = false;
+        this.updateShipObtn.Location = new Point(0, 38);
+        this.updateShipObtn.Margin = new Padding(4, 5, 4, 5);
+        this.updateShipObtn.Name = "updateShipObtn";
+        this.updateShipObtn.Size = new Size(171, 38);
+        this.updateShipObtn.TabIndex = 1;
+        this.updateShipObtn.Text = "Modifier";
+        this.updateShipObtn.UseVisualStyleBackColor = true;
+        // 
+        // ViewShipObtn
+        // 
+        this.ViewShipObtn.Dock = DockStyle.Top;
+        this.ViewShipObtn.Enabled = false;
+        this.ViewShipObtn.Location = new Point(0, 0);
+        this.ViewShipObtn.Margin = new Padding(4, 5, 4, 5);
+        this.ViewShipObtn.Name = "ViewShipObtn";
+        this.ViewShipObtn.Size = new Size(171, 38);
+        this.ViewShipObtn.TabIndex = 0;
+        this.ViewShipObtn.Text = "Voir Détails";
+        this.ViewShipObtn.UseVisualStyleBackColor = true;
         // 
         // shipOrderManagementLabel
         // 
@@ -384,6 +613,10 @@ partial class AdminMainMenu {
         // 
         // warehouseMainPanel
         // 
+        this.warehouseMainPanel.Controls.Add(this.whSearchResults);
+        this.warehouseMainPanel.Controls.Add(this.whSearxhtextBox1);
+        this.warehouseMainPanel.Controls.Add(this.createWhTLP);
+        this.warehouseMainPanel.Controls.Add(this.whButtonsTLP);
         this.warehouseMainPanel.Controls.Add(this.warehouseManagementLabel);
         this.warehouseMainPanel.Dock = DockStyle.Fill;
         this.warehouseMainPanel.Location = new Point(4, 417);
@@ -391,6 +624,118 @@ partial class AdminMainMenu {
         this.warehouseMainPanel.Name = "warehouseMainPanel";
         this.warehouseMainPanel.Size = new Size(279, 402);
         this.warehouseMainPanel.TabIndex = 5;
+        // 
+        // whSearchResults
+        // 
+        this.whSearchResults.Dock = DockStyle.Fill;
+        this.whSearchResults.FormattingEnabled = true;
+        this.whSearchResults.ItemHeight = 25;
+        this.whSearchResults.Location = new Point(0, 136);
+        this.whSearchResults.Margin = new Padding(4, 5, 4, 5);
+        this.whSearchResults.Name = "whSearchResults";
+        this.whSearchResults.Size = new Size(279, 133);
+        this.whSearchResults.TabIndex = 6;
+        // 
+        // whSearxhtextBox1
+        // 
+        this.whSearxhtextBox1.Dock = DockStyle.Top;
+        this.whSearxhtextBox1.Location = new Point(0, 105);
+        this.whSearxhtextBox1.Margin = new Padding(4, 5, 4, 5);
+        this.whSearxhtextBox1.Name = "whSearxhtextBox1";
+        this.whSearxhtextBox1.PlaceholderText = "Rechercher un entrepot";
+        this.whSearxhtextBox1.Size = new Size(279, 31);
+        this.whSearxhtextBox1.TabIndex = 5;
+        // 
+        // createWhTLP
+        // 
+        this.createWhTLP.ColumnCount = 3;
+        this.createWhTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.createWhTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
+        this.createWhTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.createWhTLP.Controls.Add(this.CreerWhBtn, 1, 0);
+        this.createWhTLP.Dock = DockStyle.Top;
+        this.createWhTLP.Location = new Point(0, 38);
+        this.createWhTLP.Margin = new Padding(4, 5, 4, 5);
+        this.createWhTLP.Name = "createWhTLP";
+        this.createWhTLP.RowCount = 1;
+        this.createWhTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.createWhTLP.Size = new Size(279, 67);
+        this.createWhTLP.TabIndex = 4;
+        // 
+        // CreerWhBtn
+        // 
+        this.CreerWhBtn.Dock = DockStyle.Bottom;
+        this.CreerWhBtn.Location = new Point(58, 24);
+        this.CreerWhBtn.Margin = new Padding(4, 5, 4, 5);
+        this.CreerWhBtn.Name = "CreerWhBtn";
+        this.CreerWhBtn.Size = new Size(163, 38);
+        this.CreerWhBtn.TabIndex = 0;
+        this.CreerWhBtn.Text = "Créer entrepot";
+        this.CreerWhBtn.UseVisualStyleBackColor = true;
+        // 
+        // whButtonsTLP
+        // 
+        this.whButtonsTLP.ColumnCount = 3;
+        this.whButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.whButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
+        this.whButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.whButtonsTLP.Controls.Add(this.panel4, 1, 0);
+        this.whButtonsTLP.Dock = DockStyle.Bottom;
+        this.whButtonsTLP.Location = new Point(0, 269);
+        this.whButtonsTLP.Margin = new Padding(4, 5, 4, 5);
+        this.whButtonsTLP.Name = "whButtonsTLP";
+        this.whButtonsTLP.RowCount = 1;
+        this.whButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.whButtonsTLP.Size = new Size(279, 133);
+        this.whButtonsTLP.TabIndex = 3;
+        // 
+        // panel4
+        // 
+        this.panel4.Controls.Add(this.deletewhbtn);
+        this.panel4.Controls.Add(this.EditWhbtn);
+        this.panel4.Controls.Add(this.viewWhbtn);
+        this.panel4.Dock = DockStyle.Fill;
+        this.panel4.Location = new Point(54, 8);
+        this.panel4.Margin = new Padding(0, 8, 0, 0);
+        this.panel4.Name = "panel4";
+        this.panel4.Size = new Size(171, 125);
+        this.panel4.TabIndex = 0;
+        // 
+        // deletewhbtn
+        // 
+        this.deletewhbtn.Dock = DockStyle.Top;
+        this.deletewhbtn.Enabled = false;
+        this.deletewhbtn.Location = new Point(0, 76);
+        this.deletewhbtn.Margin = new Padding(4, 5, 4, 5);
+        this.deletewhbtn.Name = "deletewhbtn";
+        this.deletewhbtn.Size = new Size(171, 38);
+        this.deletewhbtn.TabIndex = 2;
+        this.deletewhbtn.Text = "Supprimer";
+        this.deletewhbtn.UseVisualStyleBackColor = true;
+        // 
+        // EditWhbtn
+        // 
+        this.EditWhbtn.Dock = DockStyle.Top;
+        this.EditWhbtn.Enabled = false;
+        this.EditWhbtn.Location = new Point(0, 38);
+        this.EditWhbtn.Margin = new Padding(4, 5, 4, 5);
+        this.EditWhbtn.Name = "EditWhbtn";
+        this.EditWhbtn.Size = new Size(171, 38);
+        this.EditWhbtn.TabIndex = 1;
+        this.EditWhbtn.Text = "Modifier";
+        this.EditWhbtn.UseVisualStyleBackColor = true;
+        // 
+        // viewWhbtn
+        // 
+        this.viewWhbtn.Dock = DockStyle.Top;
+        this.viewWhbtn.Enabled = false;
+        this.viewWhbtn.Location = new Point(0, 0);
+        this.viewWhbtn.Margin = new Padding(4, 5, 4, 5);
+        this.viewWhbtn.Name = "viewWhbtn";
+        this.viewWhbtn.Size = new Size(171, 38);
+        this.viewWhbtn.TabIndex = 0;
+        this.viewWhbtn.Text = "Voir Détails";
+        this.viewWhbtn.UseVisualStyleBackColor = true;
         // 
         // warehouseManagementLabel
         // 
@@ -758,95 +1103,6 @@ partial class AdminMainMenu {
         this.userManagementLabel.Text = "Gestion des utilisateurs";
         this.userManagementLabel.TextAlign = ContentAlignment.MiddleCenter;
         // 
-        // createExpeditionTLP
-        // 
-        this.createExpeditionTLP.ColumnCount = 3;
-        this.createExpeditionTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.createExpeditionTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
-        this.createExpeditionTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.createExpeditionTLP.Controls.Add(this.createExpeditionPanel, 1, 0);
-        this.createExpeditionTLP.Dock = DockStyle.Top;
-        this.createExpeditionTLP.Location = new Point(0, 38);
-        this.createExpeditionTLP.Name = "createExpeditionTLP";
-        this.createExpeditionTLP.RowCount = 1;
-        this.createExpeditionTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.createExpeditionTLP.Size = new Size(279, 68);
-        this.createExpeditionTLP.TabIndex = 1;
-        // 
-        // createExpeditionPanel
-        // 
-        this.createExpeditionPanel.Controls.Add(this.btnCreateExpedition);
-        this.createExpeditionPanel.Dock = DockStyle.Fill;
-        this.createExpeditionPanel.Location = new Point(57, 3);
-        this.createExpeditionPanel.Name = "createExpeditionPanel";
-        this.createExpeditionPanel.Size = new Size(165, 62);
-        this.createExpeditionPanel.TabIndex = 0;
-        // 
-        // btnCreateExpedition
-        // 
-        this.btnCreateExpedition.Location = new Point(3, 24);
-        this.btnCreateExpedition.Name = "btnCreateExpedition";
-        this.btnCreateExpedition.Size = new Size(163, 38);
-        this.btnCreateExpedition.TabIndex = 0;
-        this.btnCreateExpedition.Text = "Créer Expédition";
-        this.btnCreateExpedition.UseVisualStyleBackColor = true;
-        this.btnCreateExpedition.Click += this.btnCreateExpedition_Click;
-        // 
-        // ExpeditionSearchtextBox
-        // 
-        this.ExpeditionSearchtextBox.Dock = DockStyle.Top;
-        this.ExpeditionSearchtextBox.Location = new Point(0, 106);
-        this.ExpeditionSearchtextBox.Name = "ExpeditionSearchtextBox";
-        this.ExpeditionSearchtextBox.PlaceholderText = "Recherche une expedition";
-        this.ExpeditionSearchtextBox.Size = new Size(279, 31);
-        this.ExpeditionSearchtextBox.TabIndex = 4;
-        this.ExpeditionSearchtextBox.TextChanged += this.ExpeditionSearchtextBox_TextChanged;
-        // 
-        // expeditionSearchResults
-        // 
-        this.expeditionSearchResults.Dock = DockStyle.Fill;
-        this.expeditionSearchResults.FormattingEnabled = true;
-        this.expeditionSearchResults.ItemHeight = 25;
-        this.expeditionSearchResults.Location = new Point(0, 137);
-        this.expeditionSearchResults.Name = "expeditionSearchResults";
-        this.expeditionSearchResults.Size = new Size(279, 265);
-        this.expeditionSearchResults.TabIndex = 5;
-        this.expeditionSearchResults.SelectedIndexChanged += this.expeditionSearchResults_SelectedIndexChanged;
-        // 
-        // tableLayoutPanel2
-        // 
-        this.tableLayoutPanel2.ColumnCount = 3;
-        this.tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
-        this.tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.tableLayoutPanel2.Controls.Add(this.panel3, 1, 0);
-        this.tableLayoutPanel2.Dock = DockStyle.Bottom;
-        this.tableLayoutPanel2.Location = new Point(0, 334);
-        this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-        this.tableLayoutPanel2.RowCount = 1;
-        this.tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.tableLayoutPanel2.Size = new Size(279, 68);
-        this.tableLayoutPanel2.TabIndex = 6;
-        // 
-        // panel3
-        // 
-        this.panel3.Controls.Add(this.btnViewExpedion);
-        this.panel3.Dock = DockStyle.Fill;
-        this.panel3.Location = new Point(57, 3);
-        this.panel3.Name = "panel3";
-        this.panel3.Size = new Size(165, 62);
-        this.panel3.TabIndex = 0;
-        // 
-        // btnViewExpedion
-        // 
-        this.btnViewExpedion.Location = new Point(3, 24);
-        this.btnViewExpedion.Name = "btnViewExpedion";
-        this.btnViewExpedion.Size = new Size(163, 38);
-        this.btnViewExpedion.TabIndex = 0;
-        this.btnViewExpedion.Text = "Voir Détails";
-        this.btnViewExpedion.UseVisualStyleBackColor = true;
-        this.btnViewExpedion.Click += this.btnViewExpedion_Click;
-        // 
         // AdminMainMenu
         // 
         this.AutoScaleDimensions = new SizeF(10F, 25F);
@@ -865,7 +1121,15 @@ partial class AdminMainMenu {
         this.purchaseOrderMainPanel.ResumeLayout(false);
         this.shipmentMainPanel.ResumeLayout(false);
         this.shipmentMainPanel.PerformLayout();
+        this.tableLayoutPanel2.ResumeLayout(false);
+        this.panel3.ResumeLayout(false);
+        this.createExpeditionTLP.ResumeLayout(false);
+        this.createExpeditionPanel.ResumeLayout(false);
         this.shipOrderMainPanel.ResumeLayout(false);
+        this.shipOrderMainPanel.PerformLayout();
+        this.createShipOTLP.ResumeLayout(false);
+        this.ShipOButtonsTLP.ResumeLayout(false);
+        this.panel5.ResumeLayout(false);
         this.addressMainPanel.ResumeLayout(false);
         this.addressMainPanel.PerformLayout();
         this.tableLayoutPanel1.ResumeLayout(false);
@@ -873,6 +1137,10 @@ partial class AdminMainMenu {
         this.createAdresseTLP.ResumeLayout(false);
         this.createAdressePanel.ResumeLayout(false);
         this.warehouseMainPanel.ResumeLayout(false);
+        this.warehouseMainPanel.PerformLayout();
+        this.createWhTLP.ResumeLayout(false);
+        this.whButtonsTLP.ResumeLayout(false);
+        this.panel4.ResumeLayout(false);
         this.supplierMainPanel.ResumeLayout(false);
         this.productMainPanel.ResumeLayout(false);
         this.clientMainPanel.ResumeLayout(false);
@@ -886,10 +1154,6 @@ partial class AdminMainMenu {
         this.userButtonsTLP.ResumeLayout(false);
         this.userActionButtonsPanel.ResumeLayout(false);
         this.createUserTLP.ResumeLayout(false);
-        this.createExpeditionTLP.ResumeLayout(false);
-        this.createExpeditionPanel.ResumeLayout(false);
-        this.tableLayoutPanel2.ResumeLayout(false);
-        this.panel3.ResumeLayout(false);
         this.ResumeLayout(false);
     }
 
@@ -955,4 +1219,22 @@ partial class AdminMainMenu {
     private Panel panel3;
     private Button btnViewExpedion;
     private ListBox expeditionSearchResults;
+    private ListBox ShipOSearchResults;
+    private TextBox textBox2;
+    private TableLayoutPanel createShipOTLP;
+    private Button CreateShipO;
+    private TableLayoutPanel ShipOButtonsTLP;
+    private Panel panel5;
+    private Button deleteShipObtn;
+    private Button updateShipObtn;
+    private Button ViewShipObtn;
+    private ListBox whSearchResults;
+    private TextBox whSearxhtextBox1;
+    private TableLayoutPanel createWhTLP;
+    private Button CreerWhBtn;
+    private TableLayoutPanel whButtonsTLP;
+    private Panel panel4;
+    private Button deletewhbtn;
+    private Button EditWhbtn;
+    private Button viewWhbtn;
 }

@@ -388,8 +388,237 @@ internal partial class AdminMainMenu : Form {
         if (selectedShipment != null) {
             throw new Exception("Veuillez selectionner une expedition");
         }
-        _= this.parentApp.ShipmentServices.OpenShipmentWindowForView(selectedShipment);
+        _= this.parentApp.ShipmentServices.OpenShipmentWindowForDetailsView(selectedShipment);
 
     }
+    #endregion
+
+    #region GESTION DES ENTREPÔTS
+
+    /// <summary>
+    /// Vider <see cref="Warehouse"/> de la liste <see cref="whSearchResults"/> et la remplir avec la liste a jour
+    /// <paramref name="searchResults"/>.
+    /// </summary>
+    /// <param name="searchResults"></param>
+    private void ReloadWarehouseSearchResults(List<Warehouse> searchResults) {
+        
+            this.whSearchResults.SelectedItem = null;
+            this.whSearchResults.SelectedIndex = -1;
+            this.whSearchResults.Items.Clear();
+            foreach (Warehouse warehouse in searchResults) {
+                _ = this.whSearchResults.Items.Add(warehouse);
+            }
+            this.whSearchResults.Refresh();
+
+        
+    }
+
+    /// <summary>
+    /// fonction pour activer les boutons
+    /// </summary>
+    private void ActivateWarehouseActionButtons() {
+        this.deletewhbtn.Enabled = true;
+        this.EditWhbtn.Enabled = true;
+        this.viewWhbtn.Enabled = true;
+    }
+
+    /// <summary>
+    /// fonction pour desactiver les boutons
+    /// </summary>
+    private void DeactivateWarehouseActionButtons() {
+        this.deletewhbtn.Enabled = false;
+        this.EditWhbtn.Enabled = false;
+        this.viewWhbtn.Enabled = false;
+    }
+
+    private void ButtonCreateWarehouse_Click(object sender, EventArgs e) {
+       
+            Warehouse? createdWarehouse = this.parentApp.WarehouseService.OpenWarehouseWindowForCreation();
+        if (createdWarehouse != null) {
+            _ = this.whSearchResults.Items.Add(createdWarehouse);
+            this.whSearchResults.SelectedItem = createdWarehouse;
+        } 
+
+
+      
+    }
+
+    private void WarehouseSearchTextBox_TextChanged(object sender, EventArgs e) {
+       
+            List<Warehouse> results = this.parentApp.WarehouseService.SearchWarehouses(this.whSearchResults.Text.Trim());
+            this.ReloadWarehouseSearchResults(results);
+
+       
+    }
+
+    private void WarehouseSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+        if (selectedWarehouse != null) {
+            this.ActivateWarehouseActionButtons();
+        } else {
+            this.DeactivateWarehouseActionButtons();
+        }
+    }
+
+    private void ButtonViewWarehouse_Click(object sender, EventArgs e) {
+        
+            Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+            if (selectedWarehouse != null) {
+                _ = this.parentApp.WarehouseService.OpenWarehouseWindowForDetailsView(selectedWarehouse);
+        } else {
+            throw new Exception("Pas de selection faite");
+
+        }
+    }
+
+    private void ButtonEditWarehouse_Click(object sender, EventArgs e) {
+       
+            Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+            if (selectedWarehouse != null) {
+                Warehouse? UpdatedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForEdition(selectedWarehouse);
+                if (UpdatedWh is Warehouse) {
+                    this.whSearchResults.RefreshDisplay();
+                }
+            } else {
+            throw new Exception("pas de selection faite");
+
+        }
+
+
+    }
+
+    private void ButtonDeleteWarehouse_Click(object sender, EventArgs e) {
+       
+            Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+        if (selectedWarehouse != null) {
+            Warehouse? DeletedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForDeletion(selectedWarehouse);
+            if (DeletedWh is Warehouse) {
+                this.whSearchResults.SelectedItem = null;
+                this.whSearchResults.SelectedIndex = -1;
+                this.whSearchResults.Items.Remove(selectedWarehouse);
+            }
+        } else {
+            throw new Exception("Pas de selection faite");
+
+        }
+    }
+
+    #endregion
+    #region GESTION DES COMMANDES D'EXPÉDITION
+
+    /// <summary>
+    /// Empties the <see cref="ShippingOrder"/> search results <see cref="ListBox"/> then fills it with the given
+    /// <paramref name="searchResults"/>.
+    /// </summary>
+    /// <param name="searchResults"></param>
+    private void ReloadShippingOrderSearchResults(List<ShippingOrder> searchResults) {
+        try {
+            this.ShipOSearchResults.SelectedItem = null;
+            this.ShipOSearchResults.SelectedIndex = -1;
+            this.ShipOSearchResults.Items.Clear();
+            foreach (ShippingOrder order in searchResults) {
+                _ = this.ShipOSearchResults.Items.Add(order);
+            }
+            this.ShipOSearchResults.Refresh();
+
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    /// <summary>
+    /// Enables the shipping order action buttons.
+    /// </summary>
+    private void ActivateShippingOrderActionButtons() {
+        this.deleteShipObtn.Enabled = true;
+        this.updateShipObtn.Enabled = true;
+        this.ViewShipObtn.Enabled = true;
+    }
+
+    /// <summary>
+    /// Disables the shipping order action buttons.
+    /// </summary>
+    private void DeactivateShippingOrderActionButtons() {
+        this.deleteShipObtn.Enabled = false;
+        this.updateShipObtn.Enabled = false;
+        this.ViewShipObtn.Enabled = false;
+    }
+
+    private void ButtonCreateShippingOrder_Click(object sender, EventArgs e) {
+        try {
+            ShippingOrder? createdOrder = this.parentApp.ShippingOrderService.OpenManagementWindowForCreation();
+            if (createdOrder != null) {
+                _ = this.ShipOSearchResults.Items.Add(createdOrder);
+                this.ShipOSearchResults.SelectedItem = createdOrder;
+            }
+
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void ShippingOrderSearchTextBox_TextChanged(object sender, EventArgs e) {
+        try {
+            List<ShippingOrder> results = this.parentApp.ShippingOrderService.ShipOSearchResults(this.shippingOrderSearchTextBox.Text.Trim());
+            this.ReloadShippingOrderSearchResults(results);
+
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void ShippingOrderSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
+        ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
+        if (selectedOrder != null) {
+            this.ActivateShippingOrderActionButtons();
+        } else {
+            this.DeactivateShippingOrderActionButtons();
+        }
+    }
+
+    private void ButtonViewShippingOrder_Click(object sender, EventArgs e) {
+        try {
+            ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
+            if (selectedOrder != null) {
+                _ = this.parentApp.ShippingOrderService.OpenManagementWindowForVisualization(selectedOrder);
+            }
+
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void ButtonEditShippingOrder_Click(object sender, EventArgs e) {
+        try {
+            ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
+            if (selectedOrder != null) {
+                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder);
+                if (wasUpdated) {
+                    this.ShipOSearchResults.RefreshDisplay();
+                }
+            }
+
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void ButtonDeleteShippingOrder_Click(object sender, EventArgs e) {
+        try {
+            ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
+            if (selectedOrder != null) {
+                bool wasDeleted = this.parentApp.ShippingOrderService.OpenManagementWindowForDeletion(selectedOrder);
+                if (wasDeleted) {
+                    this.ShipOSearchResults.SelectedItem = null;
+                    this.ShipOSearchResults.SelectedIndex = -1;
+                    this.ShipOSearchResults.Items.Remove(selectedOrder);
+                }
+            }
+
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
     #endregion
 }
