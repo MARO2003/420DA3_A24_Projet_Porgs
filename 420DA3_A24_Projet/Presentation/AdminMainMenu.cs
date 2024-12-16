@@ -593,7 +593,7 @@ internal partial class AdminMainMenu : Form {
         try {
             ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
             if (selectedOrder != null) {
-                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder,ShipOSearchResults.);
+                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder,ShipOSearchResults);
                 if (wasUpdated) {
                     this.ShipOSearchResults.RefreshDisplay();
                 }
