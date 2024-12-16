@@ -100,7 +100,7 @@ partial class AdminMainMenu {
         this.supplierButtonsTLP = new TableLayoutPanel();
         this.panel4 = new Panel();
         this.tableLayoutPanel3 = new TableLayoutPanel();
-//        this.button1 = new Button();
+        this.button1 = new Button();
         this.buttonDeletePurchaseOrder = new Button();
         this.buttonEditPurchaseOrder = new Button();
         this.buttonViewPurchaseOrder = new Button();
@@ -227,7 +227,6 @@ partial class AdminMainMenu {
         // 
         this.centerTableLayoutPanel.Size = new Size(1436, 826);
         this.centerTableLayoutPanel.TabIndex = 2;
-       // this.centerTableLayoutPanel.Paint += this.centerTableLayoutPanel_Paint;
         // 
         // purchaseOrderMainPanel
         // 
@@ -1109,7 +1108,7 @@ partial class AdminMainMenu {
         this.tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
         this.tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
         this.tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-      // this.tableLayoutPanel3.Controls.Add(this.button1, 1, 0);
+        this.tableLayoutPanel3.Controls.Add(this.button1, 1, 0);
         this.tableLayoutPanel3.Dock = DockStyle.Top;
         this.tableLayoutPanel3.Location = new Point(0, 30);
         this.tableLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
@@ -1121,14 +1120,14 @@ partial class AdminMainMenu {
         // 
         // button1
         // 
-       // this.button1.Dock = DockStyle.Bottom;
-      //  this.button1.Location = new Point(48, 20);
-      //  this.button1.Margin = new Padding(3, 4, 3, 4);
-      //  this.button1.Name = "button1";
-       // this.button1.Size = new Size(131, 30);
-       // this.button1.TabIndex = 0;
-       // this.button1.Text = "Créer Ordre de Restockage";
-        //this.button1.UseVisualStyleBackColor = true;
+        this.button1.Dock = DockStyle.Bottom;
+        this.button1.Location = new Point(48, 20);
+        this.button1.Margin = new Padding(3, 4, 3, 4);
+        this.button1.Name = "button1";
+        this.button1.Size = new Size(131, 30);
+        this.button1.TabIndex = 0;
+        this.button1.Text = "Créer Ordre de Restockage";
+        this.button1.UseVisualStyleBackColor = true;
         // 
         // buttonDeletePurchaseOrder
         // 
