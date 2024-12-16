@@ -147,7 +147,7 @@ internal partial class PurchaseOrderView : Form {
     /// <returns></returns>
     private PurchaseOrder SaveDataFromControls(PurchaseOrder purchaseOrder) {
         purchaseOrder.Status = (PurchaseOrderStatusEnum) Enum.Parse(typeof(PurchaseOrderStatusEnum), this.statusValue.SelectedItem.ToString());
-        purchaseOrder.Quantity = this.quantityValue.Text.Trim();
+        purchaseOrder.Quantity = (int) this.quantityValue.Value;
         return purchaseOrder;
     }
 

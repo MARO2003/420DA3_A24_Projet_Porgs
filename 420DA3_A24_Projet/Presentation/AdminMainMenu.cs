@@ -392,4 +392,16 @@ internal partial class AdminMainMenu : Form {
 
     }
     #endregion
+
+
+    #region GESTION DES SUPPLIERS
+    
+    #endregion
+
+
+
+
+    #region GESTION DES PURCHASEORDERS
+
+    #endregion
 }
