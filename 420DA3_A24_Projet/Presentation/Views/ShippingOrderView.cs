@@ -101,7 +101,7 @@ internal partial class ShippingOrderView : Form {
         this.Ajouterbtn.Enabled=this.Actionbtn.Enabled=this.CreateAdressebtn.Enabled=this.RetirerProduitbtn.Enabled=false;
     }
 
-    private void ChargerProduits(ShippingOrder shippingOrder) {
+    public void ChargerProduits(ShippingOrder shippingOrder) {
         List<ShippingOrderProduct> products = new List<ShippingOrderProduct>();
 
         foreach (ShippingOrderProduct product in shippingOrder.ShippingOrderProducts) {

@@ -389,7 +389,7 @@ internal partial class AdminMainMenu : Form {
         if (selectedShipment != null) {
             throw new Exception("Veuillez selectionner une expedition");
         }
-        _= this.parentApp.ShipmentServices.OpenShipmentWindowForDetailsView(selectedShipment);
+        _ = this.parentApp.ShipmentServices.OpenShipmentWindowForDetailsView(selectedShipment);
 
     }
     #endregion
@@ -402,16 +402,16 @@ internal partial class AdminMainMenu : Form {
     /// </summary>
     /// <param name="searchResults"></param>
     private void ReloadWarehouseSearchResults(List<Warehouse> searchResults) {
-        
-            this.whSearchResults.SelectedItem = null;
-            this.whSearchResults.SelectedIndex = -1;
-            this.whSearchResults.Items.Clear();
-            foreach (Warehouse warehouse in searchResults) {
-                _ = this.whSearchResults.Items.Add(warehouse);
-            }
-            this.whSearchResults.Refresh();
 
-        
+        this.whSearchResults.SelectedItem = null;
+        this.whSearchResults.SelectedIndex = -1;
+        this.whSearchResults.Items.Clear();
+        foreach (Warehouse warehouse in searchResults) {
+            _ = this.whSearchResults.Items.Add(warehouse);
+        }
+        this.whSearchResults.Refresh();
+
+
     }
 
     /// <summary>
@@ -433,23 +433,23 @@ internal partial class AdminMainMenu : Form {
     }
 
     private void ButtonCreateWarehouse_Click(object sender, EventArgs e) {
-       
-            Warehouse? createdWarehouse = this.parentApp.WarehouseService.OpenWarehouseWindowForCreation();
+
+        Warehouse? createdWarehouse = this.parentApp.WarehouseService.OpenWarehouseWindowForCreation();
         if (createdWarehouse != null) {
             _ = this.whSearchResults.Items.Add(createdWarehouse);
             this.whSearchResults.SelectedItem = createdWarehouse;
-        } 
+        }
 
 
-      
+
     }
 
     private void WarehouseSearchTextBox_TextChanged(object sender, EventArgs e) {
-       
-            List<Warehouse> results = this.parentApp.WarehouseService.SearchWarehouses(this.whSearchResults.Text.Trim());
-            this.ReloadWarehouseSearchResults(results);
 
-       
+        List<Warehouse> results = this.parentApp.WarehouseService.SearchWarehouses(this.whSearchResults.Text.Trim());
+        this.ReloadWarehouseSearchResults(results);
+
+
     }
 
     private void WarehouseSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
@@ -462,10 +462,10 @@ internal partial class AdminMainMenu : Form {
     }
 
     private void ButtonViewWarehouse_Click(object sender, EventArgs e) {
-        
-            Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
-            if (selectedWarehouse != null) {
-                _ = this.parentApp.WarehouseService.OpenWarehouseWindowForDetailsView(selectedWarehouse);
+
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+        if (selectedWarehouse != null) {
+            _ = this.parentApp.WarehouseService.OpenWarehouseWindowForDetailsView(selectedWarehouse);
         } else {
             throw new Exception("Pas de selection faite");
 
@@ -473,14 +473,14 @@ internal partial class AdminMainMenu : Form {
     }
 
     private void ButtonEditWarehouse_Click(object sender, EventArgs e) {
-       
-            Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
-            if (selectedWarehouse != null) {
-                Warehouse? UpdatedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForEdition(selectedWarehouse);
-                if (UpdatedWh is Warehouse) {
-                    this.whSearchResults.RefreshDisplay();
-                }
-            } else {
+
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+        if (selectedWarehouse != null) {
+            Warehouse? UpdatedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForEdition(selectedWarehouse);
+            if (UpdatedWh is Warehouse) {
+                this.whSearchResults.RefreshDisplay();
+            }
+        } else {
             throw new Exception("pas de selection faite");
 
         }
@@ -489,8 +489,8 @@ internal partial class AdminMainMenu : Form {
     }
 
     private void ButtonDeleteWarehouse_Click(object sender, EventArgs e) {
-       
-            Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
         if (selectedWarehouse != null) {
             Warehouse? DeletedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForDeletion(selectedWarehouse);
             if (DeletedWh is Warehouse) {
@@ -547,7 +547,7 @@ internal partial class AdminMainMenu : Form {
 
     private void ButtonCreateShippingOrder_Click(object sender, EventArgs e) {
         try {
-            ShippingOrder? createdOrder = this.parentApp.ShippingOrderService.OpenManagementWindowForCreation();
+            ShippingOrder? createdOrder = this.parentApp.ShippingOrderService.InsertShippingOrder();
             if (createdOrder != null) {
                 _ = this.ShipOSearchResults.Items.Add(createdOrder);
                 this.ShipOSearchResults.SelectedItem = createdOrder;
@@ -593,7 +593,7 @@ internal partial class AdminMainMenu : Form {
         try {
             ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
             if (selectedOrder != null) {
-                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder);
+                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder,ShipOSearchResults.);
                 if (wasUpdated) {
                     this.ShipOSearchResults.RefreshDisplay();
                 }
@@ -608,7 +608,7 @@ internal partial class AdminMainMenu : Form {
         try {
             ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
             if (selectedOrder != null) {
-                bool wasDeleted = this.parentApp.ShippingOrderService.OpenManagementWindowForDeletion(selectedOrder);
+                bool wasDeleted = this.parentApp.ShippingOrderService.OpenForDeletion(selectedOrder);
                 if (wasDeleted) {
                     this.ShipOSearchResults.SelectedItem = null;
                     this.ShipOSearchResults.SelectedIndex = -1;
