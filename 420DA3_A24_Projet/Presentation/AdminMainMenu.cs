@@ -593,7 +593,7 @@ internal partial class AdminMainMenu : Form {
         try {
             ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
             if (selectedOrder != null) {
-                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder,ShipOSearchResults);
+                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder, ShipOSearchResults);
                 if (wasUpdated) {
                     this.ShipOSearchResults.RefreshDisplay();
                 }
@@ -615,7 +615,7 @@ internal partial class AdminMainMenu : Form {
                     this.ShipOSearchResults.Items.Remove(selectedOrder);
                 }
             }
-        _ = this.parentApp.ShipmentServices.OpenShipmentWindowForView(selectedShipment);
+            _ = this.parentApp.ShipmentServices.OpenShipmentWindowForView(selectedShipment);
 
         } catch (Exception ex) {
             this.parentApp.HandleException(ex);
@@ -848,6 +848,141 @@ internal partial class AdminMainMenu : Form {
     }
     #endregion
 
+    #region GESTION DES PRODUITS
+
+    private void btnCreateProduct_Click(object sender, EventArgs e) {
+        Product? productCreer = this.parentApp.ProductService.OpenProductWindowForCreation();
+        if (productCreer != null) {
+            _ = this.productSearchResults.Items.Add(productCreer);
+            this.productSearchResults.SelectedItem = productCreer;
+        }
+    }
+
+    private void ProductSearchtextBox_TextChanged(object sender, EventArgs e) {
+        string criterion = this.ProductSearchtextBox.Text.Trim();
+        List<Product> result = this.parentApp.ProductService.SearchProducts(criterion);
+        this.productSearchResults.Items.Clear();
+        this.productSearchResults.SelectedItem = null;
+        this.productSearchResults.SelectedIndex = -1;
+        foreach (Product product in result) {
+            _ = this.productSearchResults.Items.Add(product);
+        }
+    }
+
+    private void productSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
+        Product? selectedProduct = this.productSearchResults.SelectedItem as Product;
+        if (selectedProduct != null) {
+            this.btnViewProduct.Enabled = true;
+            this.btnUpdateProduct.Enabled = true;
+            this.btnDeleteProduct.Enabled = true;
+        } else {
+            this.btnViewProduct.Enabled = false;
+            this.btnUpdateProduct.Enabled = false;
+            this.btnDeleteProduct.Enabled = false;
+        }
+    }
+
+    private void btnViewProduct_Click(object sender, EventArgs e) {
+        Product? selectedProduct = this.productSearchResults.SelectedItem as Product;
+        if (selectedProduct == null) {
+            throw new Exception("Veuillez selectionner un produit.");
+        }
+        _ = this.parentApp.ProductService.OpenProductWindowForDetailsView(selectedProduct);
+    }
+
+    private void btnUpdateProduct_Click(object sender, EventArgs e) {
+        Product? selectedProduct = this.productSearchResults.SelectedItem as Product;
+        if (selectedProduct == null) {
+            throw new Exception("Veuillez selectionner un produit.");
+        }
+        _ = this.parentApp.ProductService.OpenProductWindowForEdition(selectedProduct);
+        this.productSearchResults.Refresh();
+    }
+
+    private void btnDeleteProduct_Click(object sender, EventArgs e) {
+        Product? selectedProduct = this.productSearchResults.SelectedItem as Product;
+        if (selectedProduct == null) {
+            throw new Exception("Veuillez selectionner un produit.");
+        }
+        selectedProduct = this.parentApp.ProductService.OpenProductWindowForDeletion(selectedProduct);
+        if (selectedProduct != null) {
+            this.productSearchResults.Items.Remove(selectedProduct);
+            this.productSearchResults.SelectedItem = null;
+            this.productSearchResults.SelectedIndex = -1;
+        }
+    }
+
+    #endregion
+
+    #region GESTION DES CLIENTS
+
+    private void btnCreateCustomer_Click(object sender, EventArgs e) {
+        Customer? customerCreer = this.parentApp.CustomerService.OpenCustomerWindowForCreation();
+        if (customerCreer != null) {
+            _ = this.customerSearchResults.Items.Add(customerCreer);
+            this.customerSearchResults.SelectedItem = customerCreer;
+        }
+    }
+
+    private void CustomerSearchtextBox_TextChanged(object sender, EventArgs e) {
+        string criterion = this.CustomerSearchtextBox.Text.Trim();
+        List<Customer> result = this.parentApp.CustomerService.SearchCustomers(criterion);
+        this.customerSearchResults.Items.Clear();
+        this.customerSearchResults.SelectedItem = null;
+        this.customerSearchResults.SelectedIndex = -1;
+        foreach (Customer customer in result) {
+            _ = this.customerSearchResults.Items.Add(customer);
+        }
+    }
+
+    private void customerSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
+        Customer? selectedCustomer = this.customerSearchResults.SelectedItem as Customer;
+        if (selectedCustomer != null) {
+            this.btnViewCustomer.Enabled = true;
+            this.btnUpdateCustomer.Enabled = true;
+            this.btnDeleteCustomer.Enabled = true;
+        } else {
+            this.btnViewCustomer.Enabled = false;
+            this.btnUpdateCustomer.Enabled = false;
+            this.btnDeleteCustomer.Enabled = false;
+        }
+    }
+
+    private void btnViewCustomer_Click(object sender, EventArgs e) {
+        Customer? selectedCustomer = this.customerSearchResults.SelectedItem as Customer;
+        if (selectedCustomer == null) {
+            throw new Exception("Veuillez selectionner un client.");
+        }
+        _ = this.parentApp.CustomerService.OpenCustomerWindowForDetailsView(selectedCustomer);
+    }
+
+    private void btnUpdateCustomer_Click(object sender, EventArgs e) {
+        Customer? selectedCustomer = this.customerSearchResults.SelectedItem as Customer;
+        if (selectedCustomer == null) {
+            throw new Exception("Veuillez selectionner un client.");
+        }
+        _ = this.parentApp.CustomerService.OpenCustomerWindowForEdition(selectedCustomer);
+        this.customerSearchResults.Refresh();
+    }
+
+    private void btnDeleteCustomer_Click(object sender, EventArgs e) {
+        Customer? selectedCustomer = this.customerSearchResults.SelectedItem as Customer;
+        if (selectedCustomer == null) {
+            throw new Exception("Veuillez selectionner un client.");
+        }
+        selectedCustomer = this.parentApp.CustomerService.OpenCustomerWindowForDeletion(selectedCustomer);
+        if (selectedCustomer != null) {
+            this.customerSearchResults.Items.Remove(selectedCustomer);
+            this.customerSearchResults.SelectedItem = null;
+            this.customerSearchResults.SelectedIndex = -1;
+        }
+    }
+
+    #endregion
+
+    private void AdminMainMenu_Load(object sender, EventArgs e) {
+
+    }
 }
 
 
