@@ -546,7 +546,7 @@ internal partial class AdminMainMenu : Form {
 
     private void ButtonCreateShippingOrder_Click(object sender, EventArgs e) {
         try {
-            ShippingOrder? createdOrder = this.parentApp.ShippingOrderService.OpenManagementWindowForCreation();
+            ShippingOrder? createdOrder = this.parentApp.ShippingOrderService.InsertShippingOrder();
             if (createdOrder != null) {
                 _ = this.ShipOSearchResults.Items.Add(createdOrder);
                 this.ShipOSearchResults.SelectedItem = createdOrder;
@@ -592,7 +592,7 @@ internal partial class AdminMainMenu : Form {
         try {
             ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
             if (selectedOrder != null) {
-                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder);
+                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder,ShipOSearchResults.);
                 if (wasUpdated) {
                     this.ShipOSearchResults.RefreshDisplay();
                 }
@@ -607,7 +607,7 @@ internal partial class AdminMainMenu : Form {
         try {
             ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
             if (selectedOrder != null) {
-                bool wasDeleted = this.parentApp.ShippingOrderService.OpenManagementWindowForDeletion(selectedOrder);
+                bool wasDeleted = this.parentApp.ShippingOrderService.OpenForDeletion(selectedOrder);
                 if (wasDeleted) {
                     this.ShipOSearchResults.SelectedItem = null;
                     this.ShipOSearchResults.SelectedIndex = -1;
