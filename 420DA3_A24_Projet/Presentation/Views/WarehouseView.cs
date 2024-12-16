@@ -170,14 +170,14 @@ internal partial class WarehouseView : Form {
             switch (this.CurrentAction) {
                 case ViewActionsEnum.Creation:
                     _ = this.SaveDataFromControls(this.CurrentEntityInstance);
-                    this.CurrentEntityInstance = this.parentApp.WarehouseService.CreateUserInDatabase(this.CurrentEntityInstance);
+                    this.CurrentEntityInstance = this.parentApp.WarehouseService.CreateWarehouse(this.CurrentEntityInstance);
                     break;
                 case ViewActionsEnum.Edition:
                     _ = this.SaveDataFromControls(this.CurrentEntityInstance);
-                    this.CurrentEntityInstance = this.parentApp.WarehouseService.UpdateUserInDatabase(this.CurrentEntityInstance);
+                    this.CurrentEntityInstance = this.parentApp.WarehouseService.UpdateWarehouse(this.CurrentEntityInstance);
                     break;
                 case ViewActionsEnum.Deletion:
-                    this.CurrentEntityInstance = this.parentApp.WarehouseService.DeleteUserFromDatabase(this.CurrentEntityInstance);
+                    this.CurrentEntityInstance = this.parentApp.WarehouseService.DeleteWarehouse(this.CurrentEntityInstance);
                     break;
                 case ViewActionsEnum.Visualization:
                     // nothing to do
@@ -186,7 +186,7 @@ internal partial class WarehouseView : Form {
                     throw new NotImplementedException($"The view action [{Enum.GetName(this.CurrentAction)}] is not implemented in [{this.GetType().ShortDisplayName}].");
             }
             this.DialogResult = DialogResult.OK;
-        }
+        
         
         }
         catch 

@@ -72,7 +72,7 @@ internal partial class ShippingOrderView : Form {
     /// <param name="actionButtonText"></param>
     private void PreOpenSetup(ShippingOrder instance, ViewActionsEnum action, string windowTitle, string actionButtonText) {
         // load selectors with items if not loaded
-        this.Initialize();
+        this.InitializeComponent();
         // remember what the current action is
         this.Action = action;
         // remember which instance we are currently working with
@@ -80,11 +80,11 @@ internal partial class ShippingOrderView : Form {
         // Change window title
         this.Text = windowTitle;
         // change action button text
-        this.btnAction.Text = actionButtonText;
+        this.RetirerProduitbtn.Text = actionButtonText;
         // display the current action in the top bar
         this.openendModeValue.Text = Enum.GetName(action);
         // load data from the current instance in the controls
-        _ = this.LoadDataInControls(instance);
+        this.ChargerProduits(instance);
         // activate or deactivate the editable controls depending on the action
         if (action == ViewActionsEnum.Creation || action == ViewActionsEnum.Edition) {
             this.ActivateControls();
@@ -92,6 +92,15 @@ internal partial class ShippingOrderView : Form {
             this.DeactivateControls();
         }
     }
+
+    private void ActivateControls() {
+        this.Ajouterbtn.Enabled = this.Actionbtn.Enabled = this.CreateAdressebtn.Enabled = this.RetirerProduitbtn.Enabled = true;
+    }
+
+    private void DeactivateControls() {
+        this.Ajouterbtn.Enabled=this.Actionbtn.Enabled=this.CreateAdressebtn.Enabled=this.RetirerProduitbtn.Enabled=false;
+    }
+
     private void ChargerProduits(ShippingOrder shippingOrder) {
         List<ShippingOrderProduct> products = new List<ShippingOrderProduct>();
 
