@@ -203,7 +203,6 @@ partial class AdminMainMenu {
         this.centerTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
         this.centerTableLayoutPanel.Size = new Size(1436, 826);
         this.centerTableLayoutPanel.TabIndex = 2;
-        this.centerTableLayoutPanel.Paint += this.centerTableLayoutPanel_Paint;
         // 
         // purchaseOrderMainPanel
         // 

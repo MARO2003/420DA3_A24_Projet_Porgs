@@ -978,6 +978,10 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
                 Id = 1
             };
 
+        // Fournisseurs
+            Supplier supp1 = new Supplier("Hoka", "smith", "jack", "jacksmith00@gmail.com", "4154154155");
+            Supplier supp2 = new Supplier("Under Armor", "jaden", "will", "jadenUarmor@gmail.com", "4154124675");
+
             _=modelBuilder.Entity<Warehouse>().HasData(wh);
 
             // NOTE: le mot de passe des user est "testpasswd".

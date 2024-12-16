@@ -2,6 +2,7 @@
 using _420DA3_A24_Exemple_Enseignant.DataAccess.Contexts;
 using _420DA3_A24_Exemple_Enseignant.DataAccess.Daos;
 using _420DA3_A24_Exemple_Enseignant.Presentation.Views;
+using Microsoft.VisualBasic.ApplicationServices;
 using Project_Utilities.Enums;
 
 namespace _420DA3_A24_Exemple_Enseignant.Business.Services;
@@ -73,3 +74,24 @@ internal class PatientService {
     }
 
 }
+
+
+
+
+
+
+private void buttonDeleteSupplier_Click(object sender, EventArgs e) {
+    try {
+        Supplier selectedSupplier = (Supplier) this.supplierSearchResults.SelectedItem;
+        bool wasDeleted = this.parentApp.SupplierService.OpenManagementWindowForDeletion(selectedSupplier);
+
+        if (wasDeleted) {
+            this.supplierSearchResults.SelectedItem = null;
+            this.supplierSearchResults.SelectedIndex = -1;
+            this.supplierSearchResults.Items.Remove(selectedSupplier);
+        }
+    } catch (Exception ex) {
+        this.parentApp.HandleException(ex);
+    }
+}
+
