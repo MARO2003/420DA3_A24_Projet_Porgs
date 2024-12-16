@@ -29,11 +29,6 @@ partial class AdminMainMenu {
         this.buttonLogout = new Button();
         this.centerTableLayoutPanel = new TableLayoutPanel();
         this.purchaseOrderMainPanel = new Panel();
-        this.purchaseOrdreSearchResults = new ListBox();
-        this.purchaseOrderSearchTextBox = new TextBox();
-        this.tableLayoutPanel3 = new TableLayoutPanel();
-        this.button1 = new Button();
-        this.purchaseOrderButtonsTLP = new TableLayoutPanel();
         this.purchaseOrderManagementLabel = new Label();
         this.shipmentMainPanel = new Panel();
         this.tableLayoutPanel2 = new TableLayoutPanel();
@@ -72,11 +67,6 @@ partial class AdminMainMenu {
         this.whButtonsTLP = new TableLayoutPanel();
         this.warehouseManagementLabel = new Label();
         this.supplierMainPanel = new Panel();
-        this.supplierSearchResults = new ListBox();
-        this.supplierSearchTextBox = new TextBox();
-        this.createSupplierTLP = new TableLayoutPanel();
-        this.buttonCreateSupplier = new Button();
-        this.supplierButtonsTLP = new TableLayoutPanel();
         this.supplierManagementLabel = new Label();
         this.productMainPanel = new Panel();
         this.productManagementLabel = new Label();
@@ -102,22 +92,56 @@ partial class AdminMainMenu {
         this.createUserTLP = new TableLayoutPanel();
         this.buttonCreateUser = new Button();
         this.userManagementLabel = new Label();
-        this.deleteShipObtn = new Button();
-        this.updateShipObtn = new Button();
-        this.ViewShipObtn = new Button();
-        this.deletewhbtn = new Button();
-        this.EditWhbtn = new Button();
-        this.viewWhbtn = new Button();
+        this.createSupplierTLP = new TableLayoutPanel();
+        this.buttonCreateSupplier = new Button();
         this.buttonDeleteSupplier = new Button();
         this.buttonEditSupplier = new Button();
         this.buttonViewSupplier = new Button();
+        this.supplierButtonsTLP = new TableLayoutPanel();
+        this.panel4 = new Panel();
+        this.tableLayoutPanel3 = new TableLayoutPanel();
         this.buttonDeletePurchaseOrder = new Button();
         this.buttonEditPurchaseOrder = new Button();
         this.buttonViewPurchaseOrder = new Button();
+        this.purchaseOrderButtonsTLP = new TableLayoutPanel();
+        this.panel5 = new Panel();
+        this.purchaseOrderSearchTextBox = new TextBox();
+        this.supplierSearchTextBox = new TextBox();
+        this.supplierSearchResults = new ListBox();
+        this.purchaseOrdreSearchResults = new ListBox();
+        this.purchaseOrderButtonsTLP = new TableLayoutPanel();
+        this.panel5 = new Panel();
+        this.purchaseOrderSearchTextBox = new TextBox();
+        this.supplierSearchResults = new ListBox();
+        this.purchaseOrdreSearchResults = new ListBox();
+        this.purchaseOrderButtonsTLP = new TableLayoutPanel();
+        this.panel5 = new Panel();
+        this.purchaseOrderSearchTextBox = new TextBox();
+        this.tableLayoutPanel3.SuspendLayout();
+        this.supplierSearchTextBox = new TextBox();
+        this.supplierSearchResults = new ListBox();
+        this.purchaseOrdreSearchResults = new ListBox();
+        this.purchaseOrderButtonsTLP = new TableLayoutPanel();
+        this.panel5 = new Panel();
+        this.purchaseOrderSearchTextBox = new TextBox();
+        this.supplierSearchTextBox = new TextBox();
+        this.supplierSearchResults = new ListBox();
+        this.purchaseOrdreSearchResults = new ListBox();
+        this.panel5 = new Panel();
+        this.purchaseOrderSearchTextBox = new TextBox();
+        this.supplierSearchTextBox = new TextBox();
+        this.supplierSearchResults = new ListBox();
+        this.purchaseOrdreSearchResults = new ListBox();
+        this.createSupplierTLP.SuspendLayout();
+        this.supplierSearchTextBox = new TextBox();
+        this.supplierSearchResults = new ListBox();
+        this.purchaseOrdreSearchResults = new ListBox();
+        this.createSupplierTLP.SuspendLayout();
+        this.supplierButtonsTLP.SuspendLayout();
+        this.panel4.SuspendLayout();
         this.bottomBarPanel.SuspendLayout();
         this.centerTableLayoutPanel.SuspendLayout();
         this.purchaseOrderMainPanel.SuspendLayout();
-        this.tableLayoutPanel3.SuspendLayout();
         this.shipmentMainPanel.SuspendLayout();
         this.tableLayoutPanel2.SuspendLayout();
         this.panel3.SuspendLayout();
@@ -133,7 +157,6 @@ partial class AdminMainMenu {
         this.warehouseMainPanel.SuspendLayout();
         this.createWhTLP.SuspendLayout();
         this.supplierMainPanel.SuspendLayout();
-        this.createSupplierTLP.SuspendLayout();
         this.productMainPanel.SuspendLayout();
         this.roleMainPanel.SuspendLayout();
         this.roleButtonsTLP.SuspendLayout();
@@ -189,18 +212,18 @@ partial class AdminMainMenu {
         this.centerTableLayoutPanel.Controls.Add(this.shipmentMainPanel, 3, 1);
         this.centerTableLayoutPanel.Controls.Add(this.shipOrderMainPanel, 2, 1);
         this.centerTableLayoutPanel.Controls.Add(this.addressMainPanel, 1, 1);
-        this.centerTableLayoutPanel.Controls.Add(this.warehouseMainPanel, 0, 1);
-        this.centerTableLayoutPanel.Controls.Add(this.supplierMainPanel, 4, 0);
-        this.centerTableLayoutPanel.Controls.Add(this.productMainPanel, 3, 0);
-        this.centerTableLayoutPanel.Controls.Add(this.roleMainPanel, 1, 0);
-        this.centerTableLayoutPanel.Controls.Add(this.userMainPanel, 0, 0);
-        this.centerTableLayoutPanel.Dock = DockStyle.Fill;
-        this.centerTableLayoutPanel.Location = new Point(0, 82);
-        this.centerTableLayoutPanel.Margin = new Padding(4, 5, 4, 5);
-        this.centerTableLayoutPanel.Name = "centerTableLayoutPanel";
-        this.centerTableLayoutPanel.RowCount = 2;
-        this.centerTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-        this.centerTableLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+        this.purchaseOrderButtonsTLP.Name = "purchaseOrderButtonsTLP";
+        this.purchaseOrderButtonsTLP.RowCount = 1;
+        this.purchaseOrderButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.purchaseOrderButtonsTLP.Size = new Size(280, 132);
+        this.purchaseOrderButtonsTLP.TabIndex = 15;
+        // 
+        this.buttonViewPurchaseOrder.Size = new Size(137, 30);
+        this.buttonViewPurchaseOrder.TabIndex = 0;
+        this.buttonViewPurchaseOrder.Text = "Voir Détails";
+        this.buttonViewPurchaseOrder.UseVisualStyleBackColor = true;
+        this.buttonViewPurchaseOrder.Click += this.buttonViewPurchaseOrder_Click;
+        // 
         this.centerTableLayoutPanel.Size = new Size(1436, 826);
         this.centerTableLayoutPanel.TabIndex = 2;
         // 
@@ -218,185 +241,122 @@ partial class AdminMainMenu {
         this.purchaseOrderMainPanel.Size = new Size(280, 403);
         this.purchaseOrderMainPanel.TabIndex = 9;
         // 
-        // purchaseOrdreSearchResults
-        // 
-        this.purchaseOrdreSearchResults.Dock = DockStyle.Fill;
-        this.purchaseOrdreSearchResults.FormattingEnabled = true;
-        this.purchaseOrdreSearchResults.ItemHeight = 25;
-        this.purchaseOrdreSearchResults.Location = new Point(0, 137);
-        this.purchaseOrdreSearchResults.Margin = new Padding(4, 5, 4, 5);
-        this.purchaseOrdreSearchResults.Name = "purchaseOrdreSearchResults";
-        this.purchaseOrdreSearchResults.Size = new Size(280, 134);
-        this.purchaseOrdreSearchResults.TabIndex = 19;
-        // 
-        // purchaseOrderSearchTextBox
-        // 
-        this.purchaseOrderSearchTextBox.Dock = DockStyle.Top;
-        this.purchaseOrderSearchTextBox.Location = new Point(0, 106);
-        this.purchaseOrderSearchTextBox.Margin = new Padding(4, 5, 4, 5);
-        this.purchaseOrderSearchTextBox.Name = "purchaseOrderSearchTextBox";
-        this.purchaseOrderSearchTextBox.PlaceholderText = "Rechercher un ordre de restockage";
-        this.purchaseOrderSearchTextBox.Size = new Size(280, 31);
-        this.purchaseOrderSearchTextBox.TabIndex = 18;
-        // 
-        // tableLayoutPanel3
-        // 
-        this.tableLayoutPanel3.ColumnCount = 3;
-        this.tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
-        this.tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.tableLayoutPanel3.Controls.Add(this.button1, 1, 0);
-        this.tableLayoutPanel3.Dock = DockStyle.Top;
-        this.tableLayoutPanel3.Location = new Point(0, 38);
-        this.tableLayoutPanel3.Margin = new Padding(4, 5, 4, 5);
-        this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-        this.tableLayoutPanel3.RowCount = 1;
-        this.tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.tableLayoutPanel3.Size = new Size(280, 68);
-        this.tableLayoutPanel3.TabIndex = 14;
-        // 
-        // button1
-        // 
-        this.button1.Dock = DockStyle.Bottom;
-        this.button1.Location = new Point(58, 25);
-        this.button1.Margin = new Padding(4, 5, 4, 5);
-        this.button1.Name = "button1";
-        this.button1.Size = new Size(163, 38);
-        this.button1.TabIndex = 0;
-        this.button1.Text = "Créer Ordre de Restockage";
-        this.button1.UseVisualStyleBackColor = true;
-        // 
-        // purchaseOrderButtonsTLP
-        // 
-        this.purchaseOrderButtonsTLP.ColumnCount = 3;
-        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
-        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.purchaseOrderButtonsTLP.Dock = DockStyle.Bottom;
-        this.purchaseOrderButtonsTLP.Location = new Point(0, 271);
-        this.purchaseOrderButtonsTLP.Margin = new Padding(4, 5, 4, 5);
-        this.purchaseOrderButtonsTLP.Name = "purchaseOrderButtonsTLP";
-        this.purchaseOrderButtonsTLP.RowCount = 1;
-        this.purchaseOrderButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.purchaseOrderButtonsTLP.Size = new Size(280, 132);
-        this.purchaseOrderButtonsTLP.TabIndex = 15;
-        // 
         // purchaseOrderManagementLabel
         // 
         this.purchaseOrderManagementLabel.Dock = DockStyle.Top;
         this.purchaseOrderManagementLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.purchaseOrderManagementLabel.Location = new Point(0, 0);
-        this.purchaseOrderManagementLabel.Margin = new Padding(4, 0, 4, 0);
+        this.tableLayoutPanel2.Location = new Point(0, 268);
+        this.tableLayoutPanel2.Margin = new Padding(2, 2, 2, 2);
         this.purchaseOrderManagementLabel.Name = "purchaseOrderManagementLabel";
         this.purchaseOrderManagementLabel.Size = new Size(280, 38);
         this.purchaseOrderManagementLabel.TabIndex = 0;
         this.purchaseOrderManagementLabel.Text = "Gestion des ordres de restockage";
-        this.purchaseOrderManagementLabel.TextAlign = ContentAlignment.MiddleCenter;
-        // 
+        this.tableLayoutPanel2.Location = new Point(0, 335);
+        this.tableLayoutPanel2.Margin = new Padding(2);
         // shipmentMainPanel
         // 
         this.shipmentMainPanel.Controls.Add(this.tableLayoutPanel2);
         this.shipmentMainPanel.Controls.Add(this.expeditionSearchResults);
-        this.shipmentMainPanel.Controls.Add(this.ExpeditionSearchtextBox);
-        this.shipmentMainPanel.Controls.Add(this.createExpeditionTLP);
+        this.panel3.Location = new Point(45, 2);
+        this.panel3.Margin = new Padding(2, 2, 2, 2);
         this.shipmentMainPanel.Controls.Add(this.shipmentManagementLabel);
         this.shipmentMainPanel.Dock = DockStyle.Fill;
         this.shipmentMainPanel.Location = new Point(865, 418);
         this.shipmentMainPanel.Margin = new Padding(4, 5, 4, 5);
-        this.shipmentMainPanel.Name = "shipmentMainPanel";
-        this.shipmentMainPanel.Size = new Size(279, 403);
-        this.shipmentMainPanel.TabIndex = 8;
-        // 
-        // tableLayoutPanel2
-        // 
-        this.tableLayoutPanel2.ColumnCount = 3;
-        this.tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
-        this.tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.tableLayoutPanel2.Controls.Add(this.panel3, 1, 0);
-        this.tableLayoutPanel2.Dock = DockStyle.Bottom;
-        this.tableLayoutPanel2.Location = new Point(0, 335);
-        this.tableLayoutPanel2.Margin = new Padding(2);
-        this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-        this.tableLayoutPanel2.RowCount = 1;
-        this.tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.tableLayoutPanel2.Size = new Size(279, 68);
-        this.tableLayoutPanel2.TabIndex = 6;
-        // 
-        // panel3
-        // 
-        this.panel3.Controls.Add(this.btnViewExpedion);
-        this.panel3.Dock = DockStyle.Fill;
         this.panel3.Location = new Point(56, 2);
         this.panel3.Margin = new Padding(2);
-        this.panel3.Name = "panel3";
-        this.panel3.Size = new Size(167, 64);
+        this.btnViewExpedion.Location = new Point(2, 19);
+        this.btnViewExpedion.Margin = new Padding(2, 2, 2, 2);
+        // tableLayoutPanel2
+        // 
+        this.panel3.Location = new Point(45, 2);
+        this.panel3.Margin = new Padding(2, 2, 2, 2);
+        this.btnViewExpedion.Location = new Point(2, 24);
+        this.btnViewExpedion.Margin = new Padding(2);
+        this.tableLayoutPanel2.Controls.Add(this.panel3, 1, 0);
+        this.tableLayoutPanel2.Dock = DockStyle.Bottom;
+        this.tableLayoutPanel2.Location = new Point(0, 268);
+        this.tableLayoutPanel2.Margin = new Padding(2, 2, 2, 2);
+        this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+        this.expeditionSearchResults.ItemHeight = 20;
+        this.expeditionSearchResults.Location = new Point(0, 111);
+        this.expeditionSearchResults.Margin = new Padding(2, 2, 2, 2);
+        this.panel3.Location = new Point(45, 2);
+        this.panel3.Margin = new Padding(2, 2, 2, 2);
+        // panel3
+        this.expeditionSearchResults.ItemHeight = 25;
+        this.expeditionSearchResults.Location = new Point(0, 137);
+        this.expeditionSearchResults.Margin = new Padding(2);
+        this.panel3.Location = new Point(45, 2);
+        this.panel3.Margin = new Padding(2, 2, 2, 2);
+        this.ExpeditionSearchtextBox.Location = new Point(0, 84);
+        this.ExpeditionSearchtextBox.Margin = new Padding(2, 2, 2, 2);
         this.panel3.TabIndex = 0;
         // 
         // btnViewExpedion
         // 
-        this.btnViewExpedion.Location = new Point(2, 24);
-        this.btnViewExpedion.Margin = new Padding(2);
+        this.ExpeditionSearchtextBox.Location = new Point(0, 106);
+        this.ExpeditionSearchtextBox.Margin = new Padding(2);
         this.btnViewExpedion.Name = "btnViewExpedion";
         this.btnViewExpedion.Size = new Size(162, 38);
         this.btnViewExpedion.TabIndex = 0;
         this.btnViewExpedion.Text = "Voir Détails";
         this.btnViewExpedion.UseVisualStyleBackColor = true;
-        this.btnViewExpedion.Click += this.btnViewExpedion_Click;
-        // 
-        // expeditionSearchResults
-        // 
-        this.expeditionSearchResults.Dock = DockStyle.Fill;
+        this.expeditionSearchResults.ItemHeight = 20;
+        this.expeditionSearchResults.Location = new Point(0, 111);
+        this.expeditionSearchResults.Margin = new Padding(2, 2, 2, 2);
+        this.createExpeditionTLP.Location = new Point(0, 30);
+        this.createExpeditionTLP.Margin = new Padding(2, 2, 2, 2);
         this.expeditionSearchResults.FormattingEnabled = true;
-        this.expeditionSearchResults.ItemHeight = 25;
-        this.expeditionSearchResults.Location = new Point(0, 137);
-        this.expeditionSearchResults.Margin = new Padding(2);
-        this.expeditionSearchResults.Name = "expeditionSearchResults";
-        this.expeditionSearchResults.Size = new Size(279, 266);
-        this.expeditionSearchResults.TabIndex = 5;
-        this.expeditionSearchResults.SelectedIndexChanged += this.expeditionSearchResults_SelectedIndexChanged;
-        // 
-        // ExpeditionSearchtextBox
-        // 
-        this.ExpeditionSearchtextBox.Dock = DockStyle.Top;
-        this.ExpeditionSearchtextBox.Location = new Point(0, 106);
-        this.ExpeditionSearchtextBox.Margin = new Padding(2);
-        this.ExpeditionSearchtextBox.Name = "ExpeditionSearchtextBox";
-        this.ExpeditionSearchtextBox.PlaceholderText = "Recherche une expedition";
-        this.ExpeditionSearchtextBox.Size = new Size(279, 31);
-        this.ExpeditionSearchtextBox.TabIndex = 4;
-        this.ExpeditionSearchtextBox.TextChanged += this.ExpeditionSearchtextBox_TextChanged;
-        // 
-        // createExpeditionTLP
-        // 
-        this.createExpeditionTLP.ColumnCount = 3;
-        this.createExpeditionTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.createExpeditionTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
-        this.createExpeditionTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.createExpeditionTLP.Controls.Add(this.createExpeditionPanel, 1, 0);
-        this.createExpeditionTLP.Dock = DockStyle.Top;
+        this.expeditionSearchResults.ItemHeight = 20;
+        this.expeditionSearchResults.Location = new Point(0, 111);
+        this.expeditionSearchResults.Margin = new Padding(2, 2, 2, 2);
         this.createExpeditionTLP.Location = new Point(0, 38);
         this.createExpeditionTLP.Margin = new Padding(2);
+        this.ExpeditionSearchtextBox.Location = new Point(0, 84);
+        this.ExpeditionSearchtextBox.Margin = new Padding(2, 2, 2, 2);
+        // 
+        // ExpeditionSearchtextBox
+        this.createExpeditionPanel.Location = new Point(45, 2);
+        this.createExpeditionPanel.Margin = new Padding(2, 2, 2, 2);
+        this.ExpeditionSearchtextBox.Location = new Point(0, 84);
+        this.ExpeditionSearchtextBox.Margin = new Padding(2, 2, 2, 2);
+        this.ExpeditionSearchtextBox.Name = "ExpeditionSearchtextBox";
+        this.ExpeditionSearchtextBox.PlaceholderText = "Recherche une expedition";
+        this.createExpeditionPanel.Location = new Point(56, 2);
+        this.createExpeditionPanel.Margin = new Padding(2);
+        this.btnCreateExpedition.Location = new Point(2, 19);
+        this.btnCreateExpedition.Margin = new Padding(2, 2, 2, 2);
+        // createExpeditionTLP
+        // 
+        this.createExpeditionTLP.Location = new Point(0, 30);
+        this.createExpeditionTLP.Margin = new Padding(2, 2, 2, 2);
+        this.btnCreateExpedition.Location = new Point(2, 24);
+        this.btnCreateExpedition.Margin = new Padding(2);
+        this.createExpeditionTLP.Controls.Add(this.createExpeditionPanel, 1, 0);
+        this.createExpeditionTLP.Dock = DockStyle.Top;
+        this.createExpeditionTLP.Location = new Point(0, 30);
+        this.createExpeditionTLP.Margin = new Padding(2, 2, 2, 2);
         this.createExpeditionTLP.Name = "createExpeditionTLP";
         this.createExpeditionTLP.RowCount = 1;
         this.createExpeditionTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
         this.createExpeditionTLP.Size = new Size(279, 68);
-        this.createExpeditionTLP.TabIndex = 1;
-        // 
+        this.createExpeditionPanel.Location = new Point(45, 2);
+        this.createExpeditionPanel.Margin = new Padding(2, 2, 2, 2);
         // createExpeditionPanel
         // 
         this.createExpeditionPanel.Controls.Add(this.btnCreateExpedition);
         this.createExpeditionPanel.Dock = DockStyle.Fill;
-        this.createExpeditionPanel.Location = new Point(56, 2);
-        this.createExpeditionPanel.Margin = new Padding(2);
-        this.createExpeditionPanel.Name = "createExpeditionPanel";
-        this.createExpeditionPanel.Size = new Size(167, 64);
+        this.createExpeditionPanel.Location = new Point(45, 2);
+        this.createExpeditionPanel.Margin = new Padding(2, 2, 2, 2);
+        this.btnCreateExpedition.Location = new Point(2, 19);
+        this.btnCreateExpedition.Margin = new Padding(2, 2, 2, 2);
         this.createExpeditionPanel.TabIndex = 0;
         // 
         // btnCreateExpedition
         // 
-        this.btnCreateExpedition.Location = new Point(2, 24);
-        this.btnCreateExpedition.Margin = new Padding(2);
+        this.btnCreateExpedition.Location = new Point(2, 19);
+        this.btnCreateExpedition.Margin = new Padding(2, 2, 2, 2);
         this.btnCreateExpedition.Name = "btnCreateExpedition";
         this.btnCreateExpedition.Size = new Size(162, 38);
         this.btnCreateExpedition.TabIndex = 0;
@@ -493,149 +453,149 @@ partial class AdminMainMenu {
         this.ShipOButtonsTLP.Size = new Size(279, 166);
         this.ShipOButtonsTLP.TabIndex = 4;
         // 
-        // shipOrderManagementLabel
-        // 
-        this.shipOrderManagementLabel.Dock = DockStyle.Top;
+        this.adresseSearchResults.ItemHeight = 20;
+        this.adresseSearchResults.Location = new Point(0, 111);
+        this.adresseSearchResults.Margin = new Padding(2, 2, 2, 2);
         this.shipOrderManagementLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
         this.shipOrderManagementLabel.Location = new Point(0, 0);
         this.shipOrderManagementLabel.Margin = new Padding(4, 0, 4, 0);
-        this.shipOrderManagementLabel.Name = "shipOrderManagementLabel";
-        this.shipOrderManagementLabel.Size = new Size(279, 38);
-        this.shipOrderManagementLabel.TabIndex = 0;
+        this.adresseSearchResults.ItemHeight = 25;
+        this.adresseSearchResults.Location = new Point(0, 137);
+        this.adresseSearchResults.Margin = new Padding(2);
         this.shipOrderManagementLabel.Text = "Gestion des ordres d'expédition";
         this.shipOrderManagementLabel.TextAlign = ContentAlignment.MiddleCenter;
-        // 
-        // addressMainPanel
+        this.AdresseSearchtextBox.Location = new Point(0, 84);
+        this.AdresseSearchtextBox.Margin = new Padding(2, 2, 2, 2);
         // 
         this.addressMainPanel.Controls.Add(this.adresseSearchResults);
         this.addressMainPanel.Controls.Add(this.AdresseSearchtextBox);
         this.addressMainPanel.Controls.Add(this.tableLayoutPanel1);
-        this.addressMainPanel.Controls.Add(this.createAdresseTLP);
-        this.addressMainPanel.Controls.Add(this.addressManagementLabel);
+        this.AdresseSearchtextBox.Location = new Point(0, 106);
+        this.AdresseSearchtextBox.Margin = new Padding(2);
         this.addressMainPanel.Dock = DockStyle.Fill;
         this.addressMainPanel.Location = new Point(291, 418);
         this.addressMainPanel.Margin = new Padding(4, 5, 4, 5);
         this.addressMainPanel.Name = "addressMainPanel";
         this.addressMainPanel.Size = new Size(279, 403);
-        this.addressMainPanel.TabIndex = 6;
-        // 
-        // adresseSearchResults
-        // 
-        this.adresseSearchResults.Dock = DockStyle.Fill;
+        this.adresseSearchResults.ItemHeight = 20;
+        this.adresseSearchResults.Location = new Point(0, 111);
+        this.adresseSearchResults.Margin = new Padding(2, 2, 2, 2);
+        this.tableLayoutPanel1.Location = new Point(0, 216);
+        this.tableLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
         this.adresseSearchResults.FormattingEnabled = true;
-        this.adresseSearchResults.ItemHeight = 25;
-        this.adresseSearchResults.Location = new Point(0, 137);
-        this.adresseSearchResults.Margin = new Padding(2);
-        this.adresseSearchResults.Name = "adresseSearchResults";
-        this.adresseSearchResults.Size = new Size(279, 134);
-        this.adresseSearchResults.TabIndex = 4;
-        this.adresseSearchResults.SelectedIndexChanged += this.adresseSearchResults_SelectedIndexChanged;
+        this.adresseSearchResults.ItemHeight = 20;
+        this.adresseSearchResults.Location = new Point(0, 111);
+        this.adresseSearchResults.Margin = new Padding(2, 2, 2, 2);
+        this.tableLayoutPanel1.Location = new Point(0, 271);
+        this.tableLayoutPanel1.Margin = new Padding(2);
+        this.AdresseSearchtextBox.Location = new Point(0, 84);
+        this.AdresseSearchtextBox.Margin = new Padding(2, 2, 2, 2);
         // 
         // AdresseSearchtextBox
         // 
         this.AdresseSearchtextBox.Dock = DockStyle.Top;
-        this.AdresseSearchtextBox.Location = new Point(0, 106);
-        this.AdresseSearchtextBox.Margin = new Padding(2);
+        this.panel1.Location = new Point(45, 2);
+        this.panel1.Margin = new Padding(2, 2, 2, 2);
         this.AdresseSearchtextBox.Name = "AdresseSearchtextBox";
         this.AdresseSearchtextBox.PlaceholderText = "Recherche une adresse";
         this.AdresseSearchtextBox.Size = new Size(279, 31);
         this.AdresseSearchtextBox.TabIndex = 3;
-        this.AdresseSearchtextBox.TextChanged += this.AdresseSearchtextBox_TextChanged;
-        // 
+        this.panel1.Location = new Point(56, 2);
+        this.panel1.Margin = new Padding(2);
         // tableLayoutPanel1
-        // 
-        this.tableLayoutPanel1.ColumnCount = 3;
-        this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.btnDeleteAdresse.Location = new Point(2, 69);
+        this.btnDeleteAdresse.Margin = new Padding(2, 2, 2, 2);
+        this.tableLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
         this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
         this.tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
         this.tableLayoutPanel1.Controls.Add(this.panel1, 1, 0);
-        this.tableLayoutPanel1.Dock = DockStyle.Bottom;
-        this.tableLayoutPanel1.Location = new Point(0, 271);
-        this.tableLayoutPanel1.Margin = new Padding(2);
+        this.btnDeleteAdresse.Location = new Point(2, 86);
+        this.btnDeleteAdresse.Margin = new Padding(2);
+        this.tableLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
         this.tableLayoutPanel1.Name = "tableLayoutPanel1";
         this.tableLayoutPanel1.RowCount = 1;
         this.tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.tableLayoutPanel1.Size = new Size(279, 132);
-        this.tableLayoutPanel1.TabIndex = 2;
+        this.btnUpdateAdresse.Location = new Point(1, 35);
+        this.btnUpdateAdresse.Margin = new Padding(2, 2, 2, 2);
         // 
-        // panel1
-        // 
+        this.panel1.Location = new Point(45, 2);
+        this.panel1.Margin = new Padding(2, 2, 2, 2);
         this.panel1.Controls.Add(this.btnDeleteAdresse);
-        this.panel1.Controls.Add(this.btnUpdateAdresse);
-        this.panel1.Controls.Add(this.btnViewAdresse);
+        this.btnUpdateAdresse.Location = new Point(1, 44);
+        this.btnUpdateAdresse.Margin = new Padding(2);
         this.panel1.Dock = DockStyle.Fill;
-        this.panel1.Location = new Point(56, 2);
-        this.panel1.Margin = new Padding(2);
+        this.panel1.Location = new Point(45, 2);
+        this.panel1.Margin = new Padding(2, 2, 2, 2);
         this.panel1.Name = "panel1";
-        this.panel1.Size = new Size(167, 128);
-        this.panel1.TabIndex = 0;
+        this.btnDeleteAdresse.Location = new Point(2, 69);
+        this.btnDeleteAdresse.Margin = new Padding(2, 2, 2, 2);
         // 
         // btnDeleteAdresse
         // 
         this.btnDeleteAdresse.Enabled = false;
-        this.btnDeleteAdresse.Location = new Point(2, 86);
-        this.btnDeleteAdresse.Margin = new Padding(2);
+        this.btnDeleteAdresse.Location = new Point(2, 69);
+        this.btnDeleteAdresse.Margin = new Padding(2, 2, 2, 2);
         this.btnDeleteAdresse.Name = "btnDeleteAdresse";
         this.btnDeleteAdresse.Size = new Size(162, 38);
         this.btnDeleteAdresse.TabIndex = 2;
         this.btnDeleteAdresse.Text = "Supprimer";
-        this.btnDeleteAdresse.UseVisualStyleBackColor = true;
-        this.btnDeleteAdresse.Click += this.btnDeleteAdresse_Click;
+        this.btnUpdateAdresse.Location = new Point(1, 35);
+        this.btnUpdateAdresse.Margin = new Padding(2, 2, 2, 2);
         // 
         // btnUpdateAdresse
         // 
-        this.btnUpdateAdresse.Enabled = false;
-        this.btnUpdateAdresse.Location = new Point(1, 44);
-        this.btnUpdateAdresse.Margin = new Padding(2);
+        this.createAdresseTLP.Location = new Point(0, 30);
+        this.createAdresseTLP.Margin = new Padding(2, 2, 2, 2);
+        this.btnUpdateAdresse.Margin = new Padding(2, 2, 2, 2);
         this.btnUpdateAdresse.Name = "btnUpdateAdresse";
         this.btnUpdateAdresse.Size = new Size(162, 38);
         this.btnUpdateAdresse.TabIndex = 1;
-        this.btnUpdateAdresse.Text = "Modifier";
-        this.btnUpdateAdresse.UseVisualStyleBackColor = true;
+        this.createAdresseTLP.Location = new Point(0, 38);
+        this.createAdresseTLP.Margin = new Padding(2);
         this.btnUpdateAdresse.Click += this.btnUpdateAdresse_Click;
         // 
         // btnViewAdresse
         // 
-        this.btnViewAdresse.Enabled = false;
-        this.btnViewAdresse.Location = new Point(0, 2);
+        this.createAdressePanel.Location = new Point(45, 2);
+        this.createAdressePanel.Margin = new Padding(2, 2, 2, 2);
         this.btnViewAdresse.Margin = new Padding(2);
         this.btnViewAdresse.Name = "btnViewAdresse";
         this.btnViewAdresse.Size = new Size(162, 38);
         this.btnViewAdresse.TabIndex = 0;
-        this.btnViewAdresse.Text = "Voir Détails";
-        this.btnViewAdresse.UseVisualStyleBackColor = true;
-        this.btnViewAdresse.Click += this.btnViewAdresse_Click;
-        // 
+        this.createAdressePanel.Location = new Point(56, 2);
+        this.createAdressePanel.Margin = new Padding(2);
+        this.btnCreateAdresse.Location = new Point(-1, 16);
+        this.btnCreateAdresse.Margin = new Padding(2, 2, 2, 2);
         // createAdresseTLP
         // 
-        this.createAdresseTLP.ColumnCount = 3;
-        this.createAdresseTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.createAdresseTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
-        this.createAdresseTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.createAdresseTLP.Location = new Point(0, 30);
+        this.createAdresseTLP.Margin = new Padding(2, 2, 2, 2);
+        this.btnCreateAdresse.Location = new Point(-1, 20);
+        this.btnCreateAdresse.Margin = new Padding(2);
         this.createAdresseTLP.Controls.Add(this.createAdressePanel, 1, 0);
         this.createAdresseTLP.Dock = DockStyle.Top;
-        this.createAdresseTLP.Location = new Point(0, 38);
-        this.createAdresseTLP.Margin = new Padding(2);
+        this.createAdresseTLP.Location = new Point(0, 30);
+        this.createAdresseTLP.Margin = new Padding(2, 2, 2, 2);
         this.createAdresseTLP.Name = "createAdresseTLP";
         this.createAdresseTLP.RowCount = 1;
         this.createAdresseTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
         this.createAdresseTLP.Size = new Size(279, 68);
-        this.createAdresseTLP.TabIndex = 1;
-        // 
+        this.createAdressePanel.Location = new Point(45, 2);
+        this.createAdressePanel.Margin = new Padding(2, 2, 2, 2);
         // createAdressePanel
         // 
         this.createAdressePanel.Controls.Add(this.btnCreateAdresse);
         this.createAdressePanel.Dock = DockStyle.Fill;
-        this.createAdressePanel.Location = new Point(56, 2);
-        this.createAdressePanel.Margin = new Padding(2);
-        this.createAdressePanel.Name = "createAdressePanel";
-        this.createAdressePanel.Size = new Size(167, 64);
+        this.createAdressePanel.Location = new Point(45, 2);
+        this.createAdressePanel.Margin = new Padding(2, 2, 2, 2);
+        this.btnCreateAdresse.Location = new Point(-1, 16);
+        this.btnCreateAdresse.Margin = new Padding(2, 2, 2, 2);
         this.createAdressePanel.TabIndex = 0;
         // 
         // btnCreateAdresse
         // 
-        this.btnCreateAdresse.Location = new Point(-1, 20);
-        this.btnCreateAdresse.Margin = new Padding(2);
+        this.btnCreateAdresse.Location = new Point(-1, 16);
+        this.btnCreateAdresse.Margin = new Padding(2, 2, 2, 2);
         this.btnCreateAdresse.Name = "btnCreateAdresse";
         this.btnCreateAdresse.Size = new Size(162, 38);
         this.btnCreateAdresse.TabIndex = 0;
@@ -728,11 +688,11 @@ partial class AdminMainMenu {
         this.whButtonsTLP.Margin = new Padding(5, 6, 5, 6);
         this.whButtonsTLP.Name = "whButtonsTLP";
         this.whButtonsTLP.RowCount = 1;
-        this.whButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.whButtonsTLP.Size = new Size(279, 166);
-        this.whButtonsTLP.TabIndex = 3;
-        // 
-        // warehouseManagementLabel
+        this.supplierButtonsTLP.Name = "supplierButtonsTLP";
+        this.supplierButtonsTLP.RowCount = 1;
+        this.supplierButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.supplierButtonsTLP.Size = new Size(280, 132);
+        this.supplierButtonsTLP.TabIndex = 10;
         // 
         this.warehouseManagementLabel.Dock = DockStyle.Top;
         this.warehouseManagementLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -757,69 +717,6 @@ partial class AdminMainMenu {
         this.supplierMainPanel.Name = "supplierMainPanel";
         this.supplierMainPanel.Size = new Size(280, 403);
         this.supplierMainPanel.TabIndex = 4;
-        // 
-        // supplierSearchResults
-        // 
-        this.supplierSearchResults.Dock = DockStyle.Fill;
-        this.supplierSearchResults.FormattingEnabled = true;
-        this.supplierSearchResults.ItemHeight = 25;
-        this.supplierSearchResults.Location = new Point(0, 137);
-        this.supplierSearchResults.Margin = new Padding(4, 5, 4, 5);
-        this.supplierSearchResults.Name = "supplierSearchResults";
-        this.supplierSearchResults.Size = new Size(280, 134);
-        this.supplierSearchResults.TabIndex = 14;
-        // 
-        // supplierSearchTextBox
-        // 
-        this.supplierSearchTextBox.Dock = DockStyle.Top;
-        this.supplierSearchTextBox.Location = new Point(0, 106);
-        this.supplierSearchTextBox.Margin = new Padding(4, 5, 4, 5);
-        this.supplierSearchTextBox.Name = "supplierSearchTextBox";
-        this.supplierSearchTextBox.PlaceholderText = "Rechercher un fournisseur";
-        this.supplierSearchTextBox.Size = new Size(280, 31);
-        this.supplierSearchTextBox.TabIndex = 13;
-        // 
-        // createSupplierTLP
-        // 
-        this.createSupplierTLP.ColumnCount = 3;
-        this.createSupplierTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.createSupplierTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
-        this.createSupplierTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.createSupplierTLP.Controls.Add(this.buttonCreateSupplier, 1, 0);
-        this.createSupplierTLP.Dock = DockStyle.Top;
-        this.createSupplierTLP.Location = new Point(0, 38);
-        this.createSupplierTLP.Margin = new Padding(4, 5, 4, 5);
-        this.createSupplierTLP.Name = "createSupplierTLP";
-        this.createSupplierTLP.RowCount = 1;
-        this.createSupplierTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.createSupplierTLP.Size = new Size(280, 68);
-        this.createSupplierTLP.TabIndex = 9;
-        // 
-        // buttonCreateSupplier
-        // 
-        this.buttonCreateSupplier.Dock = DockStyle.Bottom;
-        this.buttonCreateSupplier.Location = new Point(58, 25);
-        this.buttonCreateSupplier.Margin = new Padding(4, 5, 4, 5);
-        this.buttonCreateSupplier.Name = "buttonCreateSupplier";
-        this.buttonCreateSupplier.Size = new Size(163, 38);
-        this.buttonCreateSupplier.TabIndex = 0;
-        this.buttonCreateSupplier.Text = "Créer Fournisseur";
-        this.buttonCreateSupplier.UseVisualStyleBackColor = true;
-        // 
-        // supplierButtonsTLP
-        // 
-        this.supplierButtonsTLP.ColumnCount = 3;
-        this.supplierButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.supplierButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
-        this.supplierButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.supplierButtonsTLP.Dock = DockStyle.Bottom;
-        this.supplierButtonsTLP.Location = new Point(0, 271);
-        this.supplierButtonsTLP.Margin = new Padding(4, 5, 4, 5);
-        this.supplierButtonsTLP.Name = "supplierButtonsTLP";
-        this.supplierButtonsTLP.RowCount = 1;
-        this.supplierButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.supplierButtonsTLP.Size = new Size(280, 132);
-        this.supplierButtonsTLP.TabIndex = 10;
         // 
         // supplierManagementLabel
         // 
@@ -1113,107 +1010,32 @@ partial class AdminMainMenu {
         this.createUserTLP.Dock = DockStyle.Top;
         this.createUserTLP.Location = new Point(0, 38);
         this.createUserTLP.Margin = new Padding(4, 5, 4, 5);
-        this.createUserTLP.Name = "createUserTLP";
-        this.createUserTLP.RowCount = 1;
-        this.createUserTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.createUserTLP.Size = new Size(279, 68);
-        this.createUserTLP.TabIndex = 1;
+        // createSupplierTLP
         // 
-        // buttonCreateUser
+        this.createSupplierTLP.ColumnCount = 3;
+        this.createSupplierTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.createSupplierTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+        this.createSupplierTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.createSupplierTLP.Controls.Add(this.buttonCreateSupplier, 1, 0);
+        this.createSupplierTLP.Dock = DockStyle.Top;
+        this.createSupplierTLP.Location = new Point(0, 30);
+        this.createSupplierTLP.Margin = new Padding(3, 4, 3, 4);
+        this.createSupplierTLP.Name = "createSupplierTLP";
+        this.createSupplierTLP.RowCount = 1;
+        this.createSupplierTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.createSupplierTLP.Size = new Size(227, 54);
+        this.createSupplierTLP.TabIndex = 9;
         // 
-        this.buttonCreateUser.Dock = DockStyle.Bottom;
-        this.buttonCreateUser.Location = new Point(58, 25);
-        this.buttonCreateUser.Margin = new Padding(4, 5, 4, 5);
-        this.buttonCreateUser.Name = "buttonCreateUser";
-        this.buttonCreateUser.Size = new Size(163, 38);
-        this.buttonCreateUser.TabIndex = 0;
-        this.buttonCreateUser.Text = "Créer Utilisateur";
-        this.buttonCreateUser.UseVisualStyleBackColor = true;
-        this.buttonCreateUser.Click += this.ButtonCreateUser_Click;
+        // buttonCreateSupplier
         // 
-        // userManagementLabel
-        // 
-        this.userManagementLabel.Dock = DockStyle.Top;
-        this.userManagementLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.userManagementLabel.Location = new Point(0, 0);
-        this.userManagementLabel.Margin = new Padding(4, 0, 4, 0);
-        this.userManagementLabel.Name = "userManagementLabel";
-        this.userManagementLabel.Size = new Size(279, 38);
-        this.userManagementLabel.TabIndex = 0;
-        this.userManagementLabel.Text = "Gestion des utilisateurs";
-        this.userManagementLabel.TextAlign = ContentAlignment.MiddleCenter;
-        // 
-        // deleteShipObtn
-        // 
-        this.deleteShipObtn.Dock = DockStyle.Top;
-        this.deleteShipObtn.Enabled = false;
-        this.deleteShipObtn.Location = new Point(0, 76);
-        this.deleteShipObtn.Margin = new Padding(4, 5, 4, 5);
-        this.deleteShipObtn.Name = "deleteShipObtn";
-        this.deleteShipObtn.Size = new Size(171, 38);
-        this.deleteShipObtn.TabIndex = 2;
-        this.deleteShipObtn.Text = "Supprimer";
-        this.deleteShipObtn.UseVisualStyleBackColor = true;
-        // 
-        // updateShipObtn
-        // 
-        this.updateShipObtn.Dock = DockStyle.Top;
-        this.updateShipObtn.Enabled = false;
-        this.updateShipObtn.Location = new Point(0, 38);
-        this.updateShipObtn.Margin = new Padding(4, 5, 4, 5);
-        this.updateShipObtn.Name = "updateShipObtn";
-        this.updateShipObtn.Size = new Size(171, 38);
-        this.updateShipObtn.TabIndex = 1;
-        this.updateShipObtn.Text = "Modifier";
-        this.updateShipObtn.UseVisualStyleBackColor = true;
-        // 
-        // ViewShipObtn
-        // 
-        this.ViewShipObtn.Dock = DockStyle.Top;
-        this.ViewShipObtn.Enabled = false;
-        this.ViewShipObtn.Location = new Point(0, 0);
-        this.ViewShipObtn.Margin = new Padding(4, 5, 4, 5);
-        this.ViewShipObtn.Name = "ViewShipObtn";
-        this.ViewShipObtn.Size = new Size(171, 38);
-        this.ViewShipObtn.TabIndex = 0;
-        this.ViewShipObtn.Text = "Voir Détails";
-        this.ViewShipObtn.UseVisualStyleBackColor = true;
-        // 
-        // deletewhbtn
-        // 
-        this.deletewhbtn.Dock = DockStyle.Top;
-        this.deletewhbtn.Enabled = false;
-        this.deletewhbtn.Location = new Point(0, 76);
-        this.deletewhbtn.Margin = new Padding(4, 5, 4, 5);
-        this.deletewhbtn.Name = "deletewhbtn";
-        this.deletewhbtn.Size = new Size(171, 38);
-        this.deletewhbtn.TabIndex = 2;
-        this.deletewhbtn.Text = "Supprimer";
-        this.deletewhbtn.UseVisualStyleBackColor = true;
-        // 
-        // EditWhbtn
-        // 
-        this.EditWhbtn.Dock = DockStyle.Top;
-        this.EditWhbtn.Enabled = false;
-        this.EditWhbtn.Location = new Point(0, 38);
-        this.EditWhbtn.Margin = new Padding(4, 5, 4, 5);
-        this.EditWhbtn.Name = "EditWhbtn";
-        this.EditWhbtn.Size = new Size(171, 38);
-        this.EditWhbtn.TabIndex = 1;
-        this.EditWhbtn.Text = "Modifier";
-        this.EditWhbtn.UseVisualStyleBackColor = true;
-        // 
-        // viewWhbtn
-        // 
-        this.viewWhbtn.Dock = DockStyle.Top;
-        this.viewWhbtn.Enabled = false;
-        this.viewWhbtn.Location = new Point(0, 0);
-        this.viewWhbtn.Margin = new Padding(4, 5, 4, 5);
-        this.viewWhbtn.Name = "viewWhbtn";
-        this.viewWhbtn.Size = new Size(171, 38);
-        this.viewWhbtn.TabIndex = 0;
-        this.viewWhbtn.Text = "Voir Détails";
-        this.viewWhbtn.UseVisualStyleBackColor = true;
+        this.buttonCreateSupplier.Dock = DockStyle.Bottom;
+        this.buttonCreateSupplier.Location = new Point(48, 20);
+        this.buttonCreateSupplier.Margin = new Padding(3, 4, 3, 4);
+        this.buttonCreateSupplier.Name = "buttonCreateSupplier";
+        this.buttonCreateSupplier.Size = new Size(131, 30);
+        this.buttonCreateSupplier.TabIndex = 0;
+        this.buttonCreateSupplier.Text = "Créer Fournisseur";
+        this.buttonCreateSupplier.UseVisualStyleBackColor = true;
         // 
         // buttonDeleteSupplier
         // 
@@ -1251,6 +1073,61 @@ partial class AdminMainMenu {
         this.buttonViewSupplier.Text = "Voir Détails";
         this.buttonViewSupplier.UseVisualStyleBackColor = true;
         // 
+        // supplierButtonsTLP
+        // 
+        this.supplierButtonsTLP.ColumnCount = 3;
+        this.supplierButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.supplierButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+        this.supplierButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.supplierButtonsTLP.Controls.Add(this.panel4, 1, 0);
+        this.supplierButtonsTLP.Dock = DockStyle.Bottom;
+        this.supplierButtonsTLP.Location = new Point(0, 216);
+        this.supplierButtonsTLP.Margin = new Padding(3, 4, 3, 4);
+        this.supplierButtonsTLP.Name = "supplierButtonsTLP";
+        this.supplierButtonsTLP.RowCount = 1;
+        this.supplierButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.supplierButtonsTLP.Size = new Size(227, 106);
+        this.supplierButtonsTLP.TabIndex = 10;
+        // 
+        // panel4
+        // 
+        this.panel4.Controls.Add(this.buttonDeleteSupplier);
+        this.panel4.Controls.Add(this.buttonEditSupplier);
+        this.panel4.Controls.Add(this.buttonViewSupplier);
+        this.panel4.Dock = DockStyle.Fill;
+        this.panel4.Location = new Point(45, 6);
+        this.panel4.Margin = new Padding(0, 6, 0, 0);
+        this.panel4.Name = "panel4";
+        this.panel4.Size = new Size(137, 100);
+        this.panel4.TabIndex = 0;
+        // 
+        // tableLayoutPanel3
+        // 
+        this.tableLayoutPanel3.ColumnCount = 3;
+        this.tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+        this.tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.tableLayoutPanel3.Controls.Add(this.button1, 1, 0);
+        this.tableLayoutPanel3.Dock = DockStyle.Top;
+        this.tableLayoutPanel3.Location = new Point(0, 30);
+        this.tableLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
+        this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+        this.tableLayoutPanel3.RowCount = 1;
+        this.tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.tableLayoutPanel3.Size = new Size(227, 54);
+        this.tableLayoutPanel3.TabIndex = 14;
+        // 
+        // button1
+        // 
+        this.button1.Dock = DockStyle.Bottom;
+        this.button1.Location = new Point(48, 20);
+        this.button1.Margin = new Padding(3, 4, 3, 4);
+        this.button1.Name = "button1";
+        this.button1.Size = new Size(131, 30);
+        this.button1.TabIndex = 0;
+        this.button1.Text = "Créer Ordre de Restockage";
+        this.button1.UseVisualStyleBackColor = true;
+        // 
         // buttonDeletePurchaseOrder
         // 
         this.buttonDeletePurchaseOrder.Dock = DockStyle.Top;
@@ -1287,6 +1164,346 @@ partial class AdminMainMenu {
         this.buttonViewPurchaseOrder.Text = "Voir Détails";
         this.buttonViewPurchaseOrder.UseVisualStyleBackColor = true;
         // 
+        // purchaseOrderButtonsTLP
+        // 
+        this.purchaseOrderButtonsTLP.ColumnCount = 3;
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.purchaseOrderButtonsTLP.Controls.Add(this.panel5, 1, 0);
+        this.purchaseOrderButtonsTLP.Dock = DockStyle.Bottom;
+        this.purchaseOrderButtonsTLP.Location = new Point(0, 216);
+        this.purchaseOrderButtonsTLP.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrderButtonsTLP.Name = "purchaseOrderButtonsTLP";
+        this.purchaseOrderButtonsTLP.RowCount = 1;
+        this.purchaseOrderButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.purchaseOrderButtonsTLP.Size = new Size(227, 106);
+        this.purchaseOrderButtonsTLP.TabIndex = 15;
+        // 
+        // panel5
+        // 
+        this.panel5.Controls.Add(this.buttonDeletePurchaseOrder);
+        this.panel5.Controls.Add(this.buttonEditPurchaseOrder);
+        this.panel5.Controls.Add(this.buttonViewPurchaseOrder);
+        this.panel5.Dock = DockStyle.Fill;
+        this.panel5.Location = new Point(45, 6);
+        this.panel5.Margin = new Padding(0, 6, 0, 0);
+        this.panel5.Name = "panel5";
+        this.panel5.Size = new Size(137, 100);
+        this.panel5.TabIndex = 0;
+        // 
+        // purchaseOrderSearchTextBox
+        // 
+        this.purchaseOrderSearchTextBox.Dock = DockStyle.Top;
+        this.purchaseOrderSearchTextBox.Location = new Point(0, 84);
+        this.purchaseOrderSearchTextBox.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrderSearchTextBox.Name = "purchaseOrderSearchTextBox";
+        this.purchaseOrderSearchTextBox.PlaceholderText = "Rechercher un ordre de restockage";
+        this.purchaseOrderSearchTextBox.Size = new Size(227, 27);
+        this.purchaseOrderSearchTextBox.TabIndex = 18;
+        // 
+        // supplierSearchTextBox
+        // 
+        this.supplierSearchTextBox.Dock = DockStyle.Top;
+        this.supplierSearchTextBox.Location = new Point(0, 84);
+        this.supplierSearchTextBox.Margin = new Padding(3, 4, 3, 4);
+        this.supplierSearchTextBox.Name = "supplierSearchTextBox";
+        this.supplierSearchTextBox.PlaceholderText = "Rechercher un fournisseur";
+        this.supplierSearchTextBox.Size = new Size(227, 27);
+        this.supplierSearchTextBox.TabIndex = 13;
+        // 
+        // supplierSearchResults
+        // 
+        this.supplierSearchResults.Dock = DockStyle.Fill;
+        this.supplierSearchResults.FormattingEnabled = true;
+        this.supplierSearchResults.ItemHeight = 20;
+        this.supplierSearchResults.Location = new Point(0, 111);
+        this.supplierSearchResults.Margin = new Padding(3, 4, 3, 4);
+        this.supplierSearchResults.Name = "supplierSearchResults";
+        this.supplierSearchResults.Size = new Size(227, 105);
+        this.supplierSearchResults.TabIndex = 14;
+        // 
+        // purchaseOrdreSearchResults
+        // 
+        this.purchaseOrdreSearchResults.Dock = DockStyle.Fill;
+        this.purchaseOrdreSearchResults.FormattingEnabled = true;
+        this.purchaseOrdreSearchResults.ItemHeight = 20;
+        this.purchaseOrdreSearchResults.Location = new Point(0, 111);
+        this.purchaseOrdreSearchResults.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrdreSearchResults.Name = "purchaseOrdreSearchResults";
+        this.purchaseOrdreSearchResults.Size = new Size(227, 105);
+        this.purchaseOrdreSearchResults.TabIndex = 19;
+        // 
+        this.buttonEditPurchaseOrder.TabIndex = 1;
+        this.buttonEditPurchaseOrder.Text = "Modifier";
+        this.buttonEditPurchaseOrder.UseVisualStyleBackColor = true;
+        // 
+        // buttonViewPurchaseOrder
+        // 
+        this.buttonViewPurchaseOrder.Dock = DockStyle.Top;
+        this.buttonViewPurchaseOrder.Enabled = false;
+        this.buttonViewPurchaseOrder.Location = new Point(0, 0);
+        this.buttonViewPurchaseOrder.Margin = new Padding(3, 4, 3, 4);
+        this.buttonViewPurchaseOrder.Name = "buttonViewPurchaseOrder";
+        this.buttonViewPurchaseOrder.Size = new Size(137, 30);
+        this.buttonViewPurchaseOrder.TabIndex = 0;
+        this.buttonViewPurchaseOrder.Text = "Voir Détails";
+        this.buttonViewPurchaseOrder.UseVisualStyleBackColor = true;
+        // 
+        // purchaseOrderButtonsTLP
+        this.purchaseOrderButtonsTLP.ColumnCount = 3;
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.purchaseOrderButtonsTLP.Controls.Add(this.panel5, 1, 0);
+        this.purchaseOrderButtonsTLP.Dock = DockStyle.Bottom;
+        this.purchaseOrderButtonsTLP.Location = new Point(0, 216);
+        this.purchaseOrderButtonsTLP.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrderButtonsTLP.Name = "purchaseOrderButtonsTLP";
+        this.purchaseOrderButtonsTLP.RowCount = 1;
+        this.purchaseOrderButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.purchaseOrderButtonsTLP.Size = new Size(227, 106);
+        this.purchaseOrderButtonsTLP.TabIndex = 15;
+        // 
+        // panel5
+        // 
+        this.panel5.Controls.Add(this.buttonDeletePurchaseOrder);
+        this.panel5.Controls.Add(this.buttonEditPurchaseOrder);
+        this.panel5.Controls.Add(this.buttonViewPurchaseOrder);
+        this.panel5.Dock = DockStyle.Fill;
+        this.panel5.Margin = new Padding(0, 6, 0, 0);
+        this.panel5.Name = "panel5";
+        this.panel5.Size = new Size(137, 100);
+        this.panel5.TabIndex = 0;
+        // 
+        // purchaseOrderSearchTextBox
+        // 
+        this.purchaseOrderSearchTextBox.Dock = DockStyle.Top;
+        this.purchaseOrderSearchTextBox.Location = new Point(0, 84);
+        this.purchaseOrderSearchTextBox.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrderSearchTextBox.Name = "purchaseOrderSearchTextBox";
+        this.purchaseOrderSearchTextBox.PlaceholderText = "Rechercher un ordre de restockage";
+        this.purchaseOrderSearchTextBox.Size = new Size(227, 27);
+        this.purchaseOrderSearchTextBox.TabIndex = 18;
+        // 
+        // supplierSearchTextBox
+        // 
+        this.supplierSearchTextBox.Dock = DockStyle.Top;
+        this.supplierSearchTextBox.Location = new Point(0, 84);
+        this.supplierSearchTextBox.Margin = new Padding(3, 4, 3, 4);
+        this.supplierSearchTextBox.Name = "supplierSearchTextBox";
+        this.supplierSearchTextBox.PlaceholderText = "Rechercher un fournisseur";
+        this.supplierSearchTextBox.Size = new Size(227, 27);
+        this.supplierSearchTextBox.TabIndex = 13;
+        // 
+        // supplierSearchResults
+        // 
+        this.supplierSearchResults.Dock = DockStyle.Fill;
+        this.supplierSearchResults.FormattingEnabled = true;
+        this.supplierSearchResults.ItemHeight = 20;
+        this.supplierSearchResults.Location = new Point(0, 111);
+        this.supplierSearchResults.Margin = new Padding(3, 4, 3, 4);
+        this.supplierSearchResults.Name = "supplierSearchResults";
+        this.supplierSearchResults.Size = new Size(227, 105);
+        this.supplierSearchResults.TabIndex = 14;
+        // 
+        // purchaseOrdreSearchResults
+        // 
+        this.purchaseOrdreSearchResults.Dock = DockStyle.Fill;
+        this.purchaseOrdreSearchResults.FormattingEnabled = true;
+        this.purchaseOrdreSearchResults.ItemHeight = 20;
+        this.purchaseOrdreSearchResults.Location = new Point(0, 111);
+        this.purchaseOrdreSearchResults.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrdreSearchResults.Name = "purchaseOrdreSearchResults";
+        this.purchaseOrdreSearchResults.Size = new Size(227, 105);
+        this.purchaseOrdreSearchResults.TabIndex = 19;
+        // 
+        this.buttonDeletePurchaseOrder.TabIndex = 2;
+        this.buttonDeletePurchaseOrder.Text = "Supprimer";
+        this.buttonDeletePurchaseOrder.UseVisualStyleBackColor = true;
+        // 
+        // buttonEditPurchaseOrder
+        // 
+        this.buttonEditPurchaseOrder.Dock = DockStyle.Top;
+        this.buttonEditPurchaseOrder.Enabled = false;
+        this.buttonEditPurchaseOrder.Location = new Point(0, 30);
+        this.buttonEditPurchaseOrder.Margin = new Padding(3, 4, 3, 4);
+        this.buttonEditPurchaseOrder.Name = "buttonEditPurchaseOrder";
+        this.buttonEditPurchaseOrder.Size = new Size(137, 30);
+        this.buttonEditPurchaseOrder.TabIndex = 1;
+        this.buttonEditPurchaseOrder.Text = "Modifier";
+        this.buttonEditPurchaseOrder.UseVisualStyleBackColor = true;
+        // 
+        // buttonViewPurchaseOrder
+        this.tableLayoutPanel3.ResumeLayout(false);
+        // 
+        this.buttonViewPurchaseOrder.Dock = DockStyle.Top;
+        this.buttonViewPurchaseOrder.Enabled = false;
+        this.buttonViewPurchaseOrder.Location = new Point(0, 0);
+        this.buttonViewPurchaseOrder.Margin = new Padding(3, 4, 3, 4);
+        this.buttonViewPurchaseOrder.Name = "buttonViewPurchaseOrder";
+        this.buttonViewPurchaseOrder.Size = new Size(137, 30);
+        this.buttonViewPurchaseOrder.TabIndex = 0;
+        this.buttonViewPurchaseOrder.Text = "Voir Détails";
+        this.buttonViewPurchaseOrder.UseVisualStyleBackColor = true;
+        // 
+        // purchaseOrderButtonsTLP
+        // 
+        this.purchaseOrderButtonsTLP.ColumnCount = 3;
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.purchaseOrderButtonsTLP.Controls.Add(this.panel5, 1, 0);
+        this.purchaseOrderButtonsTLP.Dock = DockStyle.Bottom;
+        this.purchaseOrderButtonsTLP.Location = new Point(0, 216);
+        this.createSupplierTLP.ResumeLayout(false);
+        this.purchaseOrderButtonsTLP.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrderButtonsTLP.Name = "purchaseOrderButtonsTLP";
+        this.purchaseOrderButtonsTLP.RowCount = 1;
+        this.purchaseOrderButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.purchaseOrderButtonsTLP.Size = new Size(227, 106);
+        this.purchaseOrderButtonsTLP.TabIndex = 15;
+        // 
+        // panel5
+        // 
+        this.panel5.Controls.Add(this.buttonDeletePurchaseOrder);
+        this.panel5.Controls.Add(this.buttonEditPurchaseOrder);
+        this.panel5.Controls.Add(this.buttonViewPurchaseOrder);
+        this.panel5.Dock = DockStyle.Fill;
+        this.panel5.Location = new Point(45, 6);
+        this.panel5.Margin = new Padding(0, 6, 0, 0);
+        this.panel5.Name = "panel5";
+        this.panel5.Size = new Size(137, 100);
+        this.panel5.TabIndex = 0;
+        // 
+        // purchaseOrderSearchTextBox
+        // 
+        this.purchaseOrderSearchTextBox.Dock = DockStyle.Top;
+        this.purchaseOrderSearchTextBox.Location = new Point(0, 84);
+        this.purchaseOrderSearchTextBox.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrderSearchTextBox.Name = "purchaseOrderSearchTextBox";
+        this.purchaseOrderSearchTextBox.PlaceholderText = "Rechercher un ordre de restockage";
+        this.purchaseOrderSearchTextBox.Size = new Size(227, 27);
+        this.purchaseOrderSearchTextBox.TabIndex = 18;
+        // 
+        // supplierSearchTextBox
+        // 
+        this.supplierSearchTextBox.Dock = DockStyle.Top;
+        this.supplierSearchTextBox.Location = new Point(0, 84);
+        this.supplierSearchTextBox.Margin = new Padding(3, 4, 3, 4);
+        this.supplierSearchTextBox.Name = "supplierSearchTextBox";
+        this.supplierSearchTextBox.PlaceholderText = "Rechercher un fournisseur";
+        this.supplierSearchTextBox.Size = new Size(227, 27);
+        this.supplierSearchTextBox.TabIndex = 13;
+        // 
+        // supplierSearchResults
+        // 
+        this.supplierSearchResults.Dock = DockStyle.Fill;
+        this.supplierSearchResults.FormattingEnabled = true;
+        this.supplierSearchResults.ItemHeight = 20;
+        this.supplierSearchResults.Location = new Point(0, 111);
+        this.supplierSearchResults.Margin = new Padding(3, 4, 3, 4);
+        this.supplierSearchResults.Name = "supplierSearchResults";
+        this.supplierSearchResults.Size = new Size(227, 105);
+        this.supplierSearchResults.TabIndex = 14;
+        // 
+        // purchaseOrdreSearchResults
+        // 
+        this.purchaseOrdreSearchResults.Dock = DockStyle.Fill;
+        this.purchaseOrdreSearchResults.FormattingEnabled = true;
+        this.purchaseOrdreSearchResults.ItemHeight = 20;
+        this.purchaseOrdreSearchResults.Location = new Point(0, 111);
+        this.purchaseOrdreSearchResults.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrdreSearchResults.Name = "purchaseOrdreSearchResults";
+        this.purchaseOrdreSearchResults.Size = new Size(227, 105);
+        this.purchaseOrdreSearchResults.TabIndex = 19;
+        // 
+        this.buttonEditPurchaseOrder.TabIndex = 1;
+        this.buttonEditPurchaseOrder.Text = "Modifier";
+        this.buttonEditPurchaseOrder.UseVisualStyleBackColor = true;
+        // 
+        // buttonViewPurchaseOrder
+        // 
+        this.buttonViewPurchaseOrder.Dock = DockStyle.Top;
+        this.buttonViewPurchaseOrder.Enabled = false;
+        this.buttonViewPurchaseOrder.Location = new Point(0, 0);
+        this.buttonViewPurchaseOrder.Margin = new Padding(3, 4, 3, 4);
+        this.buttonViewPurchaseOrder.Name = "buttonViewPurchaseOrder";
+        this.buttonViewPurchaseOrder.Size = new Size(137, 30);
+        this.buttonViewPurchaseOrder.TabIndex = 0;
+        this.buttonViewPurchaseOrder.Text = "Voir Détails";
+        this.buttonViewPurchaseOrder.UseVisualStyleBackColor = true;
+        // 
+        // purchaseOrderButtonsTLP
+        // 
+        this.purchaseOrderButtonsTLP.ColumnCount = 3;
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
+        this.purchaseOrderButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.purchaseOrderButtonsTLP.Controls.Add(this.panel5, 1, 0);
+        this.purchaseOrderButtonsTLP.Dock = DockStyle.Bottom;
+        this.purchaseOrderButtonsTLP.Location = new Point(0, 216);
+        this.purchaseOrderButtonsTLP.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrderButtonsTLP.Name = "purchaseOrderButtonsTLP";
+        this.purchaseOrderButtonsTLP.RowCount = 1;
+        this.purchaseOrderButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.purchaseOrderButtonsTLP.Size = new Size(227, 106);
+        this.purchaseOrderButtonsTLP.TabIndex = 15;
+        // 
+        // panel5
+        // 
+        this.panel5.Controls.Add(this.buttonDeletePurchaseOrder);
+        this.panel5.Controls.Add(this.buttonEditPurchaseOrder);
+        this.panel5.Controls.Add(this.buttonViewPurchaseOrder);
+        this.panel5.Dock = DockStyle.Fill;
+        this.panel5.Location = new Point(45, 6);
+        this.panel5.Margin = new Padding(0, 6, 0, 0);
+        this.panel5.Name = "panel5";
+        this.panel5.Size = new Size(137, 100);
+        this.panel5.TabIndex = 0;
+        // 
+        // purchaseOrderSearchTextBox
+        // 
+        this.purchaseOrderSearchTextBox.Dock = DockStyle.Top;
+        this.purchaseOrderSearchTextBox.Location = new Point(0, 84);
+        this.purchaseOrderSearchTextBox.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrderSearchTextBox.Name = "purchaseOrderSearchTextBox";
+        this.purchaseOrderSearchTextBox.PlaceholderText = "Rechercher un ordre de restockage";
+        this.purchaseOrderSearchTextBox.Size = new Size(227, 27);
+        this.purchaseOrderSearchTextBox.TabIndex = 18;
+        // 
+        // supplierSearchTextBox
+        // 
+        this.supplierSearchTextBox.Dock = DockStyle.Top;
+        this.supplierSearchTextBox.Location = new Point(0, 84);
+        this.supplierSearchTextBox.Margin = new Padding(3, 4, 3, 4);
+        this.supplierSearchTextBox.Name = "supplierSearchTextBox";
+        this.supplierSearchTextBox.PlaceholderText = "Rechercher un fournisseur";
+        this.supplierSearchTextBox.Size = new Size(227, 27);
+        this.supplierSearchTextBox.TabIndex = 13;
+        // 
+        // supplierSearchResults
+        // 
+        this.supplierSearchResults.Dock = DockStyle.Fill;
+        this.supplierSearchResults.FormattingEnabled = true;
+        this.supplierSearchResults.ItemHeight = 20;
+        this.supplierSearchResults.Location = new Point(0, 111);
+        this.supplierSearchResults.Margin = new Padding(3, 4, 3, 4);
+        this.supplierSearchResults.Name = "supplierSearchResults";
+        this.supplierSearchResults.Size = new Size(227, 105);
+        this.supplierSearchResults.TabIndex = 14;
+        // 
+        // purchaseOrdreSearchResults
+        // 
+        this.purchaseOrdreSearchResults.Dock = DockStyle.Fill;
+        this.purchaseOrdreSearchResults.FormattingEnabled = true;
+        this.purchaseOrdreSearchResults.ItemHeight = 20;
+        this.purchaseOrdreSearchResults.Location = new Point(0, 111);
+        this.purchaseOrdreSearchResults.Margin = new Padding(3, 4, 3, 4);
+        this.purchaseOrdreSearchResults.Name = "purchaseOrdreSearchResults";
+        this.purchaseOrdreSearchResults.Size = new Size(227, 105);
+        this.purchaseOrdreSearchResults.TabIndex = 19;
+        // 
         // AdminMainMenu
         // 
         this.AutoScaleDimensions = new SizeF(10F, 25F);
@@ -1304,7 +1521,6 @@ partial class AdminMainMenu {
         this.centerTableLayoutPanel.ResumeLayout(false);
         this.purchaseOrderMainPanel.ResumeLayout(false);
         this.purchaseOrderMainPanel.PerformLayout();
-        this.tableLayoutPanel3.ResumeLayout(false);
         this.shipmentMainPanel.ResumeLayout(false);
         this.shipmentMainPanel.PerformLayout();
         this.tableLayoutPanel2.ResumeLayout(false);
@@ -1325,7 +1541,6 @@ partial class AdminMainMenu {
         this.createWhTLP.ResumeLayout(false);
         this.supplierMainPanel.ResumeLayout(false);
         this.supplierMainPanel.PerformLayout();
-        this.createSupplierTLP.ResumeLayout(false);
         this.productMainPanel.ResumeLayout(false);
         this.roleMainPanel.ResumeLayout(false);
         this.roleMainPanel.PerformLayout();
@@ -1410,7 +1625,7 @@ partial class AdminMainMenu {
     private ListBox purchaseOrdreSearchResults;
     private TextBox purchaseOrderSearchTextBox;
     private TableLayoutPanel tableLayoutPanel3;
-    private Button button1;
+    private Button buttonCreatePurchaseOrder;
     private TableLayoutPanel purchaseOrderButtonsTLP;
     private Panel panel5;
     private Button buttonDeletePurchaseOrder;
