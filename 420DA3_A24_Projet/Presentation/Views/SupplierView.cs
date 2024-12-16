@@ -16,7 +16,7 @@ namespace _420DA3_A24_Projet.Presentation.Views;
 /// <summary>
 /// Management window for <see cref="Supplier"/> entities.
 /// </summary>
-public partial class SupplierView : Form {
+internal partial class SupplierView : Form {
 
     private readonly ProjectApplication parentApp;
 

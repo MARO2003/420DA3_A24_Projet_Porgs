@@ -27,30 +27,32 @@ partial class PurchaseOrderView {
         this.dateDeletedValue = new DateTimePicker();
         this.dateModifiedValue = new DateTimePicker();
         this.dateCreatedValue = new DateTimePicker();
-        this.contactEmailValue = new TextBox();
-        this.statusValue = new TextBox();
         this.idValue = new NumericUpDown();
         this.dateDeletedLabel = new Label();
         this.dateModifiedLabel = new Label();
         this.dateCreatedLabel = new Label();
-        this.quantityabel = new Label();
+        this.quantityLabel = new Label();
         this.idLabel = new Label();
         this.centerPanel = new Panel();
+        this.statusValue = new ComboBox();
+        this.completionDateValue = new DateTimePicker();
         this.contactTelephoneLabel = new Label();
         this.statusLabel = new Label();
-        this.ActionBtn = new Button();
         this.cancelBtn = new Button();
         this.centerTLP = new TableLayoutPanel();
         this.bottomBarPanel = new Panel();
+        this.ActionBtn = new Button();
+        this.cancelBtnn = new Button();
         this.topBarPanel = new Panel();
-        this.completionDate = new DateTimePicker();
         this.openendModeValue = new Label();
         this.openedModeLabel = new Label();
+        this.quantityValue = new NumericUpDown();
         ((System.ComponentModel.ISupportInitialize) this.idValue).BeginInit();
         this.centerPanel.SuspendLayout();
         this.centerTLP.SuspendLayout();
         this.bottomBarPanel.SuspendLayout();
         this.topBarPanel.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize) this.quantityValue).BeginInit();
         this.SuspendLayout();
         // 
         // dateDeletedValue
@@ -73,20 +75,6 @@ partial class PurchaseOrderView {
         this.dateCreatedValue.Name = "dateCreatedValue";
         this.dateCreatedValue.Size = new Size(250, 27);
         this.dateCreatedValue.TabIndex = 16;
-        // 
-        // contactEmailValue
-        // 
-        this.contactEmailValue.Location = new Point(229, 90);
-        this.contactEmailValue.Name = "contactEmailValue";
-        this.contactEmailValue.Size = new Size(270, 27);
-        this.contactEmailValue.TabIndex = 14;
-        // 
-        // statusValue
-        // 
-        this.statusValue.Location = new Point(229, 57);
-        this.statusValue.Name = "statusValue";
-        this.statusValue.Size = new Size(270, 27);
-        this.statusValue.TabIndex = 11;
         // 
         // idValue
         // 
@@ -123,14 +111,14 @@ partial class PurchaseOrderView {
         this.dateCreatedLabel.Text = "Date Created :";
         this.dateCreatedLabel.TextAlign = ContentAlignment.MiddleRight;
         // 
-        // quantityabel
+        // quantityLabel
         // 
-        this.quantityabel.Location = new Point(5, 92);
-        this.quantityabel.Name = "quantityabel";
-        this.quantityabel.Size = new Size(218, 25);
-        this.quantityabel.TabIndex = 4;
-        this.quantityabel.Text = "Quantity :";
-        this.quantityabel.TextAlign = ContentAlignment.MiddleRight;
+        this.quantityLabel.Location = new Point(5, 92);
+        this.quantityLabel.Name = "quantityLabel";
+        this.quantityLabel.Size = new Size(218, 25);
+        this.quantityLabel.TabIndex = 4;
+        this.quantityLabel.Text = "Quantity :";
+        this.quantityLabel.TextAlign = ContentAlignment.MiddleRight;
         // 
         // idLabel
         // 
@@ -143,18 +131,18 @@ partial class PurchaseOrderView {
         // 
         // centerPanel
         // 
-        this.centerPanel.Controls.Add(this.completionDate);
+        this.centerPanel.Controls.Add(this.quantityValue);
+        this.centerPanel.Controls.Add(this.statusValue);
+        this.centerPanel.Controls.Add(this.completionDateValue);
         this.centerPanel.Controls.Add(this.dateDeletedValue);
         this.centerPanel.Controls.Add(this.dateModifiedValue);
         this.centerPanel.Controls.Add(this.dateCreatedValue);
-        this.centerPanel.Controls.Add(this.contactEmailValue);
-        this.centerPanel.Controls.Add(this.statusValue);
         this.centerPanel.Controls.Add(this.idValue);
         this.centerPanel.Controls.Add(this.dateDeletedLabel);
         this.centerPanel.Controls.Add(this.dateModifiedLabel);
         this.centerPanel.Controls.Add(this.dateCreatedLabel);
         this.centerPanel.Controls.Add(this.contactTelephoneLabel);
-        this.centerPanel.Controls.Add(this.quantityabel);
+        this.centerPanel.Controls.Add(this.quantityLabel);
         this.centerPanel.Controls.Add(this.statusLabel);
         this.centerPanel.Controls.Add(this.idLabel);
         this.centerPanel.Dock = DockStyle.Fill;
@@ -162,6 +150,21 @@ partial class PurchaseOrderView {
         this.centerPanel.Name = "centerPanel";
         this.centerPanel.Size = new Size(594, 298);
         this.centerPanel.TabIndex = 0;
+        // 
+        // statusValue
+        // 
+        this.statusValue.FormattingEnabled = true;
+        this.statusValue.Location = new Point(229, 57);
+        this.statusValue.Name = "statusValue";
+        this.statusValue.Size = new Size(270, 28);
+        this.statusValue.TabIndex = 20;
+        // 
+        // completionDateValue
+        // 
+        this.completionDateValue.Location = new Point(229, 122);
+        this.completionDateValue.Name = "completionDateValue";
+        this.completionDateValue.Size = new Size(250, 27);
+        this.completionDateValue.TabIndex = 19;
         // 
         // contactTelephoneLabel
         // 
@@ -180,17 +183,6 @@ partial class PurchaseOrderView {
         this.statusLabel.TabIndex = 1;
         this.statusLabel.Text = "Status :";
         this.statusLabel.TextAlign = ContentAlignment.MiddleRight;
-        // 
-        // ActionBtn
-        // 
-        this.ActionBtn.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.ActionBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.ActionBtn.Location = new Point(966, -41);
-        this.ActionBtn.Name = "ActionBtn";
-        this.ActionBtn.Size = new Size(224, 29);
-        this.ActionBtn.TabIndex = 1;
-        this.ActionBtn.Text = "Action";
-        this.ActionBtn.UseVisualStyleBackColor = true;
         // 
         // cancelBtn
         // 
@@ -220,12 +212,34 @@ partial class PurchaseOrderView {
         // bottomBarPanel
         // 
         this.bottomBarPanel.Controls.Add(this.ActionBtn);
+        this.bottomBarPanel.Controls.Add(this.cancelBtnn);
         this.bottomBarPanel.Controls.Add(this.cancelBtn);
         this.bottomBarPanel.Dock = DockStyle.Bottom;
         this.bottomBarPanel.Location = new Point(0, 354);
         this.bottomBarPanel.Name = "bottomBarPanel";
         this.bottomBarPanel.Size = new Size(802, 50);
         this.bottomBarPanel.TabIndex = 4;
+        // 
+        // ActionBtn
+        // 
+        this.ActionBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.ActionBtn.Location = new Point(426, 9);
+        this.ActionBtn.Name = "ActionBtn";
+        this.ActionBtn.Size = new Size(188, 29);
+        this.ActionBtn.TabIndex = 2;
+        this.ActionBtn.Text = "Action";
+        this.ActionBtn.UseVisualStyleBackColor = true;
+        this.ActionBtn.Click += this.ActionBtn_Click;
+        // 
+        // cancelBtnn
+        // 
+        this.cancelBtnn.Location = new Point(633, 9);
+        this.cancelBtnn.Name = "cancelBtnn";
+        this.cancelBtnn.Size = new Size(128, 29);
+        this.cancelBtnn.TabIndex = 1;
+        this.cancelBtnn.Text = "cancel";
+        this.cancelBtnn.UseVisualStyleBackColor = true;
+        this.cancelBtnn.Click += this.cancelBtnn_Click;
         // 
         // topBarPanel
         // 
@@ -236,13 +250,6 @@ partial class PurchaseOrderView {
         this.topBarPanel.Name = "topBarPanel";
         this.topBarPanel.Size = new Size(802, 50);
         this.topBarPanel.TabIndex = 3;
-        // 
-        // completionDate
-        // 
-        this.completionDate.Location = new Point(229, 122);
-        this.completionDate.Name = "completionDate";
-        this.completionDate.Size = new Size(250, 27);
-        this.completionDate.TabIndex = 19;
         // 
         // openendModeValue
         // 
@@ -263,6 +270,13 @@ partial class PurchaseOrderView {
         this.openedModeLabel.TabIndex = 2;
         this.openedModeLabel.Text = "Mode :";
         // 
+        // quantityValue
+        // 
+        this.quantityValue.Location = new Point(229, 89);
+        this.quantityValue.Name = "quantityValue";
+        this.quantityValue.Size = new Size(209, 27);
+        this.quantityValue.TabIndex = 21;
+        // 
         // PurchaseOrderView
         // 
         this.AutoScaleDimensions = new SizeF(8F, 20F);
@@ -276,11 +290,11 @@ partial class PurchaseOrderView {
         this.Load += this.PurchaseOrderView_Load;
         ((System.ComponentModel.ISupportInitialize) this.idValue).EndInit();
         this.centerPanel.ResumeLayout(false);
-        this.centerPanel.PerformLayout();
         this.centerTLP.ResumeLayout(false);
         this.bottomBarPanel.ResumeLayout(false);
         this.topBarPanel.ResumeLayout(false);
         this.topBarPanel.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize) this.quantityValue).EndInit();
         this.ResumeLayout(false);
     }
 
@@ -288,23 +302,24 @@ partial class PurchaseOrderView {
     private DateTimePicker dateDeletedValue;
     private DateTimePicker dateModifiedValue;
     private DateTimePicker dateCreatedValue;
-    private TextBox contactEmailValue;
-    private TextBox statusValue;
     private NumericUpDown idValue;
     private Label dateDeletedLabel;
     private Label dateModifiedLabel;
     private Label dateCreatedLabel;
-    private Label quantityabel;
+    private Label quantityLabel;
     private Label idLabel;
     private Panel centerPanel;
     private Label contactTelephoneLabel;
     private Label statusLabel;
-    private Button ActionBtn;
     private Button cancelBtn;
     private TableLayoutPanel centerTLP;
     private Panel bottomBarPanel;
     private Panel topBarPanel;
-    private DateTimePicker completionDate;
+    private DateTimePicker completionDateValue;
     private Label openendModeValue;
     private Label openedModeLabel;
+    private Button ActionBtn;
+    private Button cancelBtnn;
+    private ComboBox statusValue;
+    private NumericUpDown quantityValue;
 }
