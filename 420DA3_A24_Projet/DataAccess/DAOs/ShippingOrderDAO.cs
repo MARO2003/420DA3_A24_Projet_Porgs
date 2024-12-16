@@ -8,7 +8,7 @@ namespace _420DA3_A24_Projet.DataAccess.DAOs;
 /// Classe DAO pour gérer les opérations liées à l'entité ShippingOrder (ordre d'expédition).
 /// </summary>
 internal class ShippingOrderDAO {
-    private readonly WsysDbContext context;
+    private  WsysDbContext context;
 
     /// <summary>
     /// Constructeur qui initialise la classe

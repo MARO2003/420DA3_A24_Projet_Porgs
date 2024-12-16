@@ -931,9 +931,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
             .ToTable(nameof(this.ShippingOrdersProducts))
             .HasKey(sop => new { sop.ShippingOrderId, sop.ProductId });
 
-        _ = modelBuilder.Entity<ShippingOrderProduct>()
-            .HasIndex(sop => new { sop.ShippingOrderId, sop.ProductId })
-            .IsUnique(true);
+       
 
         _ = modelBuilder.Entity<ShippingOrderProduct>()
             .Property(sop => sop.ShippingOrderId)
@@ -955,7 +953,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
             .HasColumnName("RowVersion")
             .HasColumnOrder(3)
             .IsRowVersion();
-       
+
 
 
 
@@ -966,10 +964,16 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
         #region RELATIONS RE DONNÉES DE TEST
 
         // Warehouse ici
+        //creation d'une variable entiere pour l'id d'adresse
+            int adressId = 1;
+        Warehouse wh = new Warehouse("PorgsWarehouse", adressId) {
+            Id = 1
+        };
 
+        _=modelBuilder.Entity<Warehouse>().HasData(wh);
 
         // NOTE: le mot de passe des user est "testpasswd".
-        User user1 = new User("UserAdmin", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
+            User user1 = new User("UserAdmin", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
                 Id = 1
             };
             User user2 = new User("UserOffice", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
@@ -1021,14 +1025,22 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
                         new { UserId = 3, RoleId = 3 });
                     }
                 );
-            // Possiblement pas besoin de la relation inversion
-            /*
-            _ = modelBuilder.Entity<Role>()
-                .HasMany(role => role.Users)
-                .WithMany(user => user.Roles);
-            */
+        // Possiblement pas besoin de la relation inversion
+        /*
+        _ = modelBuilder.Entity<Role>()
+            .HasMany(role => role.Users)
+            .WithMany(user => user.Roles);
+        */
 
-            #endregion
+        //Relation un a plusieurs entre ShippingOrder et ShippingOrderProduct
+
+            _=modelBuilder.Entity<ShippingOrder>()
+            .HasMany(so => so.ShippingOrderProducts) 
+            .WithOne(sop => sop.ShippingOrder) 
+            .HasForeignKey(sop => sop.ShippingOrderId) 
+            .IsRequired();
+
+        #endregion
 
         }
     }

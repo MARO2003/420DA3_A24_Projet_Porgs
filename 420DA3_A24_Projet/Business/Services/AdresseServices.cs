@@ -26,7 +26,7 @@ internal class AdresseServices {
         return result == DialogResult.OK ? newAdresse : null;
     }
 
-    public Adresse? OpenAdresseWindowForDetailsView(Adresse adresse) {
+    public Adresse? OpenAdresseWindowForView(Adresse adresse) {
         DialogResult result = this.view.OpenForDetailsView(adresse);
         return result == DialogResult.OK ? adresse : null;
     }
@@ -62,6 +62,9 @@ internal class AdresseServices {
     /// <returns></returns>
     public Adresse? GetAdresseType(AddressTypesEnum adresseType, bool includeDelete = false) {
         return this.dao.GetByAdresseType(adresseType, includeDelete);
+    }
+    public List<Adresse> Search(string criterio) {
+        return this.dao.Search(criterion);
     }
 
    /// <summary>

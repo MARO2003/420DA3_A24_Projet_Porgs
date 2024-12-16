@@ -1,5 +1,6 @@
 ﻿using _420DA3_A24_Projet.Business;
 using _420DA3_A24_Projet.Business.Domain;
+using _420DA3_A24_Projet.Business.Services;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Project_Utilities.Enums;
 
@@ -124,7 +125,7 @@ internal partial class UserView : Form {
             foreach (Role role in roles) {
                 _ = this.userRolesValues.Items.Add(role);
             }
-
+            
             this.whEmpWarehouseValue.Items.Clear();
             _ = this.whEmpWarehouseValue.Items.Add("None");
             // TODO @PROF: fix this quand le service entrepot sera créé

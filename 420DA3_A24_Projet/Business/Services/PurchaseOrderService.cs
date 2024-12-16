@@ -97,14 +97,13 @@ internal class PurchaseOrderService {
 
 
 
-    //// <summary>
+    /// <summary>
     /// Returns the list of every <see cref="PurchaseOrder"/> that exist in the data source.
     /// </summary>
     /// <param name="includeDeleted"></param>
     /// <returns></returns>
-    /// 
 
-    public List<PurchaseOrder> GetAllRoles(bool includeDeleted = false) {
+    public List<PurchaseOrder> GetAllPurchaseOrders(bool includeDeleted = false) {
         try {
             return this.dao.GetAll(includeDeleted);
 
@@ -113,7 +112,81 @@ internal class PurchaseOrderService {
         }
     }
 
+    /// <summary>
+    /// Returns the <see cref="PurchaseOrder"/> that matches the given <paramref name="id"/> 
+    /// in the data source or <see langword="null"/>.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="includeDeleted"></param>
+    /// <returns></returns>
+
+    public PurchaseOrder? GetById(int id, bool includeDeleted = false) {
+        try {
+            return this.dao.GetById(id, includeDeleted);
+
+        } catch (Exception ex) {
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to retrieve a PurchaseOrder by its Id.", ex);
+        }
+    }
 
 
+    /// <summary>
+    /// Returns the list of every <see cref="PurchaseOrder"/> that match the given <paramref name="criterion"/> in the data source.
+    /// </summary>
+    /// <param name="criterion"></param>
+    /// <param name="includeDeleted"></param>
+    /// <returns></returns>
+    public List<PurchaseOrder> SearchPurchaseOrders(string criterion, bool includeDeleted = false) {
+        try {
+            return this.dao.Search(criterion, includeDeleted);
+
+        } catch (Exception ex) {
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to search existing PurchaseOrders.", ex);
+        }
+    }
+
+
+    /// <summary>
+    /// Inserts a <see cref="PurchaseOrder"/> in the data source.
+    /// </summary>
+    /// <param name="purchaseOrder"></param>
+    /// <returns></returns>
+    public PurchaseOrder CreatePurchaseOrder(PurchaseOrder purchaseOrder) {
+        try {
+            return this.dao.Create(purchaseOrder);
+
+        } catch (Exception ex) {
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to insert a new purchaseOrder in the database.", ex);
+        }
+    }
+
+    /// <summary>
+    /// Updates a <see cref="PurchaseOrder"/> in the data source.
+    /// </summary>
+    /// <param name="purchaseOrder"></param>
+    /// <returns></returns>
+    public PurchaseOrder UpdatePurchaseOrder(PurchaseOrder purchaseOrder) {
+        try {
+            return this.dao.Update(purchaseOrder);
+
+        } catch (Exception ex) {
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to update a purchaseOrder in the database.", ex);
+        }
+    }
+
+    /// <summary>
+    /// Deletes a <see cref="PurchaseOrder"/> in the data source.
+    /// </summary>
+    /// <param name="purchaseOrder"></param>
+    /// <param name="softDeletes"></param>
+    /// <returns></returns>
+    public PurchaseOrder DeletePurchaseOrder(PurchaseOrder purchaseOrder, bool softDeletes = true) {
+        try {
+            return this.dao.Delete(purchaseOrder, softDeletes);
+
+        } catch (Exception ex) {
+            throw new Exception($"{this.GetType().ShortDisplayName}: Failed to delete a purchaseOrder from the database.", ex);
+        }
+    }
 
 }

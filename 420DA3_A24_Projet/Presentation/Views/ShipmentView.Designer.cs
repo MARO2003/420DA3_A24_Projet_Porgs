@@ -25,6 +25,8 @@ partial class ShipmentView {
     /// </summary>
     private void InitializeComponent() {
         this.topBarPanel = new Panel();
+        this.valueModeFentre = new Label();
+        this.lblModeleFanetre = new Label();
         this.bottomBarPanel = new Panel();
         this.btnAction = new Button();
         this.btnAnnuler = new Button();
@@ -46,8 +48,6 @@ partial class ShipmentView {
         this.lblShipmentStatus = new Label();
         this.valueId = new NumericUpDown();
         this.labelId = new Label();
-        this.lblModeleFanetre = new Label();
-        this.valueModeFentre = new Label();
         this.topBarPanel.SuspendLayout();
         this.bottomBarPanel.SuspendLayout();
         this.centerTblLayoutPanel.SuspendLayout();
@@ -65,6 +65,26 @@ partial class ShipmentView {
         this.topBarPanel.Name = "topBarPanel";
         this.topBarPanel.Size = new Size(1024, 47);
         this.topBarPanel.TabIndex = 1;
+        // 
+        // valueModeFentre
+        // 
+        this.valueModeFentre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.valueModeFentre.Location = new Point(173, 5);
+        this.valueModeFentre.Name = "valueModeFentre";
+        this.valueModeFentre.Size = new Size(254, 32);
+        this.valueModeFentre.TabIndex = 3;
+        this.valueModeFentre.Text = "PLACEHORDER";
+        this.valueModeFentre.TextAlign = ContentAlignment.MiddleLeft;
+        // 
+        // lblModeleFanetre
+        // 
+        this.lblModeleFanetre.AutoSize = true;
+        this.lblModeleFanetre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.lblModeleFanetre.Location = new Point(21, 9);
+        this.lblModeleFanetre.Name = "lblModeleFanetre";
+        this.lblModeleFanetre.Size = new Size(145, 25);
+        this.lblModeleFanetre.TabIndex = 0;
+        this.lblModeleFanetre.Text = "Model Fenetre: ";
         // 
         // bottomBarPanel
         // 
@@ -113,6 +133,7 @@ partial class ShipmentView {
         this.centerTblLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
         this.centerTblLayoutPanel.Size = new Size(1024, 515);
         this.centerTblLayoutPanel.TabIndex = 3;
+        this.centerTblLayoutPanel.Paint += this.centerTblLayoutPanel_Paint;
         // 
         // centerPanel
         // 
@@ -196,6 +217,7 @@ partial class ShipmentView {
         // 
         this.valueTrackingNumber.Location = new Point(196, 226);
         this.valueTrackingNumber.Name = "valueTrackingNumber";
+        this.valueTrackingNumber.PlaceholderText = "Tracking Number";
         this.valueTrackingNumber.Size = new Size(294, 31);
         this.valueTrackingNumber.TabIndex = 10;
         // 
@@ -278,26 +300,6 @@ partial class ShipmentView {
         this.labelId.TabIndex = 0;
         this.labelId.Text = "ID:";
         this.labelId.TextAlign = ContentAlignment.TopRight;
-        // 
-        // lblModeleFanetre
-        // 
-        this.lblModeleFanetre.AutoSize = true;
-        this.lblModeleFanetre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.lblModeleFanetre.Location = new Point(21, 9);
-        this.lblModeleFanetre.Name = "lblModeleFanetre";
-        this.lblModeleFanetre.Size = new Size(145, 25);
-        this.lblModeleFanetre.TabIndex = 0;
-        this.lblModeleFanetre.Text = "Model Fenetre: ";
-        // 
-        // valueModeFentre
-        // 
-        this.valueModeFentre.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.valueModeFentre.Location = new Point(173, 5);
-        this.valueModeFentre.Name = "valueModeFentre";
-        this.valueModeFentre.Size = new Size(254, 32);
-        this.valueModeFentre.TabIndex = 3;
-        this.valueModeFentre.Text = "PLACEHORDER";
-        this.valueModeFentre.TextAlign = ContentAlignment.MiddleLeft;
         // 
         // ShipmentView
         // 

@@ -58,13 +58,20 @@ public class ShippingOrderProduct {
             this.RowVersion = rowVersion;
         }
 
-        /// <summary>
-        /// Méthode de validation de la quantité du produit.
-        /// La quantité doit être supérieure ou égale à 1.
-        /// </summary>
-        /// <param name="quantity">La quantité du produit.</param>
-        /// <returns><see langword="true"/> si valide, <see langword="false"/> sinon.</returns>
-        public static bool ValidateQuantity(int quantity) {
+        public ShippingOrderProduct(Product product, int quantity = 0) {
+            this.Product = product;
+            this.ProductId = product.Id;
+            this.Quantity = quantity;
+        }
+
+
+    /// <summary>
+    /// Méthode de validation de la quantité du produit.
+    /// La quantité doit être supérieure ou égale à 1.
+    /// </summary>
+    /// <param name="quantity">La quantité du produit.</param>
+    /// <returns><see langword="true"/> si valide, <see langword="false"/> sinon.</returns>
+    public static bool ValidateQuantity(int quantity) {
             return quantity >= 1;
         }
 
