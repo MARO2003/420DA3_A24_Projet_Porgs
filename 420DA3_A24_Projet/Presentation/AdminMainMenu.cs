@@ -3,6 +3,7 @@ using _420DA3_A24_Projet.Business.Domain;
 using Project_Utilities.Enums;
 using System.DirectoryServices;
 using Project_Utilities.Presentation;
+using System.Windows.Forms.VisualStyles;
 
 namespace _420DA3_A24_Projet.Presentation;
 
@@ -357,8 +358,8 @@ internal partial class AdminMainMenu : Form {
     #region GESTION DES EXPEDITIONS
     private void btnCreateExpedition_Click(object sender, EventArgs e) {
         Shipment? shipmentCreer = this.parentApp.ShipmentServices.OpenShipmentWindowForCreation();
-        if (shipmentCreer != null) { 
-            _= this.expeditionSearchResults.Items.Add(shipmentCreer);
+        if (shipmentCreer != null) {
+            _ = this.expeditionSearchResults.Items.Add(shipmentCreer);
             this.expeditionSearchResults.SelectedItem = shipmentCreer;
         }
     }
@@ -369,8 +370,8 @@ internal partial class AdminMainMenu : Form {
         this.expeditionSearchResults.Items.Clear();
         this.expeditionSearchResults.SelectedItem = null;
         this.expeditionSearchResults.SelectedIndex = -1;
-        foreach(Shipment shipment in result) {
-            _= this.expeditionSearchResults.Items.Add(shipment);
+        foreach (Shipment shipment in result) {
+            _ = this.expeditionSearchResults.Items.Add(shipment);
         }
     }
 
@@ -388,20 +389,244 @@ internal partial class AdminMainMenu : Form {
         if (selectedShipment != null) {
             throw new Exception("Veuillez selectionner une expedition");
         }
-        _= this.parentApp.ShipmentServices.OpenShipmentWindowForView(selectedShipment);
+        _ = this.parentApp.ShipmentServices.OpenShipmentWindowForView(selectedShipment);
 
     }
     #endregion
 
 
     #region GESTION DES SUPPLIERS
-    
+    /// <summary>
+    /// Empties the <see cref="Supplier"/> search results <see cref="ListBox"/> then fills it with the given
+    /// <paramref name="searchResults"/>.
+    /// </summary>
+    /// <param name="searchResults"></param>
+
+    private void ReloadSupplierSearchresults(List<Supplier> searchResults) {
+        try {
+            this.supplierSearchResults.SelectedItem = null;
+            this.supplierSearchResults.SelectedIndex = -1;
+            this.supplierSearchResults.Items.Clear();
+            _ = this.supplierSearchResults.Items.Add(listNoneSelectedValue);
+            foreach (Supplier supplier in searchResults) {
+                _ = this.supplierSearchResults.Items.Add(supplier);
+            }
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    /// <summary>
+    /// Enables the supplier  action buttons.
+    /// </summary>
+
+    private void ActivateSupplierActionButtons() {
+        this.buttonDeleteSupplier.Enabled = true;
+        this.buttonEditSupplier.Enabled = true;
+        this.buttonViewSupplier.Enabled = true;
+    }
+    /// <summary>
+    /// Disables the supplier action buttons.
+    /// </summary>
+    private void DeactivateSupplierActionButtons() {
+        this.buttonDeleteSupplier.Enabled = false;
+        this.buttonEditSupplier.Enabled = false;
+        this.buttonViewSupplier.Enabled = false;
+    }
+    private void buttonCreateSupplier_Click(object sender, EventArgs e) {
+        try {
+            Supplier? supplierCreated = this.parentApp.SupplierService.OpenManagementWindowForCreation();
+            if (supplierCreated != null) {
+                _ = this.supplierSearchResults.Items.Add(supplierCreated);
+                this.supplierSearchResults.SelectedItem = supplierCreated;
+            }
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void supplierSearchTextBox_TextChanged(object sender, EventArgs e) {
+        try {
+            string searchCriterion = this.supplierSearchTextBox.Text.Trim();
+            List<Supplier> results = this.parentApp.SupplierService.SearchSuppliers(searchCriterion);
+            this.ReloadSupplierSearchresults(results);
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void supplierSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
+        Supplier? selectedSupplier = this.supplierSearchResults.SelectedItem as Supplier;
+        if (selectedSupplier != null) {
+            this.ActivateSupplierActionButtons();
+        } else {
+            this.DeactivateSupplierActionButtons();
+        }
+    }
+
+    private void buttonViewSupplier_Click(object sender, EventArgs e) {
+        try {
+            Supplier selectedSupplier = (Supplier) this.supplierSearchResults.SelectedItem;
+            Supplier? createdSupplier = this.parentApp.SupplierService.OpenManagementWindowForVisualization(selectedSupplier);
+            if (createdSupplier != null) {
+                _ = this.supplierSearchResults.Items.Add(createdSupplier);
+                this.supplierSearchResults.SelectedItem = createdSupplier;
+            }
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void buttonEditSupplier_Click(object sender, EventArgs e) {
+        try {
+            Supplier selectedSupplier = (Supplier) this.supplierSearchResults.SelectedItem;
+            bool wasUpdated = this.parentApp.SupplierService.OpenManagementWindowForEdition(selectedSupplier);
+            if (wasUpdated) {
+                this.supplierSearchResults.RefreshDisplay();
+            }
+
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void buttonDeleteSupplier_Click(object sender, EventArgs e) {
+        try {
+            Supplier selectedSupplier = (Supplier) this.supplierSearchResults.SelectedItem;
+            bool wasDeleted = this.parentApp.SupplierService.OpenManagementWindowForDeletion(selectedSupplier);
+
+            if (wasDeleted) {
+                this.supplierSearchResults.SelectedItem = null;
+                this.supplierSearchResults.SelectedIndex = -1;
+                this.supplierSearchResults.Items.Remove(selectedSupplier);
+            }
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
     #endregion
-
-
-
 
     #region GESTION DES PURCHASEORDERS
+    /// <summary>
+    /// Empties the <see cref="PurchaseOrder"/> search results <see cref="ListBox"/> then fills it with the given
+    /// <paramref name="searchResults"/>.
+    /// </summary>
+    /// <param name="searchResults"></param>
 
+    private void ReloadPurchaseOrderSearchresults(List<PurchaseOrder> searchResults) {
+        try {
+            this.purchaseOrdreSearchResults.SelectedItem = null;
+            this.purchaseOrdreSearchResults.SelectedIndex = -1;
+            this.purchaseOrdreSearchResults.Items.Clear();
+            _ = this.purchaseOrdreSearchResults.Items.Add(listNoneSelectedValue);
+            foreach (PurchaseOrder purchaseOrdre in searchResults) {
+                _ = this.purchaseOrdreSearchResults.Items.Add(purchaseOrdre);
+            }
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+
+    /// <summary>
+    /// Enables the purchaseOrdre  action buttons.
+    /// </summary>
+
+    private void ActivatePurchaseOrderActionButtons() {
+        this.buttonDeletePurchaseOrder.Enabled = true;
+        this.buttonEditPurchaseOrder.Enabled = true;
+        this.buttonViewPurchaseOrder.Enabled = true;
+    }
+    /// <summary>
+    /// Disables the purchaseOrdre action buttons.
+    /// </summary>
+    private void DeactivatePurchaseOrderActionButtons() {
+        this.buttonDeletePurchaseOrder.Enabled = false;
+        this.buttonEditPurchaseOrder.Enabled = false;
+        this.buttonViewPurchaseOrder.Enabled = false;
+    }
+
+    private void buttonCreatePurchaseOrder_Click(object sender, EventArgs e) {
+        try {
+            PurchaseOrder? purchaseOrderCreated = this.parentApp.PurchaseOrderService.OpenManagementWindowForCreation();
+            if (purchaseOrderCreated != null) {
+                _ = this.purchaseOrdreSearchResults.Items.Add(purchaseOrderCreated);
+                this.purchaseOrdreSearchResults.SelectedItem = purchaseOrderCreated;
+            }
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+
+    private void purchaseOrderSearchTextBox_TextChanged(object sender, EventArgs e) {
+        try {
+            string searchCriterion = this.purchaseOrderSearchTextBox.Text.Trim();
+            List<PurchaseOrder> results = this.parentApp.PurchaseOrderService.SearchPurchaseOrders(searchCriterion);
+            this.ReloadPurchaseOrderSearchresults(results);
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+    private void purchaseOrdreSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
+        PurchaseOrder? selectedPurchaseOrder = this.purchaseOrdreSearchResults.SelectedItem as PurchaseOrder;
+        if (selectedPurchaseOrder != null) {
+            this.ActivatePurchaseOrderActionButtons();
+        } else {
+            this.DeactivatePurchaseOrderActionButtons();
+        }
+    }
+    private void buttonViewPurchaseOrder_Click(object sender, EventArgs e) {
+        try {
+            PurchaseOrder selectedPurchaseOrder = (PurchaseOrder) this.purchaseOrdreSearchResults.SelectedItem;
+            PurchaseOrder? createdPurchaseOrder = this.parentApp.PurchaseOrderService.OpenManagementWindowForVisualization(selectedPurchaseOrder);
+            if (createdPurchaseOrder != null) {
+                _ = this.purchaseOrdreSearchResults.Items.Add(createdPurchaseOrder);
+                this.purchaseOrdreSearchResults.SelectedItem = createdPurchaseOrder;
+            }
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void buttonEditPurchaseOrder_Click(object sender, EventArgs e) {
+        try {
+            PurchaseOrder selectedPurchaseOrder = (PurchaseOrder) this.purchaseOrdreSearchResults.SelectedItem;
+            bool wasUpdated = this.parentApp.PurchaseOrderService.OpenManagementWindowForEdition(selectedPurchaseOrder);
+            if (wasUpdated) {
+                this.purchaseOrdreSearchResults.RefreshDisplay();
+            }
+
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
+
+    private void buttonDeletePurchaseOrder_Click(object sender, EventArgs e) {
+        try {
+            PurchaseOrder selectedPurchaseOrder = (PurchaseOrder) this.purchaseOrdreSearchResults.SelectedItem;
+            bool wasDeleted = this.parentApp.PurchaseOrderService.OpenManagementWindowForDeletion(selectedPurchaseOrder);
+
+            if (wasDeleted) {
+                this.purchaseOrdreSearchResults.SelectedItem = null;
+                this.purchaseOrdreSearchResults.SelectedIndex = -1;
+                this.purchaseOrdreSearchResults.Items.Remove(selectedPurchaseOrder);
+            }
+        } catch (Exception ex) {
+            this.parentApp.HandleException(ex);
+        }
+    }
     #endregion
+
 }
+
+
+
+
+
+
+
+
+
+
+
