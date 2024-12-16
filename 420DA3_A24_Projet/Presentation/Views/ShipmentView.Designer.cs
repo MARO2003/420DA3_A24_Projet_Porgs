@@ -161,7 +161,7 @@ partial class ShipmentView {
         // 
         // label1
         // 
-        this.label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.label1.Location = new Point(40, 343);
         this.label1.Name = "label1";
         this.label1.Size = new Size(150, 31);
@@ -195,8 +195,8 @@ partial class ShipmentView {
         // 
         // lblDateDelete
         // 
-        this.lblDateDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-        this.lblDateDelete.Location = new Point(40, 404);
+        this.lblDateDelete.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+        this.lblDateDelete.Location = new Point(40, 406);
         this.lblDateDelete.Name = "lblDateDelete";
         this.lblDateDelete.Size = new Size(150, 31);
         this.lblDateDelete.TabIndex = 27;
@@ -205,7 +205,7 @@ partial class ShipmentView {
         // 
         // lblDateCreate
         // 
-        this.lblDateCreate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.lblDateCreate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.lblDateCreate.Location = new Point(40, 276);
         this.lblDateCreate.Name = "lblDateCreate";
         this.lblDateCreate.Size = new Size(150, 31);
@@ -238,7 +238,7 @@ partial class ShipmentView {
         // 
         // label3
         // 
-        this.label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.label3.Location = new Point(3, 228);
         this.label3.Name = "label3";
         this.label3.Size = new Size(187, 31);
@@ -248,7 +248,7 @@ partial class ShipmentView {
         // 
         // lblShippingOrderld
         // 
-        this.lblShippingOrderld.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.lblShippingOrderld.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.lblShippingOrderld.Location = new Point(3, 170);
         this.lblShippingOrderld.Name = "lblShippingOrderld";
         this.lblShippingOrderld.Size = new Size(187, 31);
@@ -258,7 +258,7 @@ partial class ShipmentView {
         // 
         // lblShippingtServices
         // 
-        this.lblShippingtServices.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.lblShippingtServices.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.lblShippingtServices.Location = new Point(3, 117);
         this.lblShippingtServices.Name = "lblShippingtServices";
         this.lblShippingtServices.Size = new Size(187, 31);
@@ -276,7 +276,7 @@ partial class ShipmentView {
         // 
         // lblShipmentStatus
         // 
-        this.lblShipmentStatus.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.lblShipmentStatus.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.lblShipmentStatus.Location = new Point(3, 61);
         this.lblShipmentStatus.Name = "lblShipmentStatus";
         this.lblShipmentStatus.Size = new Size(187, 31);
@@ -293,7 +293,7 @@ partial class ShipmentView {
         // 
         // labelId
         // 
-        this.labelId.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.labelId.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.labelId.Location = new Point(3, 10);
         this.labelId.Name = "labelId";
         this.labelId.Size = new Size(187, 31);

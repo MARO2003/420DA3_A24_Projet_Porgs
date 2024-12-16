@@ -210,7 +210,7 @@ partial class AdresseView {
         // 
         // dateDeleteLabel
         // 
-        this.dateDeleteLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.dateDeleteLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.dateDeleteLabel.Location = new Point(12, 550);
         this.dateDeleteLabel.Margin = new Padding(2, 0, 2, 0);
         this.dateDeleteLabel.Name = "dateDeleteLabel";
@@ -221,7 +221,7 @@ partial class AdresseView {
         // 
         // dateModifiedLabel
         // 
-        this.dateModifiedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.dateModifiedLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.dateModifiedLabel.Location = new Point(12, 496);
         this.dateModifiedLabel.Margin = new Padding(2, 0, 2, 0);
         this.dateModifiedLabel.Name = "dateModifiedLabel";
@@ -232,7 +232,7 @@ partial class AdresseView {
         // 
         // dateCreateabel
         // 
-        this.dateCreateabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.dateCreateabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.dateCreateabel.Location = new Point(12, 446);
         this.dateCreateabel.Margin = new Padding(2, 0, 2, 0);
         this.dateCreateabel.Name = "dateCreateabel";
@@ -261,7 +261,7 @@ partial class AdresseView {
         // 
         // postalCodeLabel
         // 
-        this.postalCodeLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.postalCodeLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.postalCodeLabel.Location = new Point(12, 386);
         this.postalCodeLabel.Margin = new Padding(2, 0, 2, 0);
         this.postalCodeLabel.Name = "postalCodeLabel";
@@ -299,7 +299,7 @@ partial class AdresseView {
         // 
         // countryLabel
         // 
-        this.countryLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.countryLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.countryLabel.Location = new Point(12, 341);
         this.countryLabel.Margin = new Padding(2, 0, 2, 0);
         this.countryLabel.Name = "countryLabel";
@@ -310,7 +310,7 @@ partial class AdresseView {
         // 
         // stateLabel
         // 
-        this.stateLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.stateLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.stateLabel.Location = new Point(12, 298);
         this.stateLabel.Margin = new Padding(2, 0, 2, 0);
         this.stateLabel.Name = "stateLabel";
@@ -321,7 +321,7 @@ partial class AdresseView {
         // 
         // cityLabel
         // 
-        this.cityLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.cityLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.cityLabel.Location = new Point(12, 248);
         this.cityLabel.Margin = new Padding(2, 0, 2, 0);
         this.cityLabel.Name = "cityLabel";
@@ -341,7 +341,7 @@ partial class AdresseView {
         // 
         // streetLabel
         // 
-        this.streetLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.streetLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.streetLabel.Location = new Point(12, 192);
         this.streetLabel.Margin = new Padding(2, 0, 2, 0);
         this.streetLabel.Name = "streetLabel";
@@ -361,7 +361,7 @@ partial class AdresseView {
         // 
         // civicNumberLabel
         // 
-        this.civicNumberLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.civicNumberLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.civicNumberLabel.Location = new Point(12, 141);
         this.civicNumberLabel.Margin = new Padding(2, 0, 2, 0);
         this.civicNumberLabel.Name = "civicNumberLabel";
@@ -381,7 +381,7 @@ partial class AdresseView {
         // 
         // adresseLabel
         // 
-        this.adresseLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.adresseLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.adresseLabel.Location = new Point(12, 96);
         this.adresseLabel.Margin = new Padding(2, 0, 2, 0);
         this.adresseLabel.Name = "adresseLabel";
@@ -392,7 +392,7 @@ partial class AdresseView {
         // 
         // adresseTypeLabel
         // 
-        this.adresseTypeLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.adresseTypeLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.adresseTypeLabel.Location = new Point(12, 52);
         this.adresseTypeLabel.Margin = new Padding(2, 0, 2, 0);
         this.adresseTypeLabel.Name = "adresseTypeLabel";
@@ -413,7 +413,7 @@ partial class AdresseView {
         // 
         // idLabel
         // 
-        this.idLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+        this.idLabel.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
         this.idLabel.Location = new Point(12, 15);
         this.idLabel.Margin = new Padding(2, 0, 2, 0);
         this.idLabel.Name = "idLabel";
