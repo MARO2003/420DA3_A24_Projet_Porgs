@@ -357,8 +357,8 @@ internal partial class AdminMainMenu : Form {
     #region GESTION DES EXPEDITIONS
     private void btnCreateExpedition_Click(object sender, EventArgs e) {
         Shipment? shipmentCreer = this.parentApp.ShipmentServices.OpenShipmentWindowForCreation();
-        if (shipmentCreer != null) { 
-            _= this.expeditionSearchResults.Items.Add(shipmentCreer);
+        if (shipmentCreer != null) {
+            _ = this.expeditionSearchResults.Items.Add(shipmentCreer);
             this.expeditionSearchResults.SelectedItem = shipmentCreer;
         }
     }
@@ -369,8 +369,8 @@ internal partial class AdminMainMenu : Form {
         this.expeditionSearchResults.Items.Clear();
         this.expeditionSearchResults.SelectedItem = null;
         this.expeditionSearchResults.SelectedIndex = -1;
-        foreach(Shipment shipment in result) {
-            _= this.expeditionSearchResults.Items.Add(shipment);
+        foreach (Shipment shipment in result) {
+            _ = this.expeditionSearchResults.Items.Add(shipment);
         }
     }
 
@@ -388,7 +388,7 @@ internal partial class AdminMainMenu : Form {
         if (selectedShipment != null) {
             throw new Exception("Veuillez selectionner une expedition");
         }
-        _= this.parentApp.ShipmentServices.OpenShipmentWindowForDetailsView(selectedShipment);
+        _ = this.parentApp.ShipmentServices.OpenShipmentWindowForDetailsView(selectedShipment);
 
     }
     #endregion
@@ -401,16 +401,16 @@ internal partial class AdminMainMenu : Form {
     /// </summary>
     /// <param name="searchResults"></param>
     private void ReloadWarehouseSearchResults(List<Warehouse> searchResults) {
-        
-            this.whSearchResults.SelectedItem = null;
-            this.whSearchResults.SelectedIndex = -1;
-            this.whSearchResults.Items.Clear();
-            foreach (Warehouse warehouse in searchResults) {
-                _ = this.whSearchResults.Items.Add(warehouse);
-            }
-            this.whSearchResults.Refresh();
 
-        
+        this.whSearchResults.SelectedItem = null;
+        this.whSearchResults.SelectedIndex = -1;
+        this.whSearchResults.Items.Clear();
+        foreach (Warehouse warehouse in searchResults) {
+            _ = this.whSearchResults.Items.Add(warehouse);
+        }
+        this.whSearchResults.Refresh();
+
+
     }
 
     /// <summary>
@@ -432,23 +432,23 @@ internal partial class AdminMainMenu : Form {
     }
 
     private void ButtonCreateWarehouse_Click(object sender, EventArgs e) {
-       
-            Warehouse? createdWarehouse = this.parentApp.WarehouseService.OpenWarehouseWindowForCreation();
+
+        Warehouse? createdWarehouse = this.parentApp.WarehouseService.OpenWarehouseWindowForCreation();
         if (createdWarehouse != null) {
             _ = this.whSearchResults.Items.Add(createdWarehouse);
             this.whSearchResults.SelectedItem = createdWarehouse;
-        } 
+        }
 
 
-      
+
     }
 
     private void WarehouseSearchTextBox_TextChanged(object sender, EventArgs e) {
-       
-            List<Warehouse> results = this.parentApp.WarehouseService.SearchWarehouses(this.whSearchResults.Text.Trim());
-            this.ReloadWarehouseSearchResults(results);
 
-       
+        List<Warehouse> results = this.parentApp.WarehouseService.SearchWarehouses(this.whSearchResults.Text.Trim());
+        this.ReloadWarehouseSearchResults(results);
+
+
     }
 
     private void WarehouseSearchResults_SelectedIndexChanged(object sender, EventArgs e) {
@@ -461,10 +461,10 @@ internal partial class AdminMainMenu : Form {
     }
 
     private void ButtonViewWarehouse_Click(object sender, EventArgs e) {
-        
-            Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
-            if (selectedWarehouse != null) {
-                _ = this.parentApp.WarehouseService.OpenWarehouseWindowForDetailsView(selectedWarehouse);
+
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+        if (selectedWarehouse != null) {
+            _ = this.parentApp.WarehouseService.OpenWarehouseWindowForDetailsView(selectedWarehouse);
         } else {
             throw new Exception("Pas de selection faite");
 
@@ -472,14 +472,14 @@ internal partial class AdminMainMenu : Form {
     }
 
     private void ButtonEditWarehouse_Click(object sender, EventArgs e) {
-       
-            Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
-            if (selectedWarehouse != null) {
-                Warehouse? UpdatedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForEdition(selectedWarehouse);
-                if (UpdatedWh is Warehouse) {
-                    this.whSearchResults.RefreshDisplay();
-                }
-            } else {
+
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+        if (selectedWarehouse != null) {
+            Warehouse? UpdatedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForEdition(selectedWarehouse);
+            if (UpdatedWh is Warehouse) {
+                this.whSearchResults.RefreshDisplay();
+            }
+        } else {
             throw new Exception("pas de selection faite");
 
         }
@@ -488,8 +488,8 @@ internal partial class AdminMainMenu : Form {
     }
 
     private void ButtonDeleteWarehouse_Click(object sender, EventArgs e) {
-       
-            Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
         if (selectedWarehouse != null) {
             Warehouse? DeletedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForDeletion(selectedWarehouse);
             if (DeletedWh is Warehouse) {
@@ -624,7 +624,7 @@ internal partial class AdminMainMenu : Form {
 
 
     #region GESTION DES SUPPLIERS
-    
+
     #endregion
 
 
@@ -633,4 +633,8 @@ internal partial class AdminMainMenu : Form {
     #region GESTION DES PURCHASEORDERS
 
     #endregion
+
+    private void centerTableLayoutPanel_Paint(object sender, PaintEventArgs e) {
+
+    }
 }
