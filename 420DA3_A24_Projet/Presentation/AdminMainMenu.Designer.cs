@@ -100,7 +100,6 @@ partial class AdminMainMenu {
         this.supplierButtonsTLP = new TableLayoutPanel();
         this.panel4 = new Panel();
         this.tableLayoutPanel3 = new TableLayoutPanel();
-        this.button1 = new Button();
         this.buttonDeletePurchaseOrder = new Button();
         this.buttonEditPurchaseOrder = new Button();
         this.buttonViewPurchaseOrder = new Button();
@@ -227,7 +226,6 @@ partial class AdminMainMenu {
         // 
         this.centerTableLayoutPanel.Size = new Size(1436, 826);
         this.centerTableLayoutPanel.TabIndex = 2;
-        this.centerTableLayoutPanel.Paint += this.centerTableLayoutPanel_Paint;
         // 
         // purchaseOrderMainPanel
         // 
