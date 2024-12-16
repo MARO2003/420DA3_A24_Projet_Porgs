@@ -26,9 +26,9 @@ internal class ShipmentServices {
         return result == DialogResult.OK ? newShipment : null;
     }
 
-    public Shipment? OpenShipmentWindowForView(Shipment shipment) {
-        DialogResult result = this.view.OpenForDetailsView(shipment);
-        return result == DialogResult.OK ? shipment : null;
+    public Shipment? OpenShipmentWindowForView(ShippingOrder sop) {
+        DialogResult result = this.view.OpenForDetailsView(sop);
+        return result == DialogResult.OK ? sop : null;
 
     }
 

@@ -46,11 +46,15 @@ partial class AdminMainMenu {
         this.btnCreateExpedition = new Button();
         this.shipmentManagementLabel = new Label();
         this.shipOrderMainPanel = new Panel();
+        this.tableLayoutPanel5 = new TableLayoutPanel();
+        this.panel7 = new Panel();
+        this.deleteShipObttn = new Button();
+        this.EditShipObtn = new Button();
+        this.ShipOViewbtn = new Button();
         this.ShipOSearchResults = new ListBox();
-        this.textBox2 = new TextBox();
+        this.ShipOSearchtbox = new TextBox();
         this.createShipOTLP = new TableLayoutPanel();
         this.CreateShipO = new Button();
-        this.ShipOButtonsTLP = new TableLayoutPanel();
         this.shipOrderManagementLabel = new Label();
         this.addressMainPanel = new Panel();
         this.adresseSearchResults = new ListBox();
@@ -65,11 +69,15 @@ partial class AdminMainMenu {
         this.btnCreateAdresse = new Button();
         this.addressManagementLabel = new Label();
         this.warehouseMainPanel = new Panel();
+        this.tableLayoutPanel4 = new TableLayoutPanel();
+        this.panel6 = new Panel();
+        this.deletewhsbtn = new Button();
+        this.Editwhsbtn = new Button();
+        this.whViewbtn = new Button();
         this.whSearchResults = new ListBox();
         this.whSearxhtextBox1 = new TextBox();
         this.createWhTLP = new TableLayoutPanel();
         this.CreerWhBtn = new Button();
-        this.whButtonsTLP = new TableLayoutPanel();
         this.warehouseManagementLabel = new Label();
         this.supplierMainPanel = new Panel();
         this.supplierSearchResults = new ListBox();
@@ -124,6 +132,8 @@ partial class AdminMainMenu {
         this.createExpeditionTLP.SuspendLayout();
         this.createExpeditionPanel.SuspendLayout();
         this.shipOrderMainPanel.SuspendLayout();
+        this.tableLayoutPanel5.SuspendLayout();
+        this.panel7.SuspendLayout();
         this.createShipOTLP.SuspendLayout();
         this.addressMainPanel.SuspendLayout();
         this.tableLayoutPanel1.SuspendLayout();
@@ -131,6 +141,8 @@ partial class AdminMainMenu {
         this.createAdresseTLP.SuspendLayout();
         this.createAdressePanel.SuspendLayout();
         this.warehouseMainPanel.SuspendLayout();
+        this.tableLayoutPanel4.SuspendLayout();
+        this.panel6.SuspendLayout();
         this.createWhTLP.SuspendLayout();
         this.supplierMainPanel.SuspendLayout();
         this.createSupplierTLP.SuspendLayout();
@@ -166,7 +178,7 @@ partial class AdminMainMenu {
         // 
         // buttonLogout
         // 
-        this.buttonLogout.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+        this.buttonLogout.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
         this.buttonLogout.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
         this.buttonLogout.Location = new Point(1241, 10);
         this.buttonLogout.Margin = new Padding(4, 5, 4, 5);
@@ -418,10 +430,10 @@ partial class AdminMainMenu {
         // 
         // shipOrderMainPanel
         // 
+        this.shipOrderMainPanel.Controls.Add(this.tableLayoutPanel5);
         this.shipOrderMainPanel.Controls.Add(this.ShipOSearchResults);
-        this.shipOrderMainPanel.Controls.Add(this.textBox2);
+        this.shipOrderMainPanel.Controls.Add(this.ShipOSearchtbox);
         this.shipOrderMainPanel.Controls.Add(this.createShipOTLP);
-        this.shipOrderMainPanel.Controls.Add(this.ShipOButtonsTLP);
         this.shipOrderMainPanel.Controls.Add(this.shipOrderManagementLabel);
         this.shipOrderMainPanel.Dock = DockStyle.Fill;
         this.shipOrderMainPanel.Location = new Point(578, 418);
@@ -429,6 +441,70 @@ partial class AdminMainMenu {
         this.shipOrderMainPanel.Name = "shipOrderMainPanel";
         this.shipOrderMainPanel.Size = new Size(279, 403);
         this.shipOrderMainPanel.TabIndex = 7;
+        // 
+        // tableLayoutPanel5
+        // 
+        this.tableLayoutPanel5.ColumnCount = 3;
+        this.tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
+        this.tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.tableLayoutPanel5.Controls.Add(this.panel7, 1, 0);
+        this.tableLayoutPanel5.Dock = DockStyle.Bottom;
+        this.tableLayoutPanel5.Location = new Point(0, 271);
+        this.tableLayoutPanel5.Margin = new Padding(4, 5, 4, 5);
+        this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+        this.tableLayoutPanel5.RowCount = 1;
+        this.tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.tableLayoutPanel5.Size = new Size(279, 132);
+        this.tableLayoutPanel5.TabIndex = 8;
+        // 
+        // panel7
+        // 
+        this.panel7.Controls.Add(this.deleteShipObttn);
+        this.panel7.Controls.Add(this.EditShipObtn);
+        this.panel7.Controls.Add(this.ShipOViewbtn);
+        this.panel7.Dock = DockStyle.Fill;
+        this.panel7.Location = new Point(54, 8);
+        this.panel7.Margin = new Padding(0, 8, 0, 0);
+        this.panel7.Name = "panel7";
+        this.panel7.Size = new Size(171, 124);
+        this.panel7.TabIndex = 0;
+        // 
+        // deleteShipObttn
+        // 
+        this.deleteShipObttn.Dock = DockStyle.Top;
+        this.deleteShipObttn.Enabled = false;
+        this.deleteShipObttn.Location = new Point(0, 76);
+        this.deleteShipObttn.Margin = new Padding(4, 5, 4, 5);
+        this.deleteShipObttn.Name = "deleteShipObttn";
+        this.deleteShipObttn.Size = new Size(171, 38);
+        this.deleteShipObttn.TabIndex = 2;
+        this.deleteShipObttn.Text = "Supprimer";
+        this.deleteShipObttn.UseVisualStyleBackColor = true;
+        // 
+        // EditShipObtn
+        // 
+        this.EditShipObtn.Dock = DockStyle.Top;
+        this.EditShipObtn.Enabled = false;
+        this.EditShipObtn.Location = new Point(0, 38);
+        this.EditShipObtn.Margin = new Padding(4, 5, 4, 5);
+        this.EditShipObtn.Name = "EditShipObtn";
+        this.EditShipObtn.Size = new Size(171, 38);
+        this.EditShipObtn.TabIndex = 1;
+        this.EditShipObtn.Text = "Modifier";
+        this.EditShipObtn.UseVisualStyleBackColor = true;
+        // 
+        // ShipOViewbtn
+        // 
+        this.ShipOViewbtn.Dock = DockStyle.Top;
+        this.ShipOViewbtn.Enabled = false;
+        this.ShipOViewbtn.Location = new Point(0, 0);
+        this.ShipOViewbtn.Margin = new Padding(4, 5, 4, 5);
+        this.ShipOViewbtn.Name = "ShipOViewbtn";
+        this.ShipOViewbtn.Size = new Size(171, 38);
+        this.ShipOViewbtn.TabIndex = 0;
+        this.ShipOViewbtn.Text = "Voir Détails";
+        this.ShipOViewbtn.UseVisualStyleBackColor = true;
         // 
         // ShipOSearchResults
         // 
@@ -438,18 +514,18 @@ partial class AdminMainMenu {
         this.ShipOSearchResults.Location = new Point(0, 153);
         this.ShipOSearchResults.Margin = new Padding(5, 6, 5, 6);
         this.ShipOSearchResults.Name = "ShipOSearchResults";
-        this.ShipOSearchResults.Size = new Size(279, 84);
+        this.ShipOSearchResults.Size = new Size(279, 250);
         this.ShipOSearchResults.TabIndex = 7;
         // 
-        // textBox2
+        // ShipOSearchtbox
         // 
-        this.textBox2.Dock = DockStyle.Top;
-        this.textBox2.Location = new Point(0, 122);
-        this.textBox2.Margin = new Padding(5, 6, 5, 6);
-        this.textBox2.Name = "textBox2";
-        this.textBox2.PlaceholderText = "Rechercher un Ordre d'exp";
-        this.textBox2.Size = new Size(279, 31);
-        this.textBox2.TabIndex = 6;
+        this.ShipOSearchtbox.Dock = DockStyle.Top;
+        this.ShipOSearchtbox.Location = new Point(0, 122);
+        this.ShipOSearchtbox.Margin = new Padding(5, 6, 5, 6);
+        this.ShipOSearchtbox.Name = "ShipOSearchtbox";
+        this.ShipOSearchtbox.PlaceholderText = "Rechercher un Ordre d'exp";
+        this.ShipOSearchtbox.Size = new Size(279, 31);
+        this.ShipOSearchtbox.TabIndex = 6;
         // 
         // createShipOTLP
         // 
@@ -477,21 +553,6 @@ partial class AdminMainMenu {
         this.CreateShipO.TabIndex = 0;
         this.CreateShipO.Text = "Créer Ordre Exp";
         this.CreateShipO.UseVisualStyleBackColor = true;
-        // 
-        // ShipOButtonsTLP
-        // 
-        this.ShipOButtonsTLP.ColumnCount = 3;
-        this.ShipOButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.ShipOButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 214F));
-        this.ShipOButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.ShipOButtonsTLP.Dock = DockStyle.Bottom;
-        this.ShipOButtonsTLP.Location = new Point(0, 237);
-        this.ShipOButtonsTLP.Margin = new Padding(5, 6, 5, 6);
-        this.ShipOButtonsTLP.Name = "ShipOButtonsTLP";
-        this.ShipOButtonsTLP.RowCount = 1;
-        this.ShipOButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.ShipOButtonsTLP.Size = new Size(279, 166);
-        this.ShipOButtonsTLP.TabIndex = 4;
         // 
         // shipOrderManagementLabel
         // 
@@ -657,10 +718,10 @@ partial class AdminMainMenu {
         // 
         // warehouseMainPanel
         // 
+        this.warehouseMainPanel.Controls.Add(this.tableLayoutPanel4);
         this.warehouseMainPanel.Controls.Add(this.whSearchResults);
         this.warehouseMainPanel.Controls.Add(this.whSearxhtextBox1);
         this.warehouseMainPanel.Controls.Add(this.createWhTLP);
-        this.warehouseMainPanel.Controls.Add(this.whButtonsTLP);
         this.warehouseMainPanel.Controls.Add(this.warehouseManagementLabel);
         this.warehouseMainPanel.Dock = DockStyle.Fill;
         this.warehouseMainPanel.Location = new Point(4, 418);
@@ -668,6 +729,73 @@ partial class AdminMainMenu {
         this.warehouseMainPanel.Name = "warehouseMainPanel";
         this.warehouseMainPanel.Size = new Size(279, 403);
         this.warehouseMainPanel.TabIndex = 5;
+        // 
+        // tableLayoutPanel4
+        // 
+        this.tableLayoutPanel4.ColumnCount = 3;
+        this.tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
+        this.tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+        this.tableLayoutPanel4.Controls.Add(this.panel6, 1, 0);
+        this.tableLayoutPanel4.Dock = DockStyle.Bottom;
+        this.tableLayoutPanel4.Location = new Point(0, 271);
+        this.tableLayoutPanel4.Margin = new Padding(4, 5, 4, 5);
+        this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+        this.tableLayoutPanel4.RowCount = 1;
+        this.tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+        this.tableLayoutPanel4.Size = new Size(279, 132);
+        this.tableLayoutPanel4.TabIndex = 7;
+        // 
+        // panel6
+        // 
+        this.panel6.Controls.Add(this.deletewhsbtn);
+        this.panel6.Controls.Add(this.Editwhsbtn);
+        this.panel6.Controls.Add(this.whViewbtn);
+        this.panel6.Dock = DockStyle.Fill;
+        this.panel6.Location = new Point(54, 8);
+        this.panel6.Margin = new Padding(0, 8, 0, 0);
+        this.panel6.Name = "panel6";
+        this.panel6.Size = new Size(171, 124);
+        this.panel6.TabIndex = 0;
+        // 
+        // deletewhsbtn
+        // 
+        this.deletewhsbtn.Dock = DockStyle.Top;
+        this.deletewhsbtn.Enabled = false;
+        this.deletewhsbtn.Location = new Point(0, 76);
+        this.deletewhsbtn.Margin = new Padding(4, 5, 4, 5);
+        this.deletewhsbtn.Name = "deletewhsbtn";
+        this.deletewhsbtn.Size = new Size(171, 38);
+        this.deletewhsbtn.TabIndex = 2;
+        this.deletewhsbtn.Text = "Supprimer";
+        this.deletewhsbtn.UseVisualStyleBackColor = true;
+        this.deletewhsbtn.Click += this.deletewhsbtn_Click;
+        // 
+        // Editwhsbtn
+        // 
+        this.Editwhsbtn.Dock = DockStyle.Top;
+        this.Editwhsbtn.Enabled = false;
+        this.Editwhsbtn.Location = new Point(0, 38);
+        this.Editwhsbtn.Margin = new Padding(4, 5, 4, 5);
+        this.Editwhsbtn.Name = "Editwhsbtn";
+        this.Editwhsbtn.Size = new Size(171, 38);
+        this.Editwhsbtn.TabIndex = 1;
+        this.Editwhsbtn.Text = "Modifier";
+        this.Editwhsbtn.UseVisualStyleBackColor = true;
+        this.Editwhsbtn.Click += this.Editwhsbtn_Click;
+        // 
+        // whViewbtn
+        // 
+        this.whViewbtn.Dock = DockStyle.Top;
+        this.whViewbtn.Enabled = false;
+        this.whViewbtn.Location = new Point(0, 0);
+        this.whViewbtn.Margin = new Padding(4, 5, 4, 5);
+        this.whViewbtn.Name = "whViewbtn";
+        this.whViewbtn.Size = new Size(171, 38);
+        this.whViewbtn.TabIndex = 0;
+        this.whViewbtn.Text = "Voir Détails";
+        this.whViewbtn.UseVisualStyleBackColor = true;
+        this.whViewbtn.Click += this.whViewbtn_Click;
         // 
         // whSearchResults
         // 
@@ -677,7 +805,7 @@ partial class AdminMainMenu {
         this.whSearchResults.Location = new Point(0, 153);
         this.whSearchResults.Margin = new Padding(5, 6, 5, 6);
         this.whSearchResults.Name = "whSearchResults";
-        this.whSearchResults.Size = new Size(279, 84);
+        this.whSearchResults.Size = new Size(279, 250);
         this.whSearchResults.TabIndex = 6;
         // 
         // whSearxhtextBox1
@@ -716,21 +844,6 @@ partial class AdminMainMenu {
         this.CreerWhBtn.TabIndex = 0;
         this.CreerWhBtn.Text = "Créer entrepot";
         this.CreerWhBtn.UseVisualStyleBackColor = true;
-        // 
-        // whButtonsTLP
-        // 
-        this.whButtonsTLP.ColumnCount = 3;
-        this.whButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.whButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 214F));
-        this.whButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.whButtonsTLP.Dock = DockStyle.Bottom;
-        this.whButtonsTLP.Location = new Point(0, 237);
-        this.whButtonsTLP.Margin = new Padding(5, 6, 5, 6);
-        this.whButtonsTLP.Name = "whButtonsTLP";
-        this.whButtonsTLP.RowCount = 1;
-        this.whButtonsTLP.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        this.whButtonsTLP.Size = new Size(279, 166);
-        this.whButtonsTLP.TabIndex = 3;
         // 
         // warehouseManagementLabel
         // 
@@ -1313,6 +1426,8 @@ partial class AdminMainMenu {
         this.createExpeditionPanel.ResumeLayout(false);
         this.shipOrderMainPanel.ResumeLayout(false);
         this.shipOrderMainPanel.PerformLayout();
+        this.tableLayoutPanel5.ResumeLayout(false);
+        this.panel7.ResumeLayout(false);
         this.createShipOTLP.ResumeLayout(false);
         this.addressMainPanel.ResumeLayout(false);
         this.addressMainPanel.PerformLayout();
@@ -1322,6 +1437,8 @@ partial class AdminMainMenu {
         this.createAdressePanel.ResumeLayout(false);
         this.warehouseMainPanel.ResumeLayout(false);
         this.warehouseMainPanel.PerformLayout();
+        this.tableLayoutPanel4.ResumeLayout(false);
+        this.panel6.ResumeLayout(false);
         this.createWhTLP.ResumeLayout(false);
         this.supplierMainPanel.ResumeLayout(false);
         this.supplierMainPanel.PerformLayout();
@@ -1419,10 +1536,9 @@ partial class AdminMainMenu {
     private ListBox supplierSearchResults;
     private TextBox supplierSearchTextBox;
     private ListBox ShipOSearchResults;
-    private TextBox textBox2;
+    private TextBox ShipOSearchtbox;
     private TableLayoutPanel createShipOTLP;
     private Button CreateShipO;
-    private TableLayoutPanel ShipOButtonsTLP;
     // private Panel panel5;
     private Button deleteShipObtn;
     private Button updateShipObtn;
@@ -1431,9 +1547,18 @@ partial class AdminMainMenu {
     private TextBox whSearxhtextBox1;
     private TableLayoutPanel createWhTLP;
     private Button CreerWhBtn;
-    private TableLayoutPanel whButtonsTLP;
     //  private Panel panel4;
     private Button deletewhbtn;
     private Button EditWhbtn;
     private Button viewWhbtn;
+    private TableLayoutPanel tableLayoutPanel5;
+    private Panel panel7;
+    private Button deleteShipObttn;
+    private Button EditShipObtn;
+    private Button ShipOViewbtn;
+    private TableLayoutPanel tableLayoutPanel4;
+    private Panel panel6;
+    private Button deletewhsbtn;
+    private Button Editwhsbtn;
+    private Button whViewbtn;
 }

@@ -141,27 +141,6 @@ internal class ShippingOrderService {
             throw new Exception("Failure to update shipping order.", ex);
         }
     }
-    internal bool OpenForDeletion(ShippingOrder selectedOrder) {
-        try {
-            // Create an instance of the view for managing shipping orders
-            ShippingOrderView view = new ShippingOrderView(this.parentApp);
-
-            // Load the selected shipping order into the view for confirmation
-            view.ChargerProduits(selectedOrder);
-
-            // Show the view as a modal dialog
-            if (view.ShowDialog() == DialogResult.OK) {
-                // If the user confirms the deletion, proceed to delete the order
-                this.dao.Delete(selectedOrder); // Ensure that the Delete method is implemented in ShippingOrderDAO
-                this.context.SaveChanges(); // Save changes to the database
-                return true; // Return true to indicate that the deletion was successful
-            }
-
-            return false; // Return false if the deletion was canceled
-        } catch (Exception ex) {
-            throw new Exception("Failed to open deletion window for shipping order.", ex);
-        }
-    }
 
     internal object OpenManagementWindowForVisualization(ShippingOrder selectedOrder) {
         try {
@@ -179,5 +158,4 @@ internal class ShippingOrderService {
             throw new Exception("Failed to open visualization window for shipping order.", ex);
         }
     }
-
 }

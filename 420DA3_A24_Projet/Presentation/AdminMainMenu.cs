@@ -503,6 +503,45 @@ internal partial class AdminMainMenu : Form {
 
         }
     }
+    private void whViewbtn_Click(object sender, EventArgs e) {
+
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+        if (selectedWarehouse != null) {
+            _ = this.parentApp.WarehouseService.OpenWarehouseWindowForDetailsView(selectedWarehouse);
+        } else {
+            throw new Exception("Pas de selection faite");
+
+        }
+    }
+
+    private void Editwhsbtn_Click(object sender, EventArgs e) {
+
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+        if (selectedWarehouse != null) {
+            Warehouse? UpdatedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForEdition(selectedWarehouse);
+            if (UpdatedWh is Warehouse) {
+                this.whSearchResults.RefreshDisplay();
+            }
+        } else {
+            throw new Exception("pas de selection faite");
+
+        }
+    }
+
+    private void deletewhsbtn_Click(object sender, EventArgs e) {
+        Warehouse? selectedWarehouse = this.whSearchResults.SelectedItem as Warehouse;
+        if (selectedWarehouse != null) {
+            Warehouse? DeletedWh = this.parentApp.WarehouseService.OpenWarehouseWindowForDeletion(selectedWarehouse);
+            if (DeletedWh is Warehouse) {
+                this.whSearchResults.SelectedItem = null;
+                this.whSearchResults.SelectedIndex = -1;
+                this.whSearchResults.Items.Remove(selectedWarehouse);
+            }
+        } else {
+            throw new Exception("Pas de selection faite");
+
+        }
+    }
 
     #endregion
     #region GESTION DES COMMANDES D'EXPÉDITION
@@ -547,7 +586,7 @@ internal partial class AdminMainMenu : Form {
 
     private void ButtonCreateShippingOrder_Click(object sender, EventArgs e) {
         try {
-            ShippingOrder? createdOrder = this.parentApp.ShippingOrderService.InsertShippingOrder();
+            ShippingOrder? createdOrder = this.parentApp.ShippingOrderService.OpenWarehouseViewForCreate();
             if (createdOrder != null) {
                 _ = this.ShipOSearchResults.Items.Add(createdOrder);
                 this.ShipOSearchResults.SelectedItem = createdOrder;
@@ -560,7 +599,7 @@ internal partial class AdminMainMenu : Form {
 
     private void ShippingOrderSearchTextBox_TextChanged(object sender, EventArgs e) {
         try {
-            List<ShippingOrder> results = this.parentApp.ShippingOrderService.ShipOSearchResults(this.shippingOrderSearchTextBox.Text.Trim());
+            List<ShippingOrder> results = this.parentApp.ShippingOrderService.Op(this.Text.Trim());
             this.ReloadShippingOrderSearchResults(results);
 
         } catch (Exception ex) {
@@ -593,7 +632,7 @@ internal partial class AdminMainMenu : Form {
         try {
             ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
             if (selectedOrder != null) {
-                bool wasUpdated = this.parentApp.ShippingOrderService.ModifyShippingOrder(selectedOrder,ShipOSearchResults);
+                bool wasUpdated = this.parentApp.ShippingOrderService.OpenManagementWindowForModification(selectedOrder);
                 if (wasUpdated) {
                     this.ShipOSearchResults.RefreshDisplay();
                 }
@@ -608,14 +647,14 @@ internal partial class AdminMainMenu : Form {
         try {
             ShippingOrder? selectedOrder = this.ShipOSearchResults.SelectedItem as ShippingOrder;
             if (selectedOrder != null) {
-                bool wasDeleted = this.parentApp.ShippingOrderService.OpenForDeletion(selectedOrder);
+                bool wasDeleted = this.parentApp.ShippingOrderService.OpenManagementWindowForDelete(selectedOrder);
                 if (wasDeleted) {
                     this.ShipOSearchResults.SelectedItem = null;
                     this.ShipOSearchResults.SelectedIndex = -1;
                     this.ShipOSearchResults.Items.Remove(selectedOrder);
                 }
             }
-        _ = this.parentApp.ShipmentServices.OpenShipmentWindowForView(selectedShipment);
+            _ = this.parentApp.ShippingOrderService.Delete(selectedOrder);
 
         } catch (Exception ex) {
             this.parentApp.HandleException(ex);
@@ -848,6 +887,7 @@ internal partial class AdminMainMenu : Form {
     }
     #endregion
 
+   
 }
 
 
