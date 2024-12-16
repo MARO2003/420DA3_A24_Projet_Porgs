@@ -1,6 +1,7 @@
 ﻿using _420DA3_A24_Projet.Business;
 using _420DA3_A24_Projet.Business.Domain;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.VisualBasic.ApplicationServices;
 using Project_Utilities.Enums;
 using System;
 using System.Collections.Generic;
@@ -145,12 +146,19 @@ internal partial class SupplierView : Form {
     /// <param name="supplier"></param>
     /// <returns></returns>
     private Supplier LoadDataInControls(Supplier supplier) {
-        this.idValue.Text = supplier.Id.ToString();
+        this.idValue.Value = supplier.Id;
         this.supplierNameValue.Text = supplier.SupplierName;
         this.contactLastNameValue.Text = supplier.ContactLastName;
         this.contactFirstNameValue.Text = supplier.ContactFirstName;
         this.contactEmailValue.Text = supplier.ContactEmail;
         this.contactTelephoneValue.Text = supplier.ContactTelephone;
+        this.dateCreatedValue.Value = supplier.DateCreated;
+        this.dateModifiedValue.Value = supplier.DateModified ?? DateTime.Now;
+        this.dateDeletedValue.Value = supplier.DateDeleted ?? DateTime.Now;
+        this.supplierProductsValues.SelectedItems.Clear();
+        foreach (Product product in supplier.Products) {
+            this.supplierProductsValues.SelectedItems.Add(product);
+        }
         return supplier;
     }
 

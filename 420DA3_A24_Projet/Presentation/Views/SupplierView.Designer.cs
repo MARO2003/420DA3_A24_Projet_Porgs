@@ -32,7 +32,7 @@ partial class SupplierView {
         this.cancelBtn = new Button();
         this.centerTLP = new TableLayoutPanel();
         this.centerPanel = new Panel();
-        this.ProductsValue = new ListBox();
+        this.supplierProductsValues = new ListBox();
         this.dateDeletedValue = new DateTimePicker();
         this.dateModifiedValue = new DateTimePicker();
         this.dateCreatedValue = new DateTimePicker();
@@ -138,7 +138,7 @@ partial class SupplierView {
         // 
         // centerPanel
         // 
-        this.centerPanel.Controls.Add(this.ProductsValue);
+        this.centerPanel.Controls.Add(this.supplierProductsValues);
         this.centerPanel.Controls.Add(this.dateDeletedValue);
         this.centerPanel.Controls.Add(this.dateModifiedValue);
         this.centerPanel.Controls.Add(this.dateCreatedValue);
@@ -164,14 +164,14 @@ partial class SupplierView {
         this.centerPanel.Size = new Size(594, 541);
         this.centerPanel.TabIndex = 0;
         // 
-        // ProductsValue
+        // supplierProductsValues
         // 
-        this.ProductsValue.FormattingEnabled = true;
-        this.ProductsValue.ItemHeight = 20;
-        this.ProductsValue.Location = new Point(229, 343);
-        this.ProductsValue.Name = "ProductsValue";
-        this.ProductsValue.Size = new Size(311, 184);
-        this.ProductsValue.TabIndex = 19;
+        this.supplierProductsValues.FormattingEnabled = true;
+        this.supplierProductsValues.ItemHeight = 20;
+        this.supplierProductsValues.Location = new Point(229, 343);
+        this.supplierProductsValues.Name = "supplierProductsValues";
+        this.supplierProductsValues.Size = new Size(311, 184);
+        this.supplierProductsValues.TabIndex = 19;
         // 
         // dateDeletedValue
         // 
@@ -373,7 +373,7 @@ partial class SupplierView {
     private TextBox contactFirstNameValue;
     private TextBox contactLastNameValue;
     private TextBox supplierNameValue;
-    private ListBox ProductsValue;
+    private ListBox supplierProductsValues;
     private DateTimePicker dateDeletedValue;
     private Label openendModeValue;
     private Label openedModeLabel;

@@ -36,22 +36,22 @@ partial class CustomerView {
         this.idLabel = new Label();
         this.centerTLP = new TableLayoutPanel();
         this.centerPanel = new Panel();
+        this.telephoneValue = new TextBox();
+        this.emailValue = new TextBox();
+        this.label4 = new Label();
+        this.label3 = new Label();
+        this.firstNameValue = new TextBox();
+        this.label2 = new Label();
+        this.label1 = new Label();
+        this.lastNameValue = new TextBox();
         this.actionButton = new Button();
         this.cancelButton = new Button();
         this.bottomBarPanel = new Panel();
+        this.actionBtn = new Button();
+        this.cancelBtn = new Button();
         this.openedModeValue = new Label();
         this.openedModeLabel = new Label();
         this.topBarPanel = new Panel();
-        this.textBox1 = new TextBox();
-        this.label1 = new Label();
-        this.label2 = new Label();
-        this.textBox2 = new TextBox();
-        this.label3 = new Label();
-        this.label4 = new Label();
-        this.textBox3 = new TextBox();
-        this.textBox4 = new TextBox();
-        this.button1 = new Button();
-        this.button2 = new Button();
         ((System.ComponentModel.ISupportInitialize) this.idValue).BeginInit();
         this.centerTLP.SuspendLayout();
         this.centerPanel.SuspendLayout();
@@ -173,14 +173,14 @@ partial class CustomerView {
         // 
         // centerPanel
         // 
-        this.centerPanel.Controls.Add(this.textBox4);
-        this.centerPanel.Controls.Add(this.textBox3);
+        this.centerPanel.Controls.Add(this.telephoneValue);
+        this.centerPanel.Controls.Add(this.emailValue);
         this.centerPanel.Controls.Add(this.label4);
         this.centerPanel.Controls.Add(this.label3);
-        this.centerPanel.Controls.Add(this.textBox2);
+        this.centerPanel.Controls.Add(this.firstNameValue);
         this.centerPanel.Controls.Add(this.label2);
         this.centerPanel.Controls.Add(this.label1);
-        this.centerPanel.Controls.Add(this.textBox1);
+        this.centerPanel.Controls.Add(this.lastNameValue);
         this.centerPanel.Controls.Add(this.dateDeletedValue);
         this.centerPanel.Controls.Add(this.dateModifiedValue);
         this.centerPanel.Controls.Add(this.dateCreatedValue);
@@ -197,6 +197,82 @@ partial class CustomerView {
         this.centerPanel.Name = "centerPanel";
         this.centerPanel.Size = new Size(520, 391);
         this.centerPanel.TabIndex = 0;
+        // 
+        // telephoneValue
+        // 
+        this.telephoneValue.Location = new Point(216, 221);
+        this.telephoneValue.Margin = new Padding(3, 4, 3, 4);
+        this.telephoneValue.Name = "telephoneValue";
+        this.telephoneValue.PlaceholderText = "Customer telephone number";
+        this.telephoneValue.Size = new Size(299, 27);
+        this.telephoneValue.TabIndex = 19;
+        // 
+        // emailValue
+        // 
+        this.emailValue.Location = new Point(216, 171);
+        this.emailValue.Margin = new Padding(3, 4, 3, 4);
+        this.emailValue.Name = "emailValue";
+        this.emailValue.PlaceholderText = "Customer email";
+        this.emailValue.Size = new Size(299, 27);
+        this.emailValue.TabIndex = 18;
+        // 
+        // label4
+        // 
+        this.label4.Location = new Point(-11, 219);
+        this.label4.Margin = new Padding(3, 4, 3, 4);
+        this.label4.Name = "label4";
+        this.label4.Size = new Size(206, 31);
+        this.label4.TabIndex = 17;
+        this.label4.Text = "Customer Telephone :";
+        this.label4.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // label3
+        // 
+        this.label3.Location = new Point(-11, 171);
+        this.label3.Margin = new Padding(3, 4, 3, 4);
+        this.label3.Name = "label3";
+        this.label3.Size = new Size(206, 31);
+        this.label3.TabIndex = 16;
+        this.label3.Text = "Customer email :";
+        this.label3.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // firstNameValue
+        // 
+        this.firstNameValue.Location = new Point(216, 119);
+        this.firstNameValue.Margin = new Padding(3, 4, 3, 4);
+        this.firstNameValue.Name = "firstNameValue";
+        this.firstNameValue.PlaceholderText = "Customer First name";
+        this.firstNameValue.Size = new Size(299, 27);
+        this.firstNameValue.TabIndex = 15;
+        // 
+        // label2
+        // 
+        this.label2.Location = new Point(-11, 119);
+        this.label2.Margin = new Padding(3, 4, 3, 4);
+        this.label2.Name = "label2";
+        this.label2.Size = new Size(206, 31);
+        this.label2.TabIndex = 14;
+        this.label2.Text = "Customer First name :";
+        this.label2.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // label1
+        // 
+        this.label1.Location = new Point(-11, 73);
+        this.label1.Margin = new Padding(3, 4, 3, 4);
+        this.label1.Name = "label1";
+        this.label1.Size = new Size(206, 31);
+        this.label1.TabIndex = 13;
+        this.label1.Text = "Customer Last name :";
+        this.label1.TextAlign = ContentAlignment.MiddleRight;
+        // 
+        // lastNameValue
+        // 
+        this.lastNameValue.Location = new Point(216, 77);
+        this.lastNameValue.Margin = new Padding(3, 4, 3, 4);
+        this.lastNameValue.Name = "lastNameValue";
+        this.lastNameValue.PlaceholderText = "Customer Last name";
+        this.lastNameValue.Size = new Size(299, 27);
+        this.lastNameValue.TabIndex = 12;
         // 
         // actionButton
         // 
@@ -222,8 +298,8 @@ partial class CustomerView {
         // 
         // bottomBarPanel
         // 
-        this.bottomBarPanel.Controls.Add(this.button2);
-        this.bottomBarPanel.Controls.Add(this.button1);
+        this.bottomBarPanel.Controls.Add(this.actionBtn);
+        this.bottomBarPanel.Controls.Add(this.cancelBtn);
         this.bottomBarPanel.Controls.Add(this.actionButton);
         this.bottomBarPanel.Controls.Add(this.cancelButton);
         this.bottomBarPanel.Dock = DockStyle.Bottom;
@@ -232,6 +308,30 @@ partial class CustomerView {
         this.bottomBarPanel.Name = "bottomBarPanel";
         this.bottomBarPanel.Size = new Size(800, 67);
         this.bottomBarPanel.TabIndex = 4;
+        // 
+        // actionBtn
+        // 
+        this.actionBtn.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
+        this.actionBtn.Location = new Point(518, 23);
+        this.actionBtn.Margin = new Padding(3, 4, 3, 4);
+        this.actionBtn.Name = "actionBtn";
+        this.actionBtn.Size = new Size(137, 31);
+        this.actionBtn.TabIndex = 3;
+        this.actionBtn.Text = "PLACEHOLDER";
+        this.actionBtn.UseVisualStyleBackColor = true;
+        this.actionBtn.Click += this.actionBtn_Click;
+        // 
+        // cancelBtn
+        // 
+        this.cancelBtn.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
+        this.cancelBtn.Location = new Point(677, 23);
+        this.cancelBtn.Margin = new Padding(3, 4, 3, 4);
+        this.cancelBtn.Name = "cancelBtn";
+        this.cancelBtn.Size = new Size(86, 31);
+        this.cancelBtn.TabIndex = 2;
+        this.cancelBtn.Text = "Cancel";
+        this.cancelBtn.UseVisualStyleBackColor = true;
+        this.cancelBtn.Click += this.cancelBtn_Click;
         // 
         // openedModeValue
         // 
@@ -262,104 +362,6 @@ partial class CustomerView {
         this.topBarPanel.Name = "topBarPanel";
         this.topBarPanel.Size = new Size(800, 67);
         this.topBarPanel.TabIndex = 3;
-        // 
-        // textBox1
-        // 
-        this.textBox1.Location = new Point(216, 77);
-        this.textBox1.Margin = new Padding(3, 4, 3, 4);
-        this.textBox1.Name = "textBox1";
-        this.textBox1.PlaceholderText = "Customer Last name";
-        this.textBox1.Size = new Size(299, 27);
-        this.textBox1.TabIndex = 12;
-        // 
-        // label1
-        // 
-        this.label1.Location = new Point(-11, 73);
-        this.label1.Margin = new Padding(3, 4, 3, 4);
-        this.label1.Name = "label1";
-        this.label1.Size = new Size(206, 31);
-        this.label1.TabIndex = 13;
-        this.label1.Text = "Customer Last name :";
-        this.label1.TextAlign = ContentAlignment.MiddleRight;
-        // 
-        // label2
-        // 
-        this.label2.Location = new Point(-11, 119);
-        this.label2.Margin = new Padding(3, 4, 3, 4);
-        this.label2.Name = "label2";
-        this.label2.Size = new Size(206, 31);
-        this.label2.TabIndex = 14;
-        this.label2.Text = "Customer First name :";
-        this.label2.TextAlign = ContentAlignment.MiddleRight;
-        // 
-        // textBox2
-        // 
-        this.textBox2.Location = new Point(216, 119);
-        this.textBox2.Margin = new Padding(3, 4, 3, 4);
-        this.textBox2.Name = "textBox2";
-        this.textBox2.PlaceholderText = "Customer First name";
-        this.textBox2.Size = new Size(299, 27);
-        this.textBox2.TabIndex = 15;
-        // 
-        // label3
-        // 
-        this.label3.Location = new Point(-11, 171);
-        this.label3.Margin = new Padding(3, 4, 3, 4);
-        this.label3.Name = "label3";
-        this.label3.Size = new Size(206, 31);
-        this.label3.TabIndex = 16;
-        this.label3.Text = "Customer email :";
-        this.label3.TextAlign = ContentAlignment.MiddleRight;
-        // 
-        // label4
-        // 
-        this.label4.Location = new Point(-11, 219);
-        this.label4.Margin = new Padding(3, 4, 3, 4);
-        this.label4.Name = "label4";
-        this.label4.Size = new Size(206, 31);
-        this.label4.TabIndex = 17;
-        this.label4.Text = "Customer Telephone :";
-        this.label4.TextAlign = ContentAlignment.MiddleRight;
-        // 
-        // textBox3
-        // 
-        this.textBox3.Location = new Point(216, 171);
-        this.textBox3.Margin = new Padding(3, 4, 3, 4);
-        this.textBox3.Name = "textBox3";
-        this.textBox3.PlaceholderText = "Customer email";
-        this.textBox3.Size = new Size(299, 27);
-        this.textBox3.TabIndex = 18;
-        // 
-        // textBox4
-        // 
-        this.textBox4.Location = new Point(216, 221);
-        this.textBox4.Margin = new Padding(3, 4, 3, 4);
-        this.textBox4.Name = "textBox4";
-        this.textBox4.PlaceholderText = "Customer telephone number";
-        this.textBox4.Size = new Size(299, 27);
-        this.textBox4.TabIndex = 19;
-        // 
-        // button1
-        // 
-        this.button1.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.button1.Location = new Point(677, 23);
-        this.button1.Margin = new Padding(3, 4, 3, 4);
-        this.button1.Name = "button1";
-        this.button1.Size = new Size(86, 31);
-        this.button1.TabIndex = 2;
-        this.button1.Text = "Cancel";
-        this.button1.UseVisualStyleBackColor = true;
-        // 
-        // button2
-        // 
-        this.button2.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.button2.Location = new Point(518, 23);
-        this.button2.Margin = new Padding(3, 4, 3, 4);
-        this.button2.Name = "button2";
-        this.button2.Size = new Size(137, 31);
-        this.button2.TabIndex = 3;
-        this.button2.Text = "PLACEHOLDER";
-        this.button2.UseVisualStyleBackColor = true;
         // 
         // CustomerView
         // 
@@ -402,13 +404,13 @@ partial class CustomerView {
     private Label openedModeLabel;
     private Panel topBarPanel;
     private Label label1;
-    private TextBox textBox1;
-    private TextBox textBox2;
+    private TextBox lastNameValue;
+    private TextBox firstNameValue;
     private Label label2;
     private Label label4;
     private Label label3;
-    private TextBox textBox4;
-    private TextBox textBox3;
-    private Button button1;
-    private Button button2;
+    private TextBox telephoneValue;
+    private TextBox emailValue;
+    private Button cancelBtn;
+    private Button actionBtn;
 }

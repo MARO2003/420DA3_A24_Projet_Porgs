@@ -38,16 +38,16 @@ partial class ProductView {
         this.idLabel = new Label();
         this.centerTLP = new TableLayoutPanel();
         this.centerPanel = new Panel();
+        this.weightValue = new TextBox();
+        this.label1 = new Label();
         this.actionButton = new Button();
         this.cancelButton = new Button();
         this.bottomBarPanel = new Panel();
+        this.actionButtons = new Button();
+        this.button1 = new Button();
         this.openedModeValue = new Label();
         this.openedModeLabel = new Label();
         this.topBarPanel = new Panel();
-        this.label1 = new Label();
-        this.textBox1 = new TextBox();
-        this.button1 = new Button();
-        this.button2 = new Button();
         ((System.ComponentModel.ISupportInitialize) this.idValue).BeginInit();
         this.centerTLP.SuspendLayout();
         this.centerPanel.SuspendLayout();
@@ -188,7 +188,7 @@ partial class ProductView {
         // 
         // centerPanel
         // 
-        this.centerPanel.Controls.Add(this.textBox1);
+        this.centerPanel.Controls.Add(this.weightValue);
         this.centerPanel.Controls.Add(this.label1);
         this.centerPanel.Controls.Add(this.dateDeletedValue);
         this.centerPanel.Controls.Add(this.dateModifiedValue);
@@ -208,6 +208,25 @@ partial class ProductView {
         this.centerPanel.Name = "centerPanel";
         this.centerPanel.Size = new Size(520, 308);
         this.centerPanel.TabIndex = 0;
+        // 
+        // weightValue
+        // 
+        this.weightValue.Location = new Point(215, 146);
+        this.weightValue.Margin = new Padding(3, 4, 3, 4);
+        this.weightValue.Name = "weightValue";
+        this.weightValue.PlaceholderText = "Product description";
+        this.weightValue.Size = new Size(299, 27);
+        this.weightValue.TabIndex = 13;
+        // 
+        // label1
+        // 
+        this.label1.Location = new Point(3, 148);
+        this.label1.Margin = new Padding(3, 4, 3, 4);
+        this.label1.Name = "label1";
+        this.label1.Size = new Size(206, 31);
+        this.label1.TabIndex = 12;
+        this.label1.Text = "weight :";
+        this.label1.TextAlign = ContentAlignment.MiddleRight;
         // 
         // actionButton
         // 
@@ -233,7 +252,7 @@ partial class ProductView {
         // 
         // bottomBarPanel
         // 
-        this.bottomBarPanel.Controls.Add(this.button2);
+        this.bottomBarPanel.Controls.Add(this.actionButtons);
         this.bottomBarPanel.Controls.Add(this.button1);
         this.bottomBarPanel.Controls.Add(this.actionButton);
         this.bottomBarPanel.Controls.Add(this.cancelButton);
@@ -243,6 +262,30 @@ partial class ProductView {
         this.bottomBarPanel.Name = "bottomBarPanel";
         this.bottomBarPanel.Size = new Size(800, 67);
         this.bottomBarPanel.TabIndex = 4;
+        // 
+        // actionButtons
+        // 
+        this.actionButtons.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
+        this.actionButtons.Location = new Point(523, 23);
+        this.actionButtons.Margin = new Padding(3, 4, 3, 4);
+        this.actionButtons.Name = "actionButtons";
+        this.actionButtons.Size = new Size(137, 31);
+        this.actionButtons.TabIndex = 4;
+        this.actionButtons.Text = "PLACEHOLDER";
+        this.actionButtons.UseVisualStyleBackColor = true;
+        this.actionButtons.Click += this.actionButtons_Click;
+        // 
+        // button1
+        // 
+        this.button1.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
+        this.button1.Location = new Point(686, 23);
+        this.button1.Margin = new Padding(3, 4, 3, 4);
+        this.button1.Name = "button1";
+        this.button1.Size = new Size(86, 31);
+        this.button1.TabIndex = 3;
+        this.button1.Text = "Cancel";
+        this.button1.UseVisualStyleBackColor = true;
+        this.button1.Click += this.button1_Click;
         // 
         // openedModeValue
         // 
@@ -273,47 +316,6 @@ partial class ProductView {
         this.topBarPanel.Name = "topBarPanel";
         this.topBarPanel.Size = new Size(800, 67);
         this.topBarPanel.TabIndex = 3;
-        // 
-        // label1
-        // 
-        this.label1.Location = new Point(3, 148);
-        this.label1.Margin = new Padding(3, 4, 3, 4);
-        this.label1.Name = "label1";
-        this.label1.Size = new Size(206, 31);
-        this.label1.TabIndex = 12;
-        this.label1.Text = "weight :";
-        this.label1.TextAlign = ContentAlignment.MiddleRight;
-        // 
-        // textBox1
-        // 
-        this.textBox1.Location = new Point(215, 146);
-        this.textBox1.Margin = new Padding(3, 4, 3, 4);
-        this.textBox1.Name = "textBox1";
-        this.textBox1.PlaceholderText = "Product description";
-        this.textBox1.Size = new Size(299, 27);
-        this.textBox1.TabIndex = 13;
-        // 
-        // button1
-        // 
-        this.button1.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.button1.Location = new Point(686, 23);
-        this.button1.Margin = new Padding(3, 4, 3, 4);
-        this.button1.Name = "button1";
-        this.button1.Size = new Size(86, 31);
-        this.button1.TabIndex = 3;
-        this.button1.Text = "Cancel";
-        this.button1.UseVisualStyleBackColor = true;
-        // 
-        // button2
-        // 
-        this.button2.Anchor =  AnchorStyles.Bottom | AnchorStyles.Right;
-        this.button2.Location = new Point(523, 23);
-        this.button2.Margin = new Padding(3, 4, 3, 4);
-        this.button2.Name = "button2";
-        this.button2.Size = new Size(137, 31);
-        this.button2.TabIndex = 4;
-        this.button2.Text = "PLACEHOLDER";
-        this.button2.UseVisualStyleBackColor = true;
         // 
         // ProductView
         // 
@@ -357,8 +359,8 @@ partial class ProductView {
     private Label openedModeValue;
     private Label openedModeLabel;
     private Panel topBarPanel;
-    private TextBox textBox1;
+    private TextBox weightValue;
     private Label label1;
     private Button button1;
-    private Button button2;
+    private Button actionButtons;
 }
