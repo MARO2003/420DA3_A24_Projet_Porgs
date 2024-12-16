@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="4201" dy="4335" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="4155" dy="4463" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -3472,7 +3472,7 @@
         <mxCell id="IX0M0BOvFIVmJp4ZuIyW-384" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Note pour les fenêtres&lt;/h1&gt;&lt;p&gt;Les classes individuelles du présent diagramme pour les fenêtres graphiques ne spécifient pas les contrôles graphiques à ajouter au design de la fenêtre ni les méthode de gestion d&#39;événements pour ceux-ci. Il y aura donc beaucoup plus de méthodes dans ces classes que ce qui est inscrit ici.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;fontFamily=Helvetica;fontSize=11;labelBackgroundColor=none;spacing=4;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-440" y="-2320" width="360" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="BKET-8s4cR8HSUeyUgSd-0" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;jumpStyle=arc;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FkbmJSYtyHoX6dskJ_5e-293" target="FkbmJSYtyHoX6dskJ_5e-72">
+        <mxCell id="BKET-8s4cR8HSUeyUgSd-0" value="" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;jumpStyle=arc;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="FkbmJSYtyHoX6dskJ_5e-293" target="FkbmJSYtyHoX6dskJ_5e-72" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="-640" y="-293" as="sourcePoint" />
             <mxPoint x="1600" y="80" as="targetPoint" />
