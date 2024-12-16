@@ -962,87 +962,95 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
 
 
         #region RELATIONS RE DONNÉES DE TEST
-
-        // Warehouse ici
-        //creation d'une variable entiere pour l'id d'adresse
-            int adressId = 1;
-        Warehouse wh = new Warehouse("PorgsWarehouse", adressId) {
-            Id = 1
-        };
-
-        _=modelBuilder.Entity<Warehouse>().HasData(wh);
-
-        // NOTE: le mot de passe des user est "testpasswd".
-            User user1 = new User("UserAdmin", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
+        //Adresse
+            Adresse adWh = new Adresse(Project_Utilities.Enums.AddressTypesEnum.Warehouse, "adresse", "civicNumber", "street", "city", "state", "country", "postalcode") {
                 Id = 1
             };
-            User user2 = new User("UserOffice", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
-                Id = 2
+            Adresse adDes = new Adresse(Project_Utilities.Enums.AddressTypesEnum.ShippingDestination, "adresse", "civicNumber", "street", "city", "state", "country", "postalcode") {
+                Id = 2    
             };
-            User user3 = new User("UserWarehouse", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
-                Id = 3,
-                EmployeeWarehouseId = 1
+            
+            // Warehouse ici
+            //creation d'une variable entiere pour l'id d'adresse
+            int adressId = 1;
+        
+            Warehouse wh = new Warehouse("PorgsWarehouse", adressId) {
+                Id = 1
             };
-            _ = modelBuilder.Entity<User>().HasData(user1, user2, user3);
+
+            _=modelBuilder.Entity<Warehouse>().HasData(wh);
+
+            // NOTE: le mot de passe des user est "testpasswd".
+                User user1 = new User("UserAdmin", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
+                    Id = 1
+                };
+                User user2 = new User("UserOffice", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
+                    Id = 2
+                };
+                User user3 = new User("UserWarehouse", "43C39F5E14573CCB5E176B9C701673C3F7031F85C711E9A1B00AB6E4802A7310:F4C024A35DB3B92F9D1AFD928E9D6D26:100000:SHA256") {
+                    Id = 3,
+                    EmployeeWarehouseId = 1
+                };
+                _ = modelBuilder.Entity<User>().HasData(user1, user2, user3);
 
 
-            Role adminRole = new Role("Administrateurs",
-                "Administrateurs tout-puissants."
-            ) {
-                Id = Role.ADMIN_ROLE_ID
-            };
-            Role officeEmployeesRole = new Role("Employés de bureau",
-                "Employés travaillant dans les bureaux de WSYS Inc."
-            ) {
-                Id = Role.OFFICE_EMPLOYEE_ROLE_ID
-            };
-            Role whEmployeeRole = new Role("Employés d'entrepôt",
-                "Employés travaillant dans les entrepôts de WSYS Inc."
-            ) {
-                Id = Role.WAREHOUSE_EMPLOYEE_ROLE_ID
-            };
+                Role adminRole = new Role("Administrateurs",
+                    "Administrateurs tout-puissants."
+                ) {
+                    Id = Role.ADMIN_ROLE_ID
+                };
+                Role officeEmployeesRole = new Role("Employés de bureau",
+                    "Employés travaillant dans les bureaux de WSYS Inc."
+                ) {
+                    Id = Role.OFFICE_EMPLOYEE_ROLE_ID
+                };
+                Role whEmployeeRole = new Role("Employés d'entrepôt",
+                    "Employés travaillant dans les entrepôts de WSYS Inc."
+                ) {
+                    Id = Role.WAREHOUSE_EMPLOYEE_ROLE_ID
+                };
+                _ = modelBuilder.Entity<Role>()
+                    .HasData(adminRole, officeEmployeesRole, whEmployeeRole);
+
+
+                // NOTE: doit être placé après l'insertion de données pour User et pour Role
+                // (besoin des IDs pour les associations)
+                _ = modelBuilder.Entity<User>()
+                    .HasMany(user => user.Roles)
+                    .WithMany(role => role.Users)
+                    .UsingEntity("UserRoles",
+                        rightRelation => {
+                            return rightRelation.HasOne(typeof(Role)).WithMany().HasForeignKey("RoleId").HasPrincipalKey(nameof(Role.Id));
+                        },
+                        leftRelation => {
+                            return leftRelation.HasOne(typeof(User)).WithMany().HasForeignKey("UserId").HasPrincipalKey(nameof(User.Id));
+                        },
+                        shadowEntityConfig => {
+                            _ = shadowEntityConfig.HasKey("UserId", "RoleId");
+                            _ = shadowEntityConfig.HasData(
+                            new { UserId = 1, RoleId = 1 },
+                            new { UserId = 2, RoleId = 2 },
+                            new { UserId = 3, RoleId = 3 });
+                        }
+                    );
+            // Possiblement pas besoin de la relation inversion
+            /*
             _ = modelBuilder.Entity<Role>()
-                .HasData(adminRole, officeEmployeesRole, whEmployeeRole);
+                .HasMany(role => role.Users)
+                .WithMany(user => user.Roles);
+            */
 
+            //Relation un a plusieurs entre ShippingOrder et ShippingOrderProduct
 
-            // NOTE: doit être placé après l'insertion de données pour User et pour Role
-            // (besoin des IDs pour les associations)
-            _ = modelBuilder.Entity<User>()
-                .HasMany(user => user.Roles)
-                .WithMany(role => role.Users)
-                .UsingEntity("UserRoles",
-                    rightRelation => {
-                        return rightRelation.HasOne(typeof(Role)).WithMany().HasForeignKey("RoleId").HasPrincipalKey(nameof(Role.Id));
-                    },
-                    leftRelation => {
-                        return leftRelation.HasOne(typeof(User)).WithMany().HasForeignKey("UserId").HasPrincipalKey(nameof(User.Id));
-                    },
-                    shadowEntityConfig => {
-                        _ = shadowEntityConfig.HasKey("UserId", "RoleId");
-                        _ = shadowEntityConfig.HasData(
-                        new { UserId = 1, RoleId = 1 },
-                        new { UserId = 2, RoleId = 2 },
-                        new { UserId = 3, RoleId = 3 });
-                    }
-                );
-        // Possiblement pas besoin de la relation inversion
-        /*
-        _ = modelBuilder.Entity<Role>()
-            .HasMany(role => role.Users)
-            .WithMany(user => user.Roles);
-        */
+                _=modelBuilder.Entity<ShippingOrder>()
+                .HasMany(so => so.ShippingOrderProducts) 
+                .WithOne(sop => sop.ShippingOrder) 
+                .HasForeignKey(sop => sop.ShippingOrderId) 
+                .IsRequired();
 
-        //Relation un a plusieurs entre ShippingOrder et ShippingOrderProduct
+            #endregion
 
-            _=modelBuilder.Entity<ShippingOrder>()
-            .HasMany(so => so.ShippingOrderProducts) 
-            .WithOne(sop => sop.ShippingOrder) 
-            .HasForeignKey(sop => sop.ShippingOrderId) 
-            .IsRequired();
-
-        #endregion
-
-        }
+            }
     }
 
 

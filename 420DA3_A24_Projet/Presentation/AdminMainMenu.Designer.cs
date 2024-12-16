@@ -46,7 +46,7 @@ partial class AdminMainMenu {
         this.createShipOTLP = new TableLayoutPanel();
         this.CreateShipO = new Button();
         this.ShipOButtonsTLP = new TableLayoutPanel();
-        this.panel5 = new Panel();
+//        this.panel5 = new Panel();
         this.deleteShipObtn = new Button();
         this.updateShipObtn = new Button();
         this.ViewShipObtn = new Button();
@@ -69,7 +69,7 @@ partial class AdminMainMenu {
         this.createWhTLP = new TableLayoutPanel();
         this.CreerWhBtn = new Button();
         this.whButtonsTLP = new TableLayoutPanel();
-        this.panel4 = new Panel();
+     //   this.panel4 = new Panel();
         this.deletewhbtn = new Button();
         this.EditWhbtn = new Button();
         this.viewWhbtn = new Button();
@@ -106,14 +106,14 @@ partial class AdminMainMenu {
         this.buttonEditSupplier = new Button();
         this.buttonViewSupplier = new Button();
         this.supplierButtonsTLP = new TableLayoutPanel();
-        this.panel4 = new Panel();
+       // this.panel4 = new Panel();
         this.tableLayoutPanel3 = new TableLayoutPanel();
         this.button1 = new Button();
         this.buttonDeletePurchaseOrder = new Button();
         this.buttonEditPurchaseOrder = new Button();
         this.buttonViewPurchaseOrder = new Button();
         this.purchaseOrderButtonsTLP = new TableLayoutPanel();
-        this.panel5 = new Panel();
+       // this.panel5 = new Panel();
         this.purchaseOrderSearchTextBox = new TextBox();
         this.supplierSearchTextBox = new TextBox();
         this.supplierSearchResults = new ListBox();
@@ -129,7 +129,7 @@ partial class AdminMainMenu {
         this.shipOrderMainPanel.SuspendLayout();
         this.createShipOTLP.SuspendLayout();
         this.ShipOButtonsTLP.SuspendLayout();
-        this.panel5.SuspendLayout();
+       // this.panel5.SuspendLayout();
         this.addressMainPanel.SuspendLayout();
         this.tableLayoutPanel1.SuspendLayout();
         this.panel1.SuspendLayout();
@@ -138,7 +138,7 @@ partial class AdminMainMenu {
         this.warehouseMainPanel.SuspendLayout();
         this.createWhTLP.SuspendLayout();
         this.whButtonsTLP.SuspendLayout();
-        this.panel4.SuspendLayout();
+      //  this.panel4.SuspendLayout();
         this.supplierMainPanel.SuspendLayout();
         this.productMainPanel.SuspendLayout();
         this.roleMainPanel.SuspendLayout();
@@ -151,10 +151,10 @@ partial class AdminMainMenu {
         this.createUserTLP.SuspendLayout();
         this.createSupplierTLP.SuspendLayout();
         this.supplierButtonsTLP.SuspendLayout();
-        this.panel4.SuspendLayout();
+      //  this.panel4.SuspendLayout();
         this.tableLayoutPanel3.SuspendLayout();
         this.purchaseOrderButtonsTLP.SuspendLayout();
-        this.panel5.SuspendLayout();
+      //  this.panel5.SuspendLayout();
         this.SuspendLayout();
         // 
         // topBarPanel
@@ -431,7 +431,7 @@ partial class AdminMainMenu {
         this.ShipOButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
         this.ShipOButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
         this.ShipOButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.ShipOButtonsTLP.Controls.Add(this.panel5, 1, 0);
+        //this.ShipOButtonsTLP.Controls.Add(this.panel5, 1, 0);
         this.ShipOButtonsTLP.Dock = DockStyle.Bottom;
         this.ShipOButtonsTLP.Location = new Point(0, 269);
         this.ShipOButtonsTLP.Margin = new Padding(4, 5, 4, 5);
@@ -443,15 +443,15 @@ partial class AdminMainMenu {
         // 
         // panel5
         // 
-        this.panel5.Controls.Add(this.deleteShipObtn);
-        this.panel5.Controls.Add(this.updateShipObtn);
-        this.panel5.Controls.Add(this.ViewShipObtn);
-        this.panel5.Dock = DockStyle.Fill;
-        this.panel5.Location = new Point(54, 8);
-        this.panel5.Margin = new Padding(0, 8, 0, 0);
-        this.panel5.Name = "panel5";
-        this.panel5.Size = new Size(171, 125);
-        this.panel5.TabIndex = 0;
+       // this.panel5.Controls.Add(this.deleteShipObtn);
+        //this.panel5.Controls.Add(this.updateShipObtn);
+        //this.panel5.Controls.Add(this.ViewShipObtn);
+        //this.panel5.Dock = DockStyle.Fill;
+        //this.panel5.Location = new Point(54, 8);
+        //this.panel5.Margin = new Padding(0, 8, 0, 0);
+        //this.panel5.Name = "panel5";
+        //this.panel5.Size = new Size(171, 125);
+        //this.panel5.TabIndex = 0;
         // 
         // deleteShipObtn
         // 
@@ -717,7 +717,7 @@ partial class AdminMainMenu {
         this.whButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
         this.whButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 171F));
         this.whButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.whButtonsTLP.Controls.Add(this.panel4, 1, 0);
+        //this.whButtonsTLP.Controls.Add(this.panel4, 1, 0);
         this.whButtonsTLP.Dock = DockStyle.Bottom;
         this.whButtonsTLP.Location = new Point(0, 269);
         this.whButtonsTLP.Margin = new Padding(4, 5, 4, 5);
@@ -729,15 +729,15 @@ partial class AdminMainMenu {
         // 
         // panel4
         // 
-        this.panel4.Controls.Add(this.deletewhbtn);
-        this.panel4.Controls.Add(this.EditWhbtn);
-        this.panel4.Controls.Add(this.viewWhbtn);
-        this.panel4.Dock = DockStyle.Fill;
-        this.panel4.Location = new Point(54, 8);
-        this.panel4.Margin = new Padding(0, 8, 0, 0);
-        this.panel4.Name = "panel4";
-        this.panel4.Size = new Size(171, 125);
-        this.panel4.TabIndex = 0;
+        //this.panel4.Controls.Add(this.deletewhbtn);
+        //this.panel4.Controls.Add(this.EditWhbtn);
+        //this.panel4.Controls.Add(this.viewWhbtn);
+        //this.panel4.Dock = DockStyle.Fill;
+        //this.panel4.Location = new Point(54, 8);
+        //this.panel4.Margin = new Padding(0, 8, 0, 0);
+        //this.panel4.Name = "panel4";
+        //this.panel4.Size = new Size(171, 125);
+        //this.panel4.TabIndex = 0;
         // 
         // deletewhbtn
         // 
@@ -1187,7 +1187,7 @@ partial class AdminMainMenu {
         this.supplierButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
         this.supplierButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
         this.supplierButtonsTLP.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        this.supplierButtonsTLP.Controls.Add(this.panel4, 1, 0);
+        //this.supplierButtonsTLP.Controls.Add(this.panel4, 1, 0);
         this.supplierButtonsTLP.Dock = DockStyle.Bottom;
         this.supplierButtonsTLP.Location = new Point(0, 216);
         this.supplierButtonsTLP.Margin = new Padding(3, 4, 3, 4);
@@ -1199,15 +1199,15 @@ partial class AdminMainMenu {
         // 
         // panel4
         // 
-        this.panel4.Controls.Add(this.buttonDeleteSupplier);
-        this.panel4.Controls.Add(this.buttonEditSupplier);
-        this.panel4.Controls.Add(this.buttonViewSupplier);
-        this.panel4.Dock = DockStyle.Fill;
-        this.panel4.Location = new Point(45, 6);
-        this.panel4.Margin = new Padding(0, 6, 0, 0);
-        this.panel4.Name = "panel4";
-        this.panel4.Size = new Size(137, 100);
-        this.panel4.TabIndex = 0;
+        //this.panel4.Controls.Add(this.buttonDeleteSupplier);
+       // this.panel4.Controls.Add(this.buttonEditSupplier);
+        //this.panel4.Controls.Add(this.buttonViewSupplier);
+       //this.panel4.Dock = DockStyle.Fill;
+       // this.panel4.Location = new Point(45, 6);
+       // this.panel4.Margin = new Padding(0, 6, 0, 0);
+       // this.panel4.Name = "panel4";
+        //this.panel4.Size = new Size(137, 100);
+       // this.panel4.TabIndex = 0;
         // 
         // tableLayoutPanel3
         // 
@@ -1290,15 +1290,15 @@ partial class AdminMainMenu {
         // 
         // panel5
         // 
-        this.panel5.Controls.Add(this.buttonDeletePurchaseOrder);
-        this.panel5.Controls.Add(this.buttonEditPurchaseOrder);
-        this.panel5.Controls.Add(this.buttonViewPurchaseOrder);
-        this.panel5.Dock = DockStyle.Fill;
-        this.panel5.Location = new Point(45, 6);
-        this.panel5.Margin = new Padding(0, 6, 0, 0);
-        this.panel5.Name = "panel5";
-        this.panel5.Size = new Size(137, 100);
-        this.panel5.TabIndex = 0;
+        //this.panel5.Controls.Add(this.buttonDeletePurchaseOrder);
+       // this.panel5.Controls.Add(this.buttonEditPurchaseOrder);
+      //  this.panel5.Controls.Add(this.buttonViewPurchaseOrder);
+     //   this.panel5.Dock = DockStyle.Fill;
+        //this.panel5.Location = new Point(45, 6);
+      //  this.panel5.Margin = new Padding(0, 6, 0, 0);
+       // this.panel5.Name = "panel5";
+       // this.panel5.Size = new Size(137, 100);
+     //   this.panel5.TabIndex = 0;
         // 
         // purchaseOrderSearchTextBox
         // 
@@ -1369,7 +1369,7 @@ partial class AdminMainMenu {
         this.shipOrderMainPanel.PerformLayout();
         this.createShipOTLP.ResumeLayout(false);
         this.ShipOButtonsTLP.ResumeLayout(false);
-        this.panel5.ResumeLayout(false);
+       // this.panel5.ResumeLayout(false);
         this.addressMainPanel.ResumeLayout(false);
         this.addressMainPanel.PerformLayout();
         this.tableLayoutPanel1.ResumeLayout(false);
@@ -1380,7 +1380,7 @@ partial class AdminMainMenu {
         this.warehouseMainPanel.PerformLayout();
         this.createWhTLP.ResumeLayout(false);
         this.whButtonsTLP.ResumeLayout(false);
-        this.panel4.ResumeLayout(false);
+        //this.panel4.ResumeLayout(false);
         this.supplierMainPanel.ResumeLayout(false);
         this.supplierMainPanel.PerformLayout();
         this.productMainPanel.ResumeLayout(false);
@@ -1396,10 +1396,10 @@ partial class AdminMainMenu {
         this.createUserTLP.ResumeLayout(false);
         this.createSupplierTLP.ResumeLayout(false);
         this.supplierButtonsTLP.ResumeLayout(false);
-        this.panel4.ResumeLayout(false);
+      //  this.panel4.ResumeLayout(false);
         this.tableLayoutPanel3.ResumeLayout(false);
         this.purchaseOrderButtonsTLP.ResumeLayout(false);
-        this.panel5.ResumeLayout(false);
+      //  this.panel5.ResumeLayout(false);
         this.ResumeLayout(false);
     }
 
@@ -1486,7 +1486,7 @@ partial class AdminMainMenu {
     private TableLayoutPanel createShipOTLP;
     private Button CreateShipO;
     private TableLayoutPanel ShipOButtonsTLP;
-    private Panel panel5;
+   // private Panel panel5;
     private Button deleteShipObtn;
     private Button updateShipObtn;
     private Button ViewShipObtn;
@@ -1495,7 +1495,7 @@ partial class AdminMainMenu {
     private TableLayoutPanel createWhTLP;
     private Button CreerWhBtn;
     private TableLayoutPanel whButtonsTLP;
-    private Panel panel4;
+  //  private Panel panel4;
     private Button deletewhbtn;
     private Button EditWhbtn;
     private Button viewWhbtn;
