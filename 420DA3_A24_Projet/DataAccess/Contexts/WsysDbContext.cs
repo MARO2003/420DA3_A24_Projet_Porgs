@@ -925,7 +925,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
 
         #endregion
 
-        #region ShippingOrderProduct
+            #region ShippingOrderProduct
 
         _ = modelBuilder.Entity<ShippingOrderProduct>()
             .ToTable(nameof(this.ShippingOrdersProducts))
@@ -961,7 +961,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
         #endregion
 
 
-        #region RELATIONS RE DONNÉES DE TEST
+           #region RELATIONS RE DONNÉES DE TEST
         //Adresse
             Adresse adWh = new Adresse(Project_Utilities.Enums.AddressTypesEnum.Warehouse, "adresse", "civicNumber", "street", "city", "state", "country", "postalcode") {
                 Id = 1
@@ -1050,7 +1050,7 @@ namespace _420DA3_A24_Projet.DataAccess.Contexts;
 
             #endregion
 
-            }
+        }
     }
 
 
